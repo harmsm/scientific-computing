@@ -2,8 +2,8 @@
 pythonic science
 ================
 
-CH410/510 Scientific Computing
-==============================
+CH410/510 Scientific Computing, Spring 2020 @ University of Oregon
+==================================================================
 
 + The class will meet Mon and Wed at 9 am 1 hr, and then Fri for 2 hr.
 
@@ -11,68 +11,81 @@ CH410/510 Scientific Computing
   programming material.  Fri will be an open "lab" where you will work on
   exercises in class.
 
-+ Because of COVID-19, we will do all coursework remotely for at least the first
-  three weeks.  Details on how this will work will be posted here.
++ Because of COVID-19, all class time and office hours will be done via zoom.
+  The class will meet remotely at the times above.
 
-People
-======
++ All communication about the class will be done via slack.
 
-+ Mike Harms OH: 9 am Thursdays, Will 342
-+ Luis Perez OH: TBA, Will 342
+`Course syllabus <syllabus.html>`_
 
-Conceptual Goals
-================
+Schedule and course materials
+=============================
 
-By the end of the course, students should understand:
-
-+ Basic python: data types, key words, control, functions and imports
-+ Core python extensions for scientists: scipy, numpy, and jupyter
-+ Strategies for dissecting problems and formulating solutions in code
-+ Where to go to pick up skills in the future as the need arises
-
-Skill Goals
-===========
-
-By the end of the course, students should be able to:
-
-+ Write basic python programs from scratch
-+ Identify existing libraries for a problem and learn how to use them
-+ Generate arbitrarily complex custom plots
-+ Simulate experimental sampling
-+ Manipulate scientific datasets of the following types (at a basic level):
- + High-throughput sequencing data
- + Chemical structure data from databases such as the PDB
- + Images
-
-`Course schedule <schedule.html>`_
-
-Assignments
-===========
-
-+ Project prospectus (Due Friday, May 8)
-+ `Final project <final-project.html>`_ (Due Monday, June 8)
-
-Weekly assignments
-------------------
-
-+ There will be 8 labs.
-+ We will (generally) start the labs on Fri in class.
-+ They will be due the following Wed in class.
-+ They can be turned in by email.
-
-Grading
-=======
-
-+ Breakdown:
-    + 25% attendance.  (Details of the implementation of attendance during the
-      remote learning portion of the course will be posted here when they are
-      known.)
-    + 25% final project
-    + 50% labs (6.25%/lab)
-+ Labs will be graded based on whether they are turned in, whether we can run
-  the notebook, and whether they notebooks give the right results.
-+ The final project will be graded according to the rubric given in the
-  `Final project description <final-project.html>`_.
++---------+--------------------------------------------------------------------------+--------------------+
+| Date    | Topic                                                                    | Due                |
++=========+==========================================================================+====================+
+| Mon 3/30| Getting set up: :code:`python`, :code:`jupyter`, and :code:`git`         |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 4/1 | Introduction to python and the jupyter notebook.  Python as a calculator.|                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 4/3 | Conditionals, loops, lists, numpy arrays.                                |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 4/6 | Functions and namespace.                                                 |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 4/8 | Graphing and matplotlib.                                                 |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 4/10| **Lab**: Programming Puzzles                                             | hw 1 (intro)       |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 4/13| **Simulation**                                                           |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 4/15| Simulation                                                               | lab 2 (puzzles)    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 4/17| **Lab**: Simulating an experiment                                        |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 4/20| **Model Regression**                                                     |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 4/22| Model regression                                                         | lab 3 (simulation) |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 4/24| **Lab**: Fitting models to data                                          |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 4/27| **Classification with machine learning**                                 |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 4/29| Machine learning                                                         | lab 4 (fitting)    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 5/1 | **Lab**: Classification with machine learning                            |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 5/4 | **Molecular structures**                                                 |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 5/6 | Molecular structures                                                     | lab 5 (machines)   |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 5/8 | **Lab**: Calculating structural properties                               | Project prospectus |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 5/11| **Big(ish) data**                                                        |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 5/13| Big data                                                                 | lab 6 (structure)  |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 5/15| **Lab**: Analyzing high-throughput sequencing                            |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 5/18| **Microscopy images**                                                    |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 5/20| Microscopy images                                                        | lab 7 (HTS)        |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 5/22| **Lab**: Analyzing microscopy images                                     |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 5/25| Memorial Day. No class.                                                  |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 5/27| Final project in class                                                   | lab 8 (images)     |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 5/29| Final project in class                                                   |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 6/1 | Final project in class                                                   |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Wed 6/3 | Final project in class                                                   |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Fri 6/5 | Final project in class                                                   |                    |
++---------+--------------------------------------------------------------------------+--------------------+
+| Mon 6/8 | ---                                                                      | Final project      |
++---------+--------------------------------------------------------------------------+--------------------+
 
 
 Resources
