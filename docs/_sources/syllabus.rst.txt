@@ -1,3 +1,5 @@
+:orphan:
+
 ========
 Syllabus
 ========
@@ -42,40 +44,61 @@ By the end of the course, students should be able to:
 + Generate arbitrarily complex custom plots
 + Simulate experimental sampling
 + Manipulate scientific datasets of the following types (at a basic level):
- + High-throughput sequencing data
- + Chemical structure data from databases such as the PDB
- + Images
++ High-throughput sequencing data
++ Chemical structure data from databases such as the PDB
++ Images
 
 `Course schedule <index.html>`_
 
 Assignments
 ===========
 
+*All assignments should be turned in on canvas.  Assignments are due by 9 am
+on the day they are due.*
+
+Final project
+-------------
+
 + Project prospectus (Due Friday, May 8)
-+ `Final project <final-project.html>`_ (Due Monday, June 8)
++ Final project (Due Monday, June 8)
++ The descriptions of these assignments, as well as the grading rubric, are given
+  in the `Final project description <final-project.html>`_.
 
 Weekly assignments
 ------------------
 
 + There will be 8 labs.
 + We will (generally) start the labs on Fri in class.
-+ They will be due the following Wed in class.
-+ They can be turned in by email.
++ They will (usually) be due the following Wed in class.
++ Please compress the entire folder containing your jupyter notebook and
+  associated input files.  This will make sure we can run the notebook when
+  grading.
++ Labs will be graded based on whether they are turned in, whether we can run
+  the notebook, and whether they notebooks give the right results.
+
 
 Grading
 =======
 
-+ Breakdown:
-    + 25% attendance.  (Details of the implementation of attendance during the
-      remote learning portion of the course will be posted here when they are
-      known.)
-    + 25% final project
-    + 50% labs (6.25%/lab)
-+ Labs will be graded based on whether they are turned in, whether we can run
-  the notebook, and whether they notebooks give the right results.
-+ The final project will be graded according to the rubric given in the
-  `Final project description <final-project.html>`_.
++---------------+---------+--------------+-----------------+--------------+
+| Assignment    | Point % | units points | num assignments | total points |
++===============+=========+==============+=================+==============+
+| Attendance    | 25 %    | 6 pts/class  | 30 classes      | 180          |
++---------------+---------+--------------+-----------------+--------------+
+| Labs          | 50 %    | 45 pts/lab   | 8 labs          | 360          |
++---------------+---------+--------------+-----------------+--------------+
+| Proposal      | 2.5 %   | 18 pts       | 1               | 18           |
++---------------+---------+--------------+-----------------+--------------+
+| Final project | 22.5 %  | 162 pts      | 1               | 162          |
++---------------+---------+--------------+-----------------+--------------+
+| Total                                                    | 720          |
++----------------------------------------------------------+--------------+
 
++ The points posted on Canvas are the *offical* point totals.  If you think
+  there has been a mistake with your points, please contact me.
++ Anyone receiving 90% or more of the points will receive an A, 80%-90% a B, etc.
+  I may curve the course, but this will only improve your grade from the
+  baseline above.
 
 .. toctree::
    :maxdepth: 2

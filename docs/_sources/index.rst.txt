@@ -1,9 +1,9 @@
-================
-pythonic science
-================
+==============================
+CH410/510 Scientific Computing
+==============================
 
-CH410/510 Scientific Computing, Spring 2020 @ University of Oregon
-==================================================================
+Spring 2020 @ University of Oregon
+==================================
 
 + The class will meet Mon and Wed at 9 am 1 hr, and then Fri for 2 hr.
 
