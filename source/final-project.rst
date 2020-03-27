@@ -1,6 +1,3 @@
-:orphan:
-
-=============
 Final Project
 =============
 
@@ -18,7 +15,7 @@ your final goal by the end of class; it does not have to achieve the stated
 goal.
 
 Constraints
-===========
+-----------
 + The problem should be real.
 + At the end of the day, the program you write should be useful.
 + The approach should be feasible.  This means it is not only mathematically
@@ -32,9 +29,9 @@ Constraints
   runs, etc.) these should already have been collected.
 
 Resources
-=========
+---------
 + **Definitely** use software packages that help you achieve your goals.  If
-  you're analyzing colonies on a plate, use libraries like `PIL` and `skimage`
+  you're analyzing colonies on a plate, use libraries like :code:`PIL` and :code:`skimage`
   --don't write your own image parser!
 + Talk to your lab mates and PI about interesting problems and what software
   might be useful.
@@ -44,7 +41,7 @@ Resources
   help you get started.
 
 Project Ideas:
-==============
+--------------
 + Counting/classifying something in an automated fashion
 + Fitting complicated model(s) to data
 + Squeezing every last drop of information out of a high-throughput experiment
@@ -55,12 +52,12 @@ Project Ideas:
 + Machine learning to classify stuff
 
 What you turn in:
-=================
+-----------------
 
 Prospectus:
------------
+...........
 
-Due on (or, preferably, way before) Friday, May 10th.
+Due on (or, preferably, way before) Friday, May 8th.
 
 It should have the following (bullet points are fine):
 
@@ -80,12 +77,12 @@ you can get rolling on the final project.  If there are issues that should be
 addressed, I might ask for a revised version.
 
 Final project
--------------
+.............
 
-Due on Monday, June 10th.
+Due on Monday, June 8th.
 
 You will turn in EITHER a url for a github repo OR a zipped directory containing
-your project.  The repo/directory should have the follwing structure:
+your project.  The repo/directory should have the following structure:
 
 .. sourcecode :: bash
 
@@ -97,7 +94,7 @@ your project.  The repo/directory should have the follwing structure:
         data_file_for_demo
         ...
 
-Assessment critera:
+Assessment criteria:
 
 + Does the README.md file give sufficient information to know what the software
   does and how to use it?
