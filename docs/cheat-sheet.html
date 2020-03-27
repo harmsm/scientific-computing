@@ -254,7 +254,7 @@ first one is executed.</p>
 <p>where <code class="code docutils literal notranslate"><span class="pre">iterator</span></code> is something like <code class="code docutils literal notranslate"><span class="pre">range(10)</span></code> or a list that has
 multiple entries.</p>
 <p><strong>Example</strong>
-.. sourcecode :: python</p>
+.. code-block:: python</p>
 <blockquote>
 <div><dl class="simple">
 <dt>for i in range(10):</dt><dd><p>print(i)</p>
@@ -271,7 +271,7 @@ multiple entries.</p>
 <p>where <code class="code docutils literal notranslate"><span class="pre">condition</span></code> is something that can be read as <code class="code docutils literal notranslate"><span class="pre">True</span></code> or
 <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
 <p><strong>Example</strong>
-.. sourcecode :: python</p>
+.. code-block:: python</p>
 <blockquote>
 <div><p>i = 0
 while i &lt; 10:</p>
@@ -597,11 +597,26 @@ fourth dimension of a 4d array</p></li>
 <h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
 <p>Libraries are extensions of basic python that provide expanded functionality.
 To get access to a library, add a line like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
 <p>You can then run this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
 <p>You can assign imported modules more convenient names.  For example, the
 following would do exactly the same as the above program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
 <p>You can also import functions (and other objects) from each module using the
 <cite>from</cite> syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
 <div class="section" id="important-libraries">
 <h3>Important libraries:<a class="headerlink" href="#important-libraries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">

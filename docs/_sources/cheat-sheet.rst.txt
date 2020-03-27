@@ -26,7 +26,7 @@ These can be combined using :code:`and` and :code:`or`.
 
 **Example**
 
-.. sourcecode:: python
+.. code-block:: python
 
     x = 0
     y = 5
@@ -40,7 +40,7 @@ These can be combined using :code:`and` and :code:`or`.
 Conditionals
 ------------
 
-.. sourcecode:: python
+.. code-block:: python
 
     if condition_one:
         do_something
@@ -58,7 +58,7 @@ first one is executed.
 
 **Example**
 
-.. sourcecode :: python
+.. code-block:: python
 
     x = 2
     if x < 0:
@@ -76,7 +76,7 @@ Loops
 :code:`for` syntax
 ..................
 
-.. sourcecode :: python
+.. code-block:: python
 
     for x in iterator:
         something_to_x
@@ -85,7 +85,7 @@ where :code:`iterator` is something like :code:`range(10)` or a list that has
 multiple entries.
 
 **Example**
-.. sourcecode :: python
+.. code-block:: python
 
     for i in range(10):
         print(i)
@@ -93,7 +93,7 @@ multiple entries.
 :code:`while` syntax
 ....................
 
-.. sourcecode :: python
+.. code-block:: python
 
     while condition:
         something
@@ -102,12 +102,13 @@ where :code:`condition` is something that can be read as :code:`True` or
 :code:`False`
 
 **Example**
-.. sourcecode :: python
+.. code-block:: python
 
     i = 0
     while i < 10:
         print(i)
         i = i + 1
+
 
 
 .. warning::
@@ -124,7 +125,7 @@ where :code:`condition` is something that can be read as :code:`True` or
 
 **Example**
 
-.. sourcecode:: python
+.. code-block:: python
 
     # Will print i from 6 to 90
     i = 0
@@ -277,25 +278,29 @@ Libraries
 Libraries are extensions of basic python that provide expanded functionality.
 To get access to a library, add a line like:
 
-.. sourcecode :: python
+.. code-block:: python
+
     import math
 
 You can then run this:
 
-.. sourcecode :: python
+.. code-block:: python
+
     print(math.sin(1))
 
 You can assign imported modules more convenient names.  For example, the
 following would do exactly the same as the above program.
 
-.. sourcecode :: python
+.. code-block:: python
+
     import math as m
     print(m.sin(1))
 
 You can also import functions (and other objects) from each module using the
 `from` syntax:
 
-.. sourcecode :: python
+.. code-block:: python
+
     import math
     from math import sin
     print(sin(1))
@@ -320,7 +325,7 @@ Functions are blocks of re-usable code that take arguments and return values.
 Functions are defined using the `def` keyword.  Anything indented under `def`
 is part of the function.
 
-.. sourcecode :: python
+.. code-block:: python
 
     def my_function(x):
 
