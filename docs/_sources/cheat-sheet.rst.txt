@@ -160,122 +160,122 @@ List-like objects
 :code:`list`
 ''''''''''''
 + **Specs**:
- + collection of arbitrary objects
- + indexed by number (starting from 0)
+ * collection of arbitrary objects
+ * indexed by number (starting from 0)
 + **Creating new**:
- + :code:`some_list = []` creates a new, empty list
- + :code:`some_list = [1,2,3]` creates a new list with three entries
+ * :code:`some_list = []` creates a new, empty list
+ * :code:`some_list = [1,2,3]` creates a new list with three entries
 + **Adding new entry**:
- + :code:`some_list.append(1)` appends the integer :code:`1` to the end of the
+ * :code:`some_list.append(1)` appends the integer :code:`1` to the end of the
    list
- + :code:`some_list.append({})` appends an empty dictionary to the end of the
+ * :code:`some_list.append({})` appends an empty dictionary to the end of the
    list
 + **Remove entry**:
- + :code:`some_list.pop(1)` returns the second entry and removes it from the
+ * :code:`some_list.pop(1)` returns the second entry and removes it from the
    list
 + **Getting values**:
- + :code:`some_list[0]` gives first entry in list
- + :code:`some_list[-1]` gives last entry in list
- + :code:`some_list[1:3]` gives the second and third entry in list
+ * :code:`some_list[0]` gives first entry in list
+ * :code:`some_list[-1]` gives last entry in list
+ * :code:`some_list[1:3]` gives the second and third entry in list
 + **Setting values**:
- + :code:`some_list[0] = 5` sets the first value to :code:`5`
- + :code:`some_list[-1] = 5` sets the last value to :code:`5`
- + :code:`some_list[1:3] = ["test",8]` sets the second and third entries to
+ * :code:`some_list[0] = 5` sets the first value to :code:`5`
+ * :code:`some_list[-1] = 5` sets the last value to :code:`5`
+ * :code:`some_list[1:3] = ["test",8]` sets the second and third entries to
    :code:`"test"` and :code:`8`, respectively.
 
 :code:`tuple`
 '''''''''''''
 
 + **Specs**:
- + collection of arbitrary objects
- + behaves just like a list *except* that once it is created it cannot be
+ * collection of arbitrary objects
+ * behaves just like a list *except* that once it is created it cannot be
    modified.
 + **Creating new**:
- + :code:`some_tuple = (1,2,3)` creates a new tuple
+ * :code:`some_tuple = (1,2,3)` creates a new tuple
 + **Adding new entry**: can't be done
 + **Remove entry**: can't be done
 + **Getting values**:
- + Indexing and slicing rules just like lists
+ * Indexing and slicing rules just like lists
 + **Setting values**: can't be done
 
 :code:`dict`
 ''''''''''''
 
 + **Specs**:
- + collection of arbitrary objects
- + objects are indexed by keys
- + keys can be almost any type *except* lists and dictionaries.
- + dictionaries are not ordered, meaning that if you loop through them
+ * collection of arbitrary objects
+ * objects are indexed by keys
+ * keys can be almost any type *except* lists and dictionaries.
+ * dictionaries are not ordered, meaning that if you loop through them
    more than once, the items could pop out in a different order
 + **Creating new**:
- + :code:`some_dict = {}` creates a new, empty dictionary
- + :code:`some_dict = {"cows":27,18:"dogs"}` creates a new dictionary with
+ * :code:`some_dict = {}` creates a new, empty dictionary
+ * :code:`some_dict = {"cows":27,18:"dogs"}` creates a new dictionary with
    :code:`"cows"` keying to the value :code:`27` and :code:`18` keying to the
    value :code:`"dogs"`
 + **Adding new entry**:
- + :code:`some_dict["meddling"] = "kids"` creates a key/value pair where the
+ * :code:`some_dict["meddling"] = "kids"` creates a key/value pair where the
    key :code:`"meddling"` gives the value :code:`"kids"`
 + **Remove entry**:
- + :code:`some_dict.pop("meddling")` would return :code:`"kids"` and remove
+ * :code:`some_dict.pop("meddling")` would return :code:`"kids"` and remove
    the :code:`"meddling/kids"` key/value pair from the dictionary
 + **Getting values**:
- + :code:`some_dict["meddling"]` would return :code:`"kids"`
- + :code:`list(some_dict.keys())` returns list of keys
- + :code:`list(some_dict.values())` returns list of values
- + :code:`list(some_dict.items())` returns list of tuples with all key/value
+ * :code:`some_dict["meddling"]` would return :code:`"kids"`
+ * :code:`list(some_dict.keys())` returns list of keys
+ * :code:`list(some_dict.values())` returns list of values
+ * :code:`list(some_dict.items())` returns list of tuples with all key/value
    pairs
 + **Setting values**:
- + :code:`some_dict["scooby"] = "doo"` would key the value "doo" to the key
+ * :code:`some_dict["scooby"] = "doo"` would key the value "doo" to the key
    :code:`"scooby"`
 
 :code:`string`
 ''''''''''''''
 + **Specs**:
- + stores text
- + behaves similarly to a list where every entry is a character
+ * stores text
+ * behaves similarly to a list where every entry is a character
 + **Creating new**:
- + :code:`some_string = "test"` creates a new string storing test
- + Note that text in the string must have :code:`"` around it.
+ * :code:`some_string = "test"` creates a new string storing test
+ * Note that text in the string must have :code:`"` around it.
 + **Adding new entry**: can't be done
 + **Removing entry**: can't be done
 + **Getting values**: just like a list
- + :code:`some_string[0]` returns the first letter
- + :code:`some_string[-1]` returns the last letter
- + :code:`some_string[1:3]` returns the second and third letter
+ * :code:`some_string[0]` returns the first letter
+ * :code:`some_string[-1]` returns the last letter
+ * :code:`some_string[1:3]` returns the second and third letter
 + **Setting values**: just like a list
- + :code:`some_string[0] = "c"` sets the first letter to :code:`"c"`
+ * :code:`some_string[0] = "c"` sets the first letter to :code:`"c"`
 
 :code:`numpy.array`
 '''''''''''''''''''
 + **Specs**:
- + collection of numerical objects of the same type
- + less flexible than a list (all objects must be same type, can't change
+ * collection of numerical objects of the same type
+ * less flexible than a list (all objects must be same type, can't change
    dimensions after created).
- + collection of numpy functions allow extremely fast enumeration and access
- + requires :code:`import numpy` at top of program
+ * collection of numpy functions allow extremely fast enumeration and access
+ * requires :code:`import numpy` at top of program
 + **Creating**:
- + :code:`numpy.zeros((10,10),dtype=int)` creates a new 10x10 integer array of
+ * :code:`numpy.zeros((10,10),dtype=int)` creates a new 10x10 integer array of
    zeros
- + :code:`numpy.array([1.0,1.3,2.3],dtype=float)` creates a new 3 entry array
+ * :code:`numpy.array([1.0,1.3,2.3],dtype=float)` creates a new 3 entry array
    of floats with input list values
 + **Adding new entry**:
- + Can't really be done
- + :code:`y = numpy.append(x,1.0)` will create a copy of `x` with 1.0 appended
+ * Can't really be done
+ * :code:`y = numpy.append(x,1.0)` will create a copy of `x` with 1.0 appended
    to it.
 + **Removing entry**:
- + Can't really be done
- + :code:`y = numpy.delete(x,0)` will create a copy of `y` with the first
+ * Can't really be done
+ * :code:`y = numpy.delete(x,0)` will create a copy of `y` with the first
    element removed.
 + **Getting values**:
- + Extremely powerful (and sometimes complex)
- + :code:`x[0]` returns the
- + :code:`x[0,0,0]` returns the bottom left corner of a 3d array
- + :code:`x[0:5]` returns the first five entries in a 1d array
- + :code:`x[0,:]` returns the whole first column of a 2d array
- + :code:`x[:,:,:,2]` returns a 3d slice at the third position on along the
+ * Extremely powerful (and sometimes complex)
+ * :code:`x[0]` returns the
+ * :code:`x[0,0,0]` returns the bottom left corner of a 3d array
+ * :code:`x[0:5]` returns the first five entries in a 1d array
+ * :code:`x[0,:]` returns the whole first column of a 2d array
+ * :code:`x[:,:,:,2]` returns a 3d slice at the third position on along the
    fourth dimension of a 4d array
 + **Setting values**:
- + Exact same indexing and slicing rules as getting values
+ * Exact same indexing and slicing rules as getting values
 
 Libraries
 ---------
