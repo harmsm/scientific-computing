@@ -96,3 +96,30 @@ Grading
 + Anyone receiving 90% or more of the points will receive an A, 80%-90% a B, etc.
   I may curve the course, but this will only improve your grade from the
   baseline above.
+
+Community
+---------
+
+This class is governed by the UO community standards.
+
+Respect the dignity and essential worth of all individuals.
++ Promote a culture of respect.
++ Respect the privacy, property, and freedom of others.
++ Reject bigotry, discrimination, violence, or intimidation of any kind.
++ Practice personal and academic integrity and expect it from others.
+
+Students with Disabilities
+..........................
+
+If you have a documented disability and anticipate needing accommodations in
+this course, please make arrangements to meet with Mike soon. Please bring a
+notification letter from the Accessible Education Center (`<http://aec.uoregon.edu/>`_)
+outlining your approved accomodations.  In particular, if remote-learning will
+be an issue, please let me know as soon as possible so I can work with you.
+
+Cheating
+........
+TL;DR: Don’t do it. You are expected to do your own work. Cheating, plagiarism
+and any other form of academic dishonesty will not be tolerated. Please refer to
+the University Of Oregon Student Conduct Code
+(`<https://policies.uoregon.edu/vol-3-administration-student-affairs/ch-1-conduct/student-conduct-code>`_).
