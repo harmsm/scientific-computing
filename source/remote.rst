@@ -36,23 +36,23 @@ Direct messages
 Channels
 ........
 
-+ :code:`#general`:
++ `#general`:
     + I'll post announcements here.
     + I'll post zoom links to class and office hours here.
     + Feel free to use this to organize study sessions, group work, etc.
 
-+ :code:`#random`:
++ `#random`:
     + Fun stuff not directly related to the class.
     + Great for building community.
     + Memes are great, but remember to keep things respectful.
 
-+ :code:`#in_class`:
++ :`#in_class`:
     + This channel is for conversations, questions, and polls from class.
     + Post questions at any time during the class session itself.
     + Reactions and replies to others' questions will be very helpful.
     + I will post the :code:`#in_class` log after each class.
 
-+ :code:`#help`:
++ `#help`:
     + Use this any time throughout the week if you have questions on homework or
       content.
     + Before posting, check recent entries to see if someone has already posed
@@ -68,4 +68,4 @@ Recommendations
 + Get the `zoom <https://zoom.us/download>`_ and
   `slack <https://slack.com/downloads/>`_ desktop apps.
 + During class sessions, use slack on your phone or tablet to save screen space.
-+ Make liberal use of the :code:`#help` slack channel.
++ Make liberal use of the :code:`\#help` slack channel.
