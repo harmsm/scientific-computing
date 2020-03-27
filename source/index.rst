@@ -9,12 +9,9 @@ Overview
 
 + All classwork will be done remotely. `Details are here <remote.html>`_.
 
-+ To get your environment set up, please follow
- `these instructions <https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html>`_.
++ To get your environment set up, please follow `these instructions <https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html>`_.
 
-+ To test your environment, please try to run this
- `jupyter notebook <https://github.com/harmsm/pythonic-science/raw/master/test_notebook.ipynb>`_
- (right-click to save onto your computer.)
++ To test your environment, please try to run this `jupyter notebook <https://github.com/harmsm/pythonic-science/raw/master/test_notebook.ipynb>`_ (right-click to save onto your computer.)
 
 + Details regarding grading and course policies are in the `syllabus <syllabus.html>`_.
 
