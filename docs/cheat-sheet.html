@@ -186,6 +186,7 @@
 <li><p>Main <a class="reference external" href="https://github.com/harmsm/pythonic-science">github repo</a> for notebooks in course.</p></li>
 <li><p><a class="reference external" href="http://docs.python-guide.org/en/latest/writing/gotchas/">Python gotchas</a></p></li>
 <li><p><a class="reference external" href="http://connor-johnson.com/2014/02/18/linear-regression-with-python/">Fitting and summary of quality-of-fit measures</a></p></li>
+<li></li>
 </ul>
 </div>
 <div class="section" id="comparison-operators">
@@ -253,14 +254,11 @@ first one is executed.</p>
 </div>
 <p>where <code class="code docutils literal notranslate"><span class="pre">iterator</span></code> is something like <code class="code docutils literal notranslate"><span class="pre">range(10)</span></code> or a list that has
 multiple entries.</p>
-<p><strong>Example</strong>
-.. code-block:: python</p>
-<blockquote>
-<div><dl class="simple">
-<dt>for i in range(10):</dt><dd><p>print(i)</p>
-</dd>
-</dl>
-</div></blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="while-syntax">
 <h3><code class="code docutils literal notranslate"><span class="pre">while</span></code> syntax<a class="headerlink" href="#while-syntax" title="Permalink to this headline">¶</a></h3>
@@ -270,16 +268,13 @@ multiple entries.</p>
 </div>
 <p>where <code class="code docutils literal notranslate"><span class="pre">condition</span></code> is something that can be read as <code class="code docutils literal notranslate"><span class="pre">True</span></code> or
 <code class="code docutils literal notranslate"><span class="pre">False</span></code></p>
-<p><strong>Example</strong>
-.. code-block:: python</p>
-<blockquote>
-<div><p>i = 0
-while i &lt; 10:</p>
-<blockquote>
-<div><p>print(i)
-i = i + 1</p>
-</div></blockquote>
-</div></blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you forgot the <code class="code docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> line in the code above, it would create

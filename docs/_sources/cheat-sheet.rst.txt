@@ -9,6 +9,7 @@ Resources
 * Main `github repo <https://github.com/harmsm/pythonic-science>`_ for notebooks in course.
 * `Python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_
 * `Fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_
+*
 
 Comparison operators
 --------------------
@@ -76,6 +77,8 @@ Loops
 :code:`for` syntax
 ..................
 
+
+
 .. code-block:: python
 
     for x in iterator:
@@ -85,6 +88,7 @@ where :code:`iterator` is something like :code:`range(10)` or a list that has
 multiple entries.
 
 **Example**
+
 .. code-block:: python
 
     for i in range(10):
@@ -102,6 +106,7 @@ where :code:`condition` is something that can be read as :code:`True` or
 :code:`False`
 
 **Example**
+
 .. code-block:: python
 
     i = 0
