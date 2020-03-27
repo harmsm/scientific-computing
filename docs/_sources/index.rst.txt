@@ -7,12 +7,14 @@ Overview
 
 + The class will meet Monday and Wednesday at 9 am 1 hr, and then Friday at 9 am for 2 hr.
 
-+ In general, Mon and Wed will be instruction days where we cover new
-  programming material.  Fri will be an open lab where you will work on
-  exercises as groups in class.
++ All classwork will be done remotely. `Details are here <remote.html>`_.
 
-+ Because of COVID-19, all class time and office hours will be done via zoom.
-  The class will meet remotely at the times above.  `Details are here. <remote.html>`_.
++ To get your environment set up, please follow
+ `these instructions <https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html>`_.
+
++ To test your environment, please try to run this
+ `jupyter notebook <https://github.com/harmsm/pythonic-science/raw/master/test_notebook.ipynb>`_
+ (right-click to save onto your computer.)
 
 + Details regarding grading and course policies are in the `syllabus <syllabus.html>`_.
 
@@ -20,7 +22,7 @@ Overview
 Schedule and course materials
 =============================
 
-:red:`Warning`: Future dates and material may be subject to (minor) change.
+*Warning*: Future dates and material may be subject to (minor) change.
 
 +---------+--------------------------------------------------------------------------+--------------------+
 | Date    | Topic                                                                    | Due                |
