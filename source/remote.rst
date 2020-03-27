@@ -66,7 +66,9 @@ Material
 --------
 + The material for each week will be posted on the `main page <index.html>`_
   prior to the week's class.
+
 + After each class session, I will post:
+
     * Video of the zoom session
     * Text of the :code:`#in_class` chat log
     * Any slides or notebooks I put up on the screen in class
@@ -75,7 +77,6 @@ Material
 
 Recommendations
 ---------------
-
 + Get the `zoom <https://zoom.us/download>`_ and
   `slack <https://slack.com/downloads/>`_ desktop apps.
 + During class sessions, use slack on your phone or tablet to save screen space.

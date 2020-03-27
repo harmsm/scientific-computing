@@ -5,19 +5,22 @@ CH410/510 Scientific Computing
 Overview
 ========
 
-+ The class will meet Mon and Wed at 9 am 1 hr, and then Fri for 2 hr.
++ The class will meet Monday and Wednesday at 9 am 1 hr, and then Friday at 9 am for 2 hr.
 
 + In general, Mon and Wed will be instruction days where we cover new
-  programming material.  Fri will be an open "lab" where you will work on
+  programming material.  Fri will be an open lab where you will work on
   exercises as groups in class.
 
 + Because of COVID-19, all class time and office hours will be done via zoom.
-  The class will meet remotely at the times above.  `Details are here. <remote.html>`_
+  The class will meet remotely at the times above.  `Details are here. <remote.html>`_.
 
-+ `Course syllabus <syllabus.html>`_
++ Details regarding grading and course policies are in the `syllabus <syllabus.html>`_.
+
 
 Schedule and course materials
 =============================
+
+:red:`Warning`: Future dates and material may be subject to (minor) change.
 
 +---------+--------------------------------------------------------------------------+--------------------+
 | Date    | Topic                                                                    | Due                |

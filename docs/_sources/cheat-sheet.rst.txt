@@ -5,11 +5,11 @@ Python quick reference
 Resources
 ---------
 
+* `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_ (right click to save jupyter notebook).
+* `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_ (right click to save jupyter notebook).
 * `Insane Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_.
-* Main `github repo <https://github.com/harmsm/pythonic-science>`_ for notebooks in course.
 * `Python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_
 * `Fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_
-*
 
 Comparison operators
 --------------------
