@@ -95,6 +95,9 @@ Resources
 * main `github repo <https://github.com/harmsm/pythonic-science>`_.
 
 .. toctree::
+   syllabus
+   remote
+   final-project
    :maxdepth: 2
    :caption: Contents:
 

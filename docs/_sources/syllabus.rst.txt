@@ -1,6 +1,3 @@
-:orphan:
-
-========
 Syllabus
 ========
 
@@ -16,7 +13,7 @@ Syllabus
 + All communication about the class will be done via slack.
 
 People
-======
+------
 
 + Mike Harms (professor)
 + Luis Perez (TA)
@@ -25,7 +22,7 @@ People
 + Michael Shavlik (volunteer TA)
 
 Conceptual Goals
-================
+----------------
 
 By the end of the course, students should understand:
 
@@ -35,7 +32,7 @@ By the end of the course, students should understand:
 + Where to go to pick up skills in the future as the need arises
 
 Skill Goals
-===========
+-----------
 
 By the end of the course, students should be able to:
 
@@ -51,13 +48,13 @@ By the end of the course, students should be able to:
 `Course schedule <index.html>`_
 
 Assignments
-===========
+-----------
 
 *All assignments should be turned in on canvas.  Assignments are due by 9 am
 on the day they are due.*
 
 Final project
--------------
+.............
 
 + Project prospectus (Due Friday, May 8)
 + Final project (Due Monday, June 8)
@@ -65,7 +62,7 @@ Final project
   in the `Final project description <final-project.html>`_.
 
 Weekly assignments
-------------------
+..................
 
 + There will be 8 labs.
 + We will (generally) start the labs on Fri in class.
@@ -78,7 +75,7 @@ Weekly assignments
 
 
 Grading
-=======
+-------
 
 +---------------+---------+--------------+-----------------+--------------+
 | Assignment    | Point % | units points | num assignments | total points |
@@ -99,14 +96,3 @@ Grading
 + Anyone receiving 90% or more of the points will receive an A, 80%-90% a B, etc.
   I may curve the course, but this will only improve your grade from the
   baseline above.
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
