@@ -86,18 +86,13 @@ Schedule and course materials
 +---------+--------------------------------------------------------------------------+--------------------+
 
 
-Resources
-=========
-* `Cool Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_.
-* `Python cheat sheet <cheat-sheet.html>`_
-* main `github repo <https://github.com/harmsm/pythonic-science>`_.
-
 .. toctree::
    syllabus
    remote
    final-project
+   cheat-sheet
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Sections:
 
 Indices and tables
 ==================
