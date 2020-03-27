@@ -15,13 +15,23 @@ Class time
 + We will make liberal use of breakout rooms during class.  Be prepared to
   work in assigned pairs and small groups during class.
 + If you have questions and comments during class, please post them in the
-  :code:`#in_class` channel.  The TAs and I will monitor this channel.  Depending
+  :code:`#in_class` slack channel.  The TAs and I will monitor this channel.  Depending
   on the situation, we may start a class discussion, join you in your breakout
   room or start a DM chat.
 
+Material
+--------
++ The material for each week will be posted on the `main page <index.html>`_
+  prior to the week's class.
+
++ After each class session, I will post:
+  * Video of the zoom session
+  * Text of the :code:`#in_class` chat log
+  * Any slides or notebooks I put up on the screen in class
++ Homework will be submitted via `canvas <canvas.uoregon.edu>`_.
+
 Slack
 -----
-
 Slack is going to be the primary means of communication in this class.  You
 should have gotten an invitation to the slack organization for the class.
 If not, please email me.
@@ -62,18 +72,6 @@ Channels
     * Feel free to reply to others, comment, etc. on each thread.
     * *Use threads*
 
-Material
---------
-+ The material for each week will be posted on the `main page <index.html>`_
-  prior to the week's class.
-
-+ After each class session, I will post:
-
-    * Video of the zoom session
-    * Text of the :code:`#in_class` chat log
-    * Any slides or notebooks I put up on the screen in class
-+ Homework will be submitted via `cavnas <canvas.uoregon.edu>`_.
-
 
 Recommendations
 ---------------
@@ -81,3 +79,5 @@ Recommendations
   `slack <https://slack.com/downloads/>`_ desktop apps.
 + During class sessions, use slack on your phone or tablet to save screen space.
 + Make liberal use of the :code:`#help` slack channel.
++ Upload profile photos to slack and zoom so everyone has some idea of who they
+  are talking to!
