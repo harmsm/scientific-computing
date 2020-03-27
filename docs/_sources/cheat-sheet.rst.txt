@@ -3,7 +3,7 @@ Python quick reference
 ======================
 
 Resources
-=========
+---------
 
 * `Insane Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_.
 * Main `github repo <https://github.com/harmsm/pythonic-science>`_ for notebooks in course.
@@ -11,7 +11,7 @@ Resources
 * `Fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_
 
 Comparison operators
-====================
+--------------------
 
 Used to compare two objects.  Returns :code:`True` or :code:`False`.
 
@@ -38,7 +38,7 @@ These can be combined using :code:`and` and :code:`or`.
         print("x is smaller than y and x is less than 1")
 
 Conditionals
-============
+------------
 
 .. sourcecode:: python
 
@@ -58,7 +58,7 @@ first one is executed.
 
 **Example**
 
-.. sourcecode:: python
+.. sourcecode :: python
 
     x = 2
     if x < 0:
@@ -71,12 +71,12 @@ first one is executed.
         print("x is bigger than 100")
 
 Loops
-=====
+-----
 
-`for` syntax
-------------
+:code:`for` syntax
+..................
 
-.. sourcecode:: python
+.. sourcecode :: python
 
     for x in iterator:
         something_to_x
@@ -85,14 +85,15 @@ where :code:`iterator` is something like :code:`range(10)` or a list that has
 multiple entries.
 
 **Example**
-.. sourcecode:: python
+.. sourcecode :: python
 
     for i in range(10):
         print(i)
 
-`while` syntax
----------------
-.. sourcecode:: python
+:code:`while` syntax
+....................
+
+.. sourcecode :: python
 
     while condition:
         something
@@ -101,7 +102,7 @@ where :code:`condition` is something that can be read as :code:`True` or
 :code:`False`
 
 **Example**
-.. sourcecode:: python
+.. sourcecode :: python
 
     i = 0
     while i < 10:
@@ -116,7 +117,7 @@ where :code:`condition` is something that can be read as :code:`True` or
     when using :code:`while` loops.
 
 :code:`continue` and :code:`break` syntax
------------------------------------------
+.........................................
 
 + :code:`continue` hops to the next iteration of the loop
 + :code:`break` terminates the loop
@@ -138,20 +139,20 @@ where :code:`condition` is something that can be read as :code:`True` or
         print(i)
 
 Datatypes
-=========
+---------
 
 Single-value datatypes
-----------------------
+......................
 
 + :code:`int` (integer)
 + :code:`bool` (True or False)
 + :code:`float` (decimal number)
 
 List-like objects
------------------
+.................
 
 :code:`list`
-............
+''''''''''''
 + **Specs**:
  + collection of arbitrary objects
  + indexed by number (starting from 0)
@@ -177,7 +178,7 @@ List-like objects
    :code:`"test"` and :code:`8`, respectively.
 
 :code:`tuple`
-.............
+'''''''''''''
 
 + **Specs**:
  + collection of arbitrary objects
@@ -192,7 +193,7 @@ List-like objects
 + **Setting values**: can't be done
 
 :code:`dict`
-............
+''''''''''''
 
 + **Specs**:
  + collection of arbitrary objects
@@ -222,7 +223,7 @@ List-like objects
    :code:`"scooby"`
 
 :code:`string`
-..............
+''''''''''''''
 + **Specs**:
  + stores text
  + behaves similarly to a list where every entry is a character
@@ -239,7 +240,7 @@ List-like objects
  + :code:`some_string[0] = "c"` sets the first letter to :code:`"c"`
 
 :code:`numpy.array`
-...................
+'''''''''''''''''''
 + **Specs**:
  + collection of numerical objects of the same type
  + less flexible than a list (all objects must be same type, can't change
@@ -271,37 +272,37 @@ List-like objects
  + Exact same indexing and slicing rules as getting values
 
 Libraries
-=========
+---------
 
 Libraries are extensions of basic python that provide expanded functionality.
 To get access to a library, add a line like:
 
-.. sourcecode:: python
+.. sourcecode :: python
     import math
 
 You can then run this:
 
-.. sourcecode:: python
+.. sourcecode :: python
     print(math.sin(1))
 
 You can assign imported modules more convenient names.  For example, the
 following would do exactly the same as the above program.
 
-.. sourcecode:: python
+.. sourcecode :: python
     import math as m
     print(m.sin(1))
 
 You can also import functions (and other objects) from each module using the
 `from` syntax:
 
-.. sourcecode:: python
+.. sourcecode :: python
     import math
     from math import sin
     print(sin(1))
 
 
 Important libraries:
---------------------
+....................
 
 + math (math functions)
 + random (generate random numbers)
@@ -312,14 +313,14 @@ Important libraries:
 + combinations (used to make combinations and permutations efficiently)
 
 Functions
-=========
+---------
 
 Functions are blocks of re-usable code that take arguments and return values.
 
 Functions are defined using the `def` keyword.  Anything indented under `def`
 is part of the function.
 
-.. sourcecode:: python
+.. sourcecode :: python
 
     def my_function(x):
 
