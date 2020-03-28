@@ -1,0 +1,57 @@
+Week 1
+======
+
+Monday, 3/30
+------------
+Introduction. Configuring jupyter and python
+
+Due
+...
+
+
+Pre-class material
+..................
+
+
+Post-class material
+...................
++ Video
++ Jupyter notebooks
++ `#in_class` log
+
+Wednesday, 4/1
+--------------
+The jupyter notebook. Python as a calculator.
+
+Due
+...
++ Join slack organization
++ Configure environment
+
+Pre-class material
+..................
++ _chapter_00
+
+Post-class material
+...................
++ Video
++ Jupyter notebooks
++ `#in_class` log
+
+Friday, 4/3
+--------------
+Conditionals, loops, lists, arrays.
+
+Due
+...
+
+
+Pre-class material
+..................
++ _lab_00_0
+
+Post-class material
+...................
++ Video
++ Jupyter notebooks
++ `#in_class` log

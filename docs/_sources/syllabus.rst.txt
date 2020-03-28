@@ -3,10 +3,6 @@ Syllabus
 
 + The class will meet Mon and Wed at 9 am 1 hr, and then Fri for 2 hr.
 
-+ In general, Mon and Wed will be instruction days where we cover new
-  programming material.  Fri will be an open "lab" where you will work on
-  exercises in class.
-
 + Because of COVID-19, all class time and office hours will be done via zoom.
   The class will meet remotely at the times above.
 
