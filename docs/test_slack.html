@@ -1,540 +1,851 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Slack log</title>
-<style>
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
 
-$stylesheet="
-    .messages {
-        width:100%;
-        max-width:700px;
-        text-align:left;
-        display:inline-block;
-    }
-    .time {
-        display:inline-block;
-        color:rgb(150,150,150);
-        margin-left:0.5em;
-    }
-    .username {
-        display:inline-block;
-        font-weight:700;
-        line-height:1;
-    }
-    .msg {
-        line-height:1.5;
-    }
-";
-    
+<html>
+    <head>
+        <title>Test export</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                width: 4%;
+                height: auto;
+            }
+            .main-container {
+                max-width: 800px;
+            }
+        </style>
+    </head>
 
-</style>
-  </head>
-  <body>
-    <div class="container">
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Anneliese m</div>
-            <div class="time">2020-03-27 12:25:02</div>
-            <div class="msg"><span class="font-italic">@Anneliese m</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Anneliese m</div>
-            <div class="time">2020-03-27 12:25:03</div>
-            <div class="msg"><span class="font-italic">@Anneliese m</span> set the channel purpose: give everyone your suggestions to distract ourselves from the pandemic</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:26:24</div>
-            <div class="msg"><span class="font-italic">@Mike Harms</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2018-11-12/477695681188_a86aa3547a47123f64d8_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Daria Wonderlick</div>
-            <div class="time">2020-03-27 12:26:24</div>
-            <div class="msg"><span class="font-italic">@Daria Wonderlick</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Michael Shavlik</div>
-            <div class="time">2020-03-27 12:26:24</div>
-            <div class="msg"><span class="font-italic">@Michael Shavlik</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Joseph Harman</div>
-            <div class="time">2020-03-27 12:26:24</div>
-            <div class="msg"><span class="font-italic">@Joseph Harman</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://secure.gravatar.com/avatar/7e3c4b12066219d45cd4adc08984174b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Nick Frantz</div>
-            <div class="time">2020-03-27 12:26:24</div>
-            <div class="msg"><span class="font-italic">@Nick Frantz</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://secure.gravatar.com/avatar/e6aeaf43914663ffc8ee45dfdcd36641.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Jon Muyskens</div>
-            <div class="time">2020-03-27 12:26:25</div>
-            <div class="msg"><span class="font-italic">@Jon Muyskens</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://secure.gravatar.com/avatar/e6538b403b22c3fe6adbdf3cce8329a3.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0015-72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Patrick Connor</div>
-            <div class="time">2020-03-27 12:26:25</div>
-            <div class="msg"><span class="font-italic">@Patrick Connor</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-01-18/528065336661_dc4b4c57fd0110af7656_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Hannah Murawsky</div>
-            <div class="time">2020-03-27 12:26:25</div>
-            <div class="msg"><span class="font-italic">@Hannah Murawsky</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2020-03-23/1010285068417_493796d21e0d7b597220_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Luis Perez</div>
-            <div class="time">2020-03-27 12:26:25</div>
-            <div class="msg"><span class="font-italic">@Luis Perez</span> has joined the channel</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:28:10</div>
-            <div class="msg"><a href="https://keeptalkinggame.com/">https://keeptalkinggame.com/</a> Playable over zoom…</div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8"><span class="badge badge-light">1</span> <img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f919.png?v8"><span class="badge badge-light">1</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Joseph Harman</div>
-            <div class="time">2020-03-27 12:30:03</div>
-            <div class="msg">Haven't watched yet, but I hear the Tiger King documentary on Netflix is bonkers. Murder, mystery, tigers, Florida...
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card">
+                <h3>Test export</h3>
+            </div>
+
+            
+
+            
+
+            
+                <div class="card bg-light p-0 mt-0 ml-1 mr-1 mb-1">
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Anneliese m</div>
+                                        <div class="time">2020-03-27 12:25:02</div>
+                                        <div class="msg"><span class="font-italic">@Anneliese m </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Anneliese m</div>
+                                        <div class="time">2020-03-27 12:25:03</div>
+                                        <div class="msg"><span class="font-italic">@Anneliese m </span>set the channel purpose: give everyone your suggestions to distract ourselves from the pandemic</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:26:24</div>
+                                        <div class="msg"><span class="font-italic">@Mike Harms </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2018-11-12/477695681188_a86aa3547a47123f64d8_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Daria Wonderlick</div>
+                                        <div class="time">2020-03-27 12:26:24</div>
+                                        <div class="msg"><span class="font-italic">@Daria Wonderlick </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Michael Shavlik</div>
+                                        <div class="time">2020-03-27 12:26:24</div>
+                                        <div class="msg"><span class="font-italic">@Michael Shavlik </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Joseph Harman</div>
+                                        <div class="time">2020-03-27 12:26:24</div>
+                                        <div class="msg"><span class="font-italic">@Joseph Harman </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/7e3c4b12066219d45cd4adc08984174b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Nick Frantz</div>
+                                        <div class="time">2020-03-27 12:26:24</div>
+                                        <div class="msg"><span class="font-italic">@Nick Frantz </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/e6aeaf43914663ffc8ee45dfdcd36641.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Jon Muyskens</div>
+                                        <div class="time">2020-03-27 12:26:25</div>
+                                        <div class="msg"><span class="font-italic">@Jon Muyskens </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/e6538b403b22c3fe6adbdf3cce8329a3.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0015-72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Patrick Connor</div>
+                                        <div class="time">2020-03-27 12:26:25</div>
+                                        <div class="msg"><span class="font-italic">@Patrick Connor </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-01-18/528065336661_dc4b4c57fd0110af7656_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Hannah Murawsky</div>
+                                        <div class="time">2020-03-27 12:26:25</div>
+                                        <div class="msg"><span class="font-italic">@Hannah Murawsky </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1010285068417_493796d21e0d7b597220_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Luis Perez</div>
+                                        <div class="time">2020-03-27 12:26:25</div>
+                                        <div class="msg"><span class="font-italic">@Luis Perez </span>has joined the channel</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:28:10</div>
+                                        <div class="msg"><a href="https://keeptalkinggame.com/">https://keeptalkinggame.com/</a> Playable over zoom…</div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" class="emoji"> <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f919.png?v8" class="emoji"> <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Joseph Harman</div>
+                                        <div class="time">2020-03-27 12:30:03</div>
+                                        <div class="msg">Haven't watched yet, but I hear the Tiger King documentary on Netflix is bonkers. Murder, mystery, tigers, Florida...
 
 <a href="https://www.today.com/tmrw/what-tiger-king-everything-we-know-about-new-netflix-show-t176817">https://www.today.com/tmrw/what-tiger-king-everything-we-know-about-new-netflix-show-t176817</a></div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8"><span class="badge badge-light">1</span></div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" class="emoji"> <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Anneliese m</div>
+                                        <div class="time">2020-03-27 12:30:41</div>
+                                        <div class="msg">Currently watching. Can confirm it is enthralling </div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" class="emoji"> <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-01-18/528065336661_dc4b4c57fd0110af7656_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Hannah Murawsky</div>
+                                        <div class="time">2020-03-27 12:32:06</div>
+                                        <div class="msg">If anyone has a Nintendo Switch I highly recommend Animal Crossing, it’s a great distraction </div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Michael Shavlik</div>
+                                        <div class="time">2020-03-27 12:36:47</div>
+                                        <div class="msg">Mike, I took your suggestion and started watching "The good place" on Netflix. 10/10</div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">the_horns <span class="badge badge-light">2</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:38:02</div>
+                                        <div class="msg"><a href="https://media1.tenor.com/images/05280acd7b15f0dc56013b866115a550/tenor.gif?itemid=10603389">https://media1.tenor.com/images/05280acd7b15f0dc56013b866115a550/tenor.gif?itemid=10603389</a></div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Joseph Harman</div>
+                                        <div class="time">2020-03-27 12:39:18</div>
+                                        <div class="msg">^me when I check coronavirus numbers every ten minutes</div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f633.png?v8" class="emoji"> <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Anneliese m</div>
+                                        <div class="time">2020-03-27 12:39:58</div>
+                                        <div class="msg">that is not the purpose of this channel joseph! this is to distract FROM the pandemic. no pandemic talk here</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Anneliese m</div>
+                                        <div class="time">2020-03-27 12:40:15</div>
+                                        <div class="msg">thank you for abiding by the only law of this channel</div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" class="emoji"> <span class="badge badge-light">2</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:40:27</div>
+                                        <div class="msg">great game: <a href="https://boardgamegeek.com/boardgame/30549/pandemic">https://boardgamegeek.com/boardgame/30549/pandemic</a></div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8" class="emoji"> <span class="badge badge-light">3</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Michael Shavlik</div>
+                                        <div class="time">2020-03-27 12:41:19</div>
+                                        <div class="msg">Might I recommend a stellar movie when y'all get bored this weekend? <a href="https://www.imdb.com/title/tt1598778/">https://www.imdb.com/title/tt1598778/</a></div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8" class="emoji"> <span class="badge badge-light">3</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:47:22</div>
+                                        <div class="msg">Seriously, if I just want to zone out but engage my brain, <a href="https://2048game.com/|2048. ">https://2048game.com/|2048. </a></div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 12:48:17</div>
+                                        <div class="msg">Though, right now, I am trying to figure out regular expressions.  What the heck is <code>search_pattern = re.compile("[^\\\P{P}-]+")</code>???</div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">white_frowning_face <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 16:50:10</div>
+                                        <div class="msg">this is a test reply to see what happens when i export stuff from slack</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Joseph Harman</div>
+                                        <div class="time">2020-03-27 16:51:34</div>
+                                        <div class="msg"><img src=https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8 class="emoji"></div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1010285068417_493796d21e0d7b597220_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Luis Perez</div>
+                                        <div class="time">2020-03-27 16:51:51</div>
+                                        <div class="msg"><a href="https://docs.python.org/3/howto/regex.html">https://docs.python.org/3/howto/regex.html</a></div>
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">kirk <span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 16:52:34</div>
+                                        <div class="msg">If you want to know, that regex above selects all non-hyphen punctuation marks.</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr/>
+                                    <div class="row mt-1 pl-5 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 16:52:41</div>
+                                        <div class="msg">Thanks <span class="font-italic">@Joseph Harman </span>and <span class="font-italic">@Luis Perez </span></div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-2 pr-2">
+                                
+
+                                <!--<div class="row">-->
+                                    <div class="col-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg">
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="username">Mike Harms</div>
+                                        <div class="time">2020-03-27 16:51:02</div>
+                                        <div class="msg">Abuse of this channel, but could I have someone reply to my reply to my thread attached to the 2048 post?</div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
         </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Anneliese m</div>
-            <div class="time">2020-03-27 12:30:41</div>
-            <div class="msg">Currently watching. Can confirm it is enthralling </div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8"><span class="badge badge-light">1</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-01-18/528065336661_dc4b4c57fd0110af7656_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Hannah Murawsky</div>
-            <div class="time">2020-03-27 12:32:06</div>
-            <div class="msg">If anyone has a Nintendo Switch I highly recommend Animal Crossing, it’s a great distraction </div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Michael Shavlik</div>
-            <div class="time">2020-03-27 12:36:47</div>
-            <div class="msg">Mike, I took your suggestion and started watching "The good place" on Netflix. 10/10</div>
-<div class="button">2x:the_horns:</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:38:02</div>
-            <div class="msg"><a href="https://media1.tenor.com/images/05280acd7b15f0dc56013b866115a550/tenor.gif?itemid=10603389">https://media1.tenor.com/images/05280acd7b15f0dc56013b866115a550/tenor.gif?itemid=10603389</a></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Joseph Harman</div>
-            <div class="time">2020-03-27 12:39:18</div>
-            <div class="msg">^me when I check coronavirus numbers every ten minutes</div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f633.png?v8"><span class="badge badge-light">1</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Anneliese m</div>
-            <div class="time">2020-03-27 12:39:58</div>
-            <div class="msg">that is not the purpose of this channel joseph! this is to distract FROM the pandemic. no pandemic talk here</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-03-18/582025121254_a444c24dd1998501535c_72.png" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Anneliese m</div>
-            <div class="time">2020-03-27 12:40:15</div>
-            <div class="msg">thank you for abiding by the only law of this channel</div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8"><span class="badge badge-light">2</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:40:27</div>
-            <div class="msg">great game: <a href="https://boardgamegeek.com/boardgame/30549/pandemic">https://boardgamegeek.com/boardgame/30549/pandemic</a></div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8"><span class="badge badge-light">3</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-06-12/651956895811_a9774aec642fc3045c22_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Michael Shavlik</div>
-            <div class="time">2020-03-27 12:41:19</div>
-            <div class="msg">Might I recommend a stellar movie when y'all get bored this weekend? <a href="https://www.imdb.com/title/tt1598778/">https://www.imdb.com/title/tt1598778/</a></div>
-<div class="button"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8"><span class="badge badge-light">3</span></div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:47:22</div>
-            <div class="msg">Seriously, if I just want to zone out but engage my brain, <a href="https://2048game.com/|2048. ">https://2048game.com/|2048. </a></div>
-        </div>
-      </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 12:48:17</div>
-            <div class="msg">Though, right now, I am trying to figure out regular expressions.  What the heck is <code>search_pattern = re.compile("[^\\\P{P}-]+")</code>???</div>
-<div class="button">1x:white_frowning_face:</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 16:50:10</div>
-            <div class="msg">this is a test reply to see what happens when i export stuff from slack</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2016-03-30/30744057904_2aba3da5a239a4def810_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Joseph Harman</div>
-            <div class="time">2020-03-27 16:51:34</div>
-            <div class="msg"><img class="img-fluid" style="width:8%" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2020-03-23/1010285068417_493796d21e0d7b597220_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Luis Perez</div>
-            <div class="time">2020-03-27 16:51:51</div>
-            <div class="msg"><a href="https://docs.python.org/3/howto/regex.html">https://docs.python.org/3/howto/regex.html</a></div>
-<div class="button">1x:kirk:</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 16:52:34</div>
-            <div class="msg">If you want to know, that regex above selects all non-hyphen punctuation marks.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="list-group-item bg-light" >
-  <div class="row">
-    <div class="col-md-1 col-1"></div>
-    <div class="col-md-11 col-11">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 16:52:41</div>
-            <div class="msg">Thanks <span class="font-italic">@Joseph Harman</span> and <span class="font-italic">@Luis Perez</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="card p-1 mb-1 bg-muted">
-<div class="list-group bg-light">
-<div class="list-group-item bg-light">
-      <div class="row">
-        <div class="col-xl-2 col-md-2 col-2">
-          <img src="https://avatars.slack-edge.com/2019-12-06/852442349891_d5bfb1bef03ac61452c2_72.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-xl-10 col-md-10 col-10">
-            <div class="username">Mike Harms</div>
-            <div class="time">2020-03-27 16:51:02</div>
-            <div class="msg">Abuse of this channel, but could I have someone reply to my reply to my thread attached to the 2048 post?</div>
-        </div>
-      </div>
-</div>
-</div>
-</div>
-</div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    </body>
 </html>
