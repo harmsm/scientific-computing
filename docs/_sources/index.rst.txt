@@ -110,7 +110,6 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 
 
 .. toctree::
-   schedule
    syllabus
    remote
    final-project
