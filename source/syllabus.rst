@@ -68,7 +68,8 @@ Weekly assignments
   grading.
 + Labs will be graded based on whether they are turned in, whether we can run
   the notebook, and whether they notebooks give the right results.
-
++ Group work on the labs is encouraged, but please do not :code:`copy-paste` 
+  code.  
 
 Grading
 -------
@@ -98,7 +99,7 @@ Community
 
 This class is governed by the UO community standards.
 
-Respect the dignity and essential worth of all individuals.
++ Respect the dignity and essential worth of all individuals.
 + Promote a culture of respect.
 + Respect the privacy, property, and freedom of others.
 + Reject bigotry, discrimination, violence, or intimidation of any kind.
@@ -117,5 +118,5 @@ Cheating
 ........
 TL;DR: Don’t do it. You are expected to do your own work. Cheating, plagiarism
 and any other form of academic dishonesty will not be tolerated. Please refer to
-the University Of Oregon Student Conduct Code
+the University of Oregon Student Conduct Code
 (`<https://policies.uoregon.edu/vol-3-administration-student-affairs/ch-1-conduct/student-conduct-code>`_).
