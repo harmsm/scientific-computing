@@ -1,6 +1,6 @@
 # Scientific Computing
 
-Repo holds the [website]((https://harmsm.github.io/scientific-programming) for
+Repo holds the [website](https://harmsm.github.io/scientific-programming) for
 a Scientific Computing course taught at the University of Oregon.
 
 This is a course *implementation* of the material stored in the
