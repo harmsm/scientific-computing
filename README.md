@@ -1,10 +1,10 @@
 # Scientific Computing
 
-Repo holds the web page for a Scientific Computing course taught at the
-University of Oregon.
+Repo holds the [website]((https://harmsm.github.io/scientific-programming) for
+a Scientific Computing course taught at the University of Oregon.
 
-This is an *implementation* of the material stored in the pythonic-science
-repo.  
+This is a course *implementation* of the material stored in the
+[pythonic-science](https://github.com/harmsm/pythonic-science) repo.  
 
 ### Components
 
