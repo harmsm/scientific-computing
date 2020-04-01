@@ -8,21 +8,23 @@ Resources
 General python resources
 ........................
 
-* `socratica youtube channel <http://bit.ly/PythonSocratica>`_.  An amazing set of introductory python videos  
-* `Insane Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_
-* `Python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_
-* `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_ (right click to save jupyter notebook)
+* `socratica youtube channel <http://bit.ly/PythonSocratica>`_: an amazing set of introductory python videos. 
+* `insane python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_: most of python syntax, all on one two-sided sheet.
+* `python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_: things that tend to trip up python programmers.
+* `python style guide <https://www.python.org/dev/peps/pep-0008/>`_: rules for writing python code so other people can actually read it.
+* `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_: Jupyter notebook showing a bunch of matplotlib functionality (right click to save jupyter notebook).
+* `codeacademy <https://www.codecademy.com/>`_: great resource for learning python syntax and basic concepts.  Free 7-day trial.  Looks like there might be free plans for students.
 
 Jupyter resources
 .................
 
-* `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_ (right click to save jupyter notebook)
-* `jupyter keyboard shortcuts <https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330>`_
+* `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_: Jupyter notebook showing off what you can do in notebooks (right click to save jupyter notebook)
+* `jupyter keyboard shortcuts <https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330>`_: Keyboard shortuts for jupyter for those of us that hate our mice
 
 Scientific-python resources
 ...........................
 
-* `Fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_
+* `fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_: resource for doing fitting in python.
 
 
 Comparison operators
