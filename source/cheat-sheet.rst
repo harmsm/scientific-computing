@@ -8,7 +8,7 @@ Resources
 General python resources
 ........................
 
-* `socratica youtube channel <http://bit.ly/PythonSocratica>`_: an amazing set of introductory python videos. 
+* `socratica youtube channel <http://bit.ly/PythonSocratica>`_: an amazing set of introductory python videos.
 * `insane python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_: most of python syntax, all on one two-sided sheet.
 * `python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_: things that tend to trip up python programmers.
 * `python style guide <https://www.python.org/dev/peps/pep-0008/>`_: rules for writing python code so other people can actually read it.

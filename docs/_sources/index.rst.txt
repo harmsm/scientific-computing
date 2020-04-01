@@ -9,11 +9,29 @@ Overview
 
 + All classwork will be done remotely. `Details are here <remote.html>`_.
 
++ Details regarding grading and course policies are in the `syllabus <syllabus.html>`_.
+
+Getting help
+============
+
+`Python reference and links to helpful material <cheat-sheet.html>`_
+
+Office hours:
+-------------
+
++ Anneliese: 4 pm on Mondays
++ Luis: 11 am on Wednesdays
++ Michael: 2 pm on Wednesdays
++ Joseph: 2 pm on Thursdays
++ Mike: 1 pm on Fridays
+
+Getting set up:
+---------------
+
 + To get your environment set up, please follow `these instructions <https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html>`_.
 
 + To test your environment, please try to run this `jupyter notebook <https://github.com/harmsm/pythonic-science/raw/master/test_notebook.ipynb>`_ (right-click to save onto your computer.)
 
-+ Details regarding grading and course policies are in the `syllabus <syllabus.html>`_.
 
 
 Schedule and course materials
