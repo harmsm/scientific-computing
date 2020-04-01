@@ -5,11 +5,25 @@ Python quick reference
 Resources
 ---------
 
-* `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_ (right click to save jupyter notebook).
-* `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_ (right click to save jupyter notebook).
-* `Insane Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_.
+General python resources
+........................
+
+* `socratica youtube channel <http://bit.ly/PythonSocratica>`_.  An amazing set of introductory python videos  
+* `Insane Python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_
 * `Python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_
+* `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_ (right click to save jupyter notebook)
+
+Jupyter resources
+.................
+
+* `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_ (right click to save jupyter notebook)
+* `jupyter keyboard shortcuts <https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330>`_
+
+Scientific-python resources
+...........................
+
 * `Fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_
+
 
 Comparison operators
 --------------------
