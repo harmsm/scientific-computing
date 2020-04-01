@@ -30,7 +30,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
     | Date  | Topic                                          | Preclass                         | Due                                                        | Postclass  |
     +=======+================================================+==================================+============================================================+============+
-    | 3/30  | Introduction. Configuring jupyter and python   |                                  |                                                            |            |
+    | 3/30  | Introduction. Configuring jupyter and python   |                                  |                                                            | _00_class  |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
     | 4/1   | The jupyter notebook. Python as a calculator.  | + `test_notebook`_               | + `config_environment`_                                    |            |
     |       |                                                | + `chapter_00`_                  | + Take the `survey`_ if you haven't.                       |            |
@@ -107,7 +107,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`survey`: https://forms.gle/XMfB2a9tpuuGeydY8
 .. _`prospectus`: https://harmsm.github.io/scientific-computing/final-project.html
 .. _`final_project`: https://harmsm.github.io/scientific-computing/final-project.html
-
+.. _`00_class`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/00/index.html
 
 .. toctree::
    syllabus

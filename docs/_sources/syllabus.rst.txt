@@ -68,8 +68,8 @@ Weekly assignments
   grading.
 + Labs will be graded based on whether they are turned in, whether we can run
   the notebook, and whether they notebooks give the right results.
-+ Group work on the labs is encouraged, but please do not :code:`copy-paste` 
-  code.  
++ Group work on the labs is encouraged, but please do not :code:`copy-paste`
+  code.
 
 Grading
 -------
@@ -116,7 +116,20 @@ be an issue, please let me know as soon as possible so I can work with you.
 
 Cheating
 ........
+
 TL;DR: Don’t do it. You are expected to do your own work. Cheating, plagiarism
 and any other form of academic dishonesty will not be tolerated. Please refer to
 the University of Oregon Student Conduct Code
 (`<https://policies.uoregon.edu/vol-3-administration-student-affairs/ch-1-conduct/student-conduct-code>`_).
+
+Auditors
+........
+
+If you are not taking the course for credit:
+
++ Please come to a session you RSVP for.  If you are *not* coming, please let
+  me know 24 hours in advance so I can plan the groups accordingly.
++ You should do all in-class work as though you are in class.  You are welcome
+  to complete the assignments and turn them in for feedback.  (If time becomes
+  limiting, I may have to revisit this policy.)
++ I am happy to work with you to do a final project.
