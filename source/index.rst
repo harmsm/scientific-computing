@@ -32,7 +32,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +=======+================================================+==================================+============================================================+============+
     | 3/30  | Introduction. Configuring jupyter and python   |                                  |                                                            | `class1`_  |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
-    | 4/1   | The jupyter notebook. Python as a calculator.  | + `test_notebook`_               | + `config_environment`_                                    |            |
+    | 4/1   | The jupyter notebook. Python as a calculator.  | + `test_notebook`_               | + `config_environment`_                                    | `class2`_  |
     |       |                                                | + `chapter_00`_                  | + Take the `survey`_ if you haven't.                       |            |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
     | 4/3   | Conditionals, loops, lists, arrays.            | `lab_00_0`_                      |                                                            |            |
@@ -108,6 +108,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`prospectus`: https://harmsm.github.io/scientific-computing/final-project.html
 .. _`final_project`: https://harmsm.github.io/scientific-computing/final-project.html
 .. _`class1`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/00/index.html
+.. _`class2`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/01/index.html
 
 .. toctree::
    syllabus

@@ -167,7 +167,17 @@ def _process_polly_poll(msg):
 
     poll_creator = msg["text"].split()[0]
     question = msg["blocks"][0]["text"]["text"][1:-1]
-    responses = msg["blocks"][2]["fields"]
+
+    i = 2
+    responses = []
+    while True:
+        try:
+            this_response = msg["blocks"][i]["fields"]
+            responses.extend(this_response)
+            i += 1
+        except KeyError:
+            break
+        
 
     text = ["<div class=\"card p-2\">"]
     text.append("<div>Poll by {}:</div>".format(poll_creator))
