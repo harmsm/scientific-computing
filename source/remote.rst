@@ -25,9 +25,11 @@ Material
   prior to the week's class.
 
 + After each class session, I will post:
-  * Video of the zoom session
-  * Text of the :code:`#in_class` chat log
-  * Any slides or notebooks I put up on the screen in class
+
+    * Video of the zoom session
+    * Text of the :code:`#in_class` chat log
+    * Any slides or notebooks I put up on the screen in class
+
 + Homework will be submitted via `canvas <canvas.uoregon.edu>`_.
 
 Slack
@@ -47,22 +49,26 @@ Channels
 ........
 
 + **#general**:
+
     * I'll post announcements here.
     * I'll post zoom links to class and office hours here.
     * Feel free to use this to organize study sessions, group work, etc.
 
 + **#random**:
+
     * Fun stuff not directly related to the class.
     * Great for building community.
     * Remember to keep things respectful.
 
 + **#in_class**:
+
     * This channel is for conversations, questions, and polls from class.
     * Post questions at any time during the class session itself.
     * Reactions and replies to others' questions will be very helpful.
     * I will post the :code:`#in_class` log after each class.
 
 + **#help**:
+
     * Use this any time throughout the week if you have questions on homework or
       content.
     * Before posting, check recent entries to see if someone has already posed
