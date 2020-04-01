@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>{{ session.title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>{{ session.title }}</h3>
+                <p>{{ session.date }}</p>
+            </div>
+
+            {% if 'downloads' in session %}
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                {% for download in session['downloads'].pre_class %}
+
+                                    <li class="list-group-item">
+                                        <a href="{{ download.url }}">{{ download.text }}</a>
+                                    </li>
+
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                {% for download in session['downloads'].post_class %}
+
+                                    <li class="list-group-item">
+                                        <a href="{{ download.url }}">{{ download.text }}</a>
+                                    </li>
+
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if 'youtube' in session %}
+
+                <div class="card bg-light p-2">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width=“560” height=“315" src="{{ session.youtube }}" frameborder=“0" allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+                        </div>
+
+                </div>
+
+            {% endif %}
+
+            {% if 'threads' in session %}
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    {% for thread in session.threads %}
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            {% for msg in thread %}
+
+                                {% if loop.first %}
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                {% else %}
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                {% endif %}
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="{{ msg.icon }}">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">{{ msg.user }}</div>
+                                            <div class="time">{{ msg.time }}</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">{{ msg.message }}</div>
+                                        </div>
+
+                                        {% if 'attachments' in msg and msg.attachments|length > 0 %}
+
+                                            <div class="attachment-box button bg-light m-1 p-1 rounded-lg border">
+                                            {% for attach in msg.attachments %}
+                                                <p>{{ attach }}</p>
+                                            {% endfor %}
+                                            </div>
+
+                                        {% endif %}
+
+
+                                        {% if 'reactions' in msg and msg.reactions|length > 0 %}
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            {% for rxn in msg.reactions %}
+                                                {% if 'image_file' in rxn %}
+                                                    <span class="button p-1 m-1" ><img src="{{ rxn.image_file }}" class="emoji img-fluid"> <span class="badge badge-light">{{ rxn.count }}</span></span>
+                                                {% else %}
+                                                    <span class="button">{{ rxn.name }}<span class="badge badge-light">{{ rxn.count }}</span></span>
+                                                {% endif %}
+                                            {% endfor %}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% endif %}
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+
+### Scripts
+
++ **repo_to_zip.py**: construct easy-to-download zip files from directories
+  containing jupyter notebooks and supporting files.
++ **session_to_html.py**: convert a slack .zip export file and other links into
+  into pretty, bootstrap-enabled html.
++ **polly_generator.py**: generate polly-style quizzes for slack from a
+  spreadsheet.
++ **assign_groups.py**: assign students into groups randomly, potentially
+  weighted by their scores on a placement quiz.
++ **spreadsheet-to-rst.py**: construct an .rst table of assignments and topics
+  from a spreadsheet.
++ **notebook-to-html.py**: convert a notebook into html
+
+
+### Workflow:
+
+Long before class:
+ + Use repo_to_zip.py to create nice, zipped files and keys
+ + Update the scheduling spreadsheet with links to these files (and others)
+ + Run spreadsheet-to-rst.py to generate pretty .rst table for schedule.
+
+Right before class:
+ + Run polly_generator.py to pre-generate any quizzes for posting in slack.
+ + Run assign_groups.py to assign students into breakout rooms.
+
+After class:
+ + Process the video and post it to youtube.
+ + Export the slack session to a zip file.
+ + Export the notebook to html using nbconvert
+ + Update the class-schedule spreadsheet with the new links.
+ + Run session_to_html.py to convert the zip file, youtube link, and content
+   links into html.
+ + Update the docs/ folder and commit to github.
+
+
+private-data/
+    sessions/
+        00/
+            slack-export.zip
+            breakout-room.csv
+
+pythonic-science/
+    chapters/
+    labs/
+    sessions/
