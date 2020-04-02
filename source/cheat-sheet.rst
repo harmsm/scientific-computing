@@ -20,6 +20,7 @@ Jupyter resources
 
 * `jupyter reference <https://github.com/harmsm/pythonic-science/raw/master/reference/jupyter_reference.ipynb>`_: Jupyter notebook showing off what you can do in notebooks (right click to save jupyter notebook)
 * `jupyter keyboard shortcuts <https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330>`_: Keyboard shortuts for jupyter for those of us that hate our mice
+* `changing jupyter startup folder <https://medium.com/@kegui/change-jupyter-notebook-startup-folder-windows-608dfcfdc104>`_: Convenient way to change startup folder for windows, the guide for mac is okay too
 
 Scientific-python resources
 ...........................
