@@ -14,10 +14,14 @@ Class time
 + *Please mute your microphone unless you are speaking*
 + We will make liberal use of breakout rooms during class.  Be prepared to
   work in assigned pairs and small groups during class.
-+ If you have questions and comments during class, please post them in the
-  :code:`#in_class` slack channel.  The TAs and I will monitor this channel.  Depending
-  on the situation, we may start a class discussion, join you in your breakout
-  room or start a DM chat.
++ If you have questions and comments during class you can:
+
+    * `Raise your blue hand <https://support.zoom.us/hc/en-us/articles/205566129-Raise-Hand-In-Webinar>`_
+    * Post your question in the :code:`#in_class` slack channel.  The TAs and I
+      will monitor this channel.  Depending on the situation, we may start a class
+      discussion, join you in your breakout room or start a DM chat. This channel
+      will be posted after class, so it will be a handy record of things that
+      were confusing and clarified. 
 
 Material
 --------

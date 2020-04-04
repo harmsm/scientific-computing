@@ -163,7 +163,11 @@ class CodeHandler(SymmetricalStringHandler):
 def _process_polly_poll(msg):
 
     name = "Polly Poll"
-    icon = msg["icons"]["image_48"]
+
+    try:
+        icon = msg["icons"]["image_48"]
+    except KeyError:
+        icon = None
 
     poll_creator = msg["text"].split()[0]
     question = msg["blocks"][0]["text"]["text"][1:-1]
@@ -177,7 +181,7 @@ def _process_polly_poll(msg):
             i += 1
         except KeyError:
             break
-        
+
 
     text = ["<div class=\"card p-2\">"]
     text.append("<div>Poll by {}:</div>".format(poll_creator))
@@ -326,7 +330,11 @@ def parse_slack_channel(slack_zip_file,
                 pass
 
             if polly_poll:
-                final_message["user"], final_message["icon"], text_string = _process_polly_poll(m)
+                usr, icon, text_string = _process_polly_poll(m)
+
+                final_message["user"] = usr
+                if icon is not None:
+                    final_message["icon"] = icon
             else:
                 continue
 
