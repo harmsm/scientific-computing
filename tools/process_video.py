@@ -1,27 +1,28 @@
 #!/usr/bin/env python
 __description__ = \
 """
-Take a video file, chop out the sections identified in a spreadsheet, and
-then combine them into a single video.  Uses ffmpeg under the hood.
+Take a video file, extract the sections identified in a spreadsheet, and
+then combine them into a single video.  Fades to black between clips. Uses
+ffmpeg under the hood.
 
-Spreadsheet should specificy time stamps in HH:MM:SS format. Example:
+Spreadsheet should specify the time stamps in HH:MM:SS format. Example:
 
-start,end,gap
+start,stop,gap
 00:05:00,00:15:12,00:00:05
 00:22:17,01:07:06,00:00:00
 
-This would take the input video and extract between (minute 5 and 0 seconds)
-and (minute 15 and 12 seconds), and then between (minute 22 and 17 seconds)
-and (hour 1, minute 7, and 6 seconds). These will be combined with a 5 second
-black screen between them.  A one second fade is added to the front and end
-of each clip by default, so the total video time would go from:
+This would take the input video and extract two chunks:
 
-00:04:59 -> 00:15:13
-5 seconds of black
-00:22:16 -> 01:07:07
+    from 00:05:00 (5 min) to 00:15:12 (15 min, 12 sec)
+    from 00:22:17 (22 min, 17 sec) to 01:07:06 (1 hr, 7 min, 6 sec)
 
-The program will also optionally dump out a json file mapping between the
-time in the chopped video back to real time.
+and then combine them, inserting a 5 second gap (black screen) between them.
+The codecs and resolution of the input video file should be (largely)
+preserved.  This implementation assumes there is both an audio and a video
+stream in the video file.
+
+The program will also optionally dump out a csv file mapping between the
+time in the chopped video and real time.
 """
 
 __author__ = "Michael J. Harms"
@@ -33,7 +34,7 @@ import ffmpeg
 import pandas as pd
 import numpy as np
 
-import sys, random, string, copy, glob, shutil, os, argparse, json
+import sys, random, string, copy, glob, shutil, os, argparse
 
 def _time_to_seconds(time_string):
     """
@@ -42,8 +43,8 @@ def _time_to_seconds(time_string):
 
     error_string = "time '{}' not recognized.  Should have format HH:MM:SS\n".format(time_string)
 
-    # Make sure it's a string
-    if type(time_string) is not str:
+    # Make sure it's a string (should catch strings or numpy strings)
+    if not isinstance(time_string,str):
         raise ValueError(error_string)
 
     # Make sure it splits into three with ":"
@@ -64,7 +65,7 @@ def _time_to_seconds(time_string):
         raise ValueError(error_string)
 
     # Make sure values are all positive
-    if sum([t >= 0 for t in t_list]) != 0:
+    if sum([t < 0 for t in t_list]) != 0:
         raise ValueError(error_string)
 
     # Return converted time
@@ -111,46 +112,76 @@ def _seconds_to_time(seconds):
 def _get_video_properties(input_file):
     """
     Use ffprobe to extract information for video processing from video file.
+    Note that it only looks at the first audio and first video streams.
     """
 
     # Rip some information from the video for use in arguments later
     ffprobe = ffmpeg.probe(input_file)["streams"]
 
+    # Find indexes for audio and video streams
+    video_index = None
+    audio_index = None
+    for i in range(len(ffprobe)):
+        if video_index is None and ffprobe[i]['codec_type'] == "video":
+            video_index = i
+        elif audio_index is None and ffprobe[i]['codec_type'] == "audio":
+            audio_index = i
+        else:
+            continue
+
+        if video_index is not None and audio_index is not None:
+            break
+
+    if video_index is None:
+        err = "{} does not contain a video stream\n".format(input_file)
+        raise ValueError(err)
+
+    if audio_index is None:
+        err = "{} does not contain an audio stream\n".format(input_file)
+        raise ValueError(err)
+
     # Dictionary of relevant information to return
     out = {}
 
+    if audio_index > video_index:
+        out["audio_first"] = False
+    else:
+        out["audio_first"] = True
+
     # Get max duration as integer
-    out['duration'] = int(np.floor(ffprobe[0]['duration']))
+    out['duration'] = int(np.floor(float(ffprobe[audio_index]['duration'])))
 
     # Audio
-    out['audio_codec'] = ffprobe[0]['codec_name']
-    out['sample_rate'] = ffprobe[0]['sample_rate']
-    out['channel_layout'] = ffprobe[0]['channel_layout']
+    out['audio_codec'] = ffprobe[audio_index]['codec_name']
+    out['sample_rate'] = ffprobe[audio_index]['sample_rate']
+    out['channel_layout'] = ffprobe[audio_index]['channel_layout']
 
     # Video
-    out['frame_rate'] = ffprobe[1]['avg_frame_rate']
-    out['width'] = ffprobe[1]['width']
-    out['height'] = ffprobe[1]['height']
-    out['video_codec'] = ffprobe[1]['codec_name']
-    out['pix_fmt'] = ffprobe[1]['pix_fmt']
+    out['frame_rate'] = ffprobe[video_index]['avg_frame_rate']
+    out['width'] = ffprobe[video_index]['width']
+    out['height'] = ffprobe[video_index]['height']
+    out['video_codec'] = ffprobe[video_index]['codec_name']
+    out['pix_fmt'] = ffprobe[video_index]['pix_fmt']
 
     # Construct set of output keyword arguments for ffmpeg that will match input
     # video
-    out_kwargs = {"c:v":"{}".format(ffprobe[1]['codec_name']),
-                  "c:a":"{}".format(ffprobe[0]['codec_name']),
-                  "pix_fmt":ffprobe[1]['pix_fmt'],
-                  "r":ffprobe[1]['avg_frame_rate']}
+    out_kwargs = {"c:v":"{}".format(out['video_codec']),
+                  "c:a":"{}".format(out['audio_codec']),
+                  "pix_fmt":out['pix_fmt'],
+                  "r":out['frame_rate']}
 
     out['out_kwargs'] = out_kwargs
 
-def _fade_in(input_file,output_file,end_fade,fade_length):
+    return out
+
+def _fade_in(input_file,output_file,stop_fade,fade_length):
     """
     Make a tiny video encoding a fade from black for a chunk extracted
     from a larger video.
 
     input_file: input video file.
     output_file: output video file.
-    end_fade: time at which to end the fade (as indexed in the input_file)
+    stop_fade: time at which to stop the fade (as indexed in the input_file)
     fade_length: fade length in seconds
     """
 
@@ -160,13 +191,13 @@ def _fade_in(input_file,output_file,end_fade,fade_length):
     out_kwargs["filter:v"] = "fade=in:0:{}".format(fade_length*video_props['frame_rate'])
 
     # Fade length
-    start_fade_in_seconds = _time_to_seconds(end_fade) - fade_length
-    start_fade = _second_to_time(start_fade_in_seconds)
+    start_fade_in_seconds = _time_to_seconds(stop_fade) - fade_length
+    start_fade = _seconds_to_time(start_fade_in_seconds)
 
     (
         ffmpeg
         .input(input_file,**{"ss":start_fade,
-                             "to":end_fade})
+                             "to":stop_fade})
         .output(output_file,**out_kwargs)
         .run()
     )
@@ -202,13 +233,13 @@ def _fade_out(input_file,output_file,start_fade,fade_length):
     out_kwargs["filter:v"] = "fade=out:0:{}".format(fade_length*video_props['frame_rate'])
 
     # Fade length
-    end_fade_in_seconds = _time_to_seconds(start_fade) + fade_length
-    end_fade = _second_to_time(end_fade_in_seconds)
+    stop_fade_in_seconds = _time_to_seconds(start_fade) + fade_length
+    stop_fade = _seconds_to_time(stop_fade_in_seconds)
 
     (
         ffmpeg
         .input(input_file,**{"ss":start_fade,
-                             "to":end_fade})
+                             "to":stop_fade})
         .output(output_file,**out_kwargs)
         .run()
     )
@@ -235,22 +266,87 @@ def _generate_blank(input_file,output_file,length):
 
     # Generate silent audio track
     audio = ffmpeg.input("anullsrc=channel_layout={}:sample_rate={}".format(video_props['channel_layout'],
-                                                                            video_props['sample_rate']),
+                                                                              video_props['sample_rate']),
                          **{"t":length,"f":"lavfi"})
 
+
     # Combine video and audio
-    stream = ffmpeg.concat(video.video,audio.audio,v=1,a=1).node
+    if video_props["audio_first"]:
+        stream = ffmpeg.concat(video.audio,audio.video,a=1,v=1).node
+    else:
+        stream = ffmpeg.concat(video.video,audio.audio,v=1,a=1).node
 
     # Write output
     out = ffmpeg.output(stream[0],stream[1],output_file,**out_kwargs)
     out.run()
 
 
+def _load_time_column(df,column_name=None,allow_missing=False):
+    """
+    Load a column of HH:MM:SS type values from a data frame.
+
+    df: dataframe with column
+    column_name: name of column.  if None, return a set of 00:00:00 of the
+                 proper length
+    allow_missing: whether or not to allow missing values.  if True, set
+                   missing values to 00:00:00
+    """
+
+    # Get time values from spreadsheets
+    try:
+
+        values = np.array(df[column_name])
+
+        # Deal with missing values. Either replace with 00:00:00 or throw error
+        if allow_missing:
+            values[df[column_name].isnull()] = "00:00:00"
+        else:
+            if np.sum(df[column_name].isnull()) > 0:
+                err = "column '{}' has missing values\n".format(column_name)
+                raise ValueError(err)
+
+    except KeyError:
+        if column_name is None:
+            num_values = len(df.iloc[:,0])
+            values = np.array(["00:00:00" for _ in range(num_values)])
+        else:
+            err = "spreadsheet does not have column '{}'\n".format(column_name)
+            raise ValueError(err)
+
+    # Check sanity of times.  This will throw an error if they have the incorrect
+    # format.
+    for v in values:
+        _ = _time_to_seconds(v)
+
+    return values
+
+
+
 def process_video(video_file,output_file,
                   spreadsheet_file,
-                  start_column="start",end_column="end",gap_column=None,
+                  start_column="start",stop_column="stop",gap_column=None,
                   fade_length=1,
-                  timebase_file=None,real_time="00:00:00"):
+                  timebase_file=None,real_time="00:00:00",
+                  force=False):
+    """
+    Take a video file, extract the sections identified in a spreadsheet, and
+    then combine them into a single video.  Fades to black between clips.
+    Optionally dump out a csv file mapping between the time in the chopped video
+    and real time.
+
+    video_file: video file to process
+    output_file: output video file name
+    spreadsheet file: spreadsheet encoding chunks to extract
+    start_column: column in spreadsheet with chunk starts
+    stop_column: column in spreadsheet with chunk stops
+    gap_column: column in spreadsheet with gaps (if None, do not use)
+    fade_length: length of fades in seconds
+    timebase_file: file to write out map between video and real time. if None
+                   do not write out the file
+    real_time: real time in HH:MM:SS format corresponding to 00:00:00 in output
+               video. only used in timebase_file.
+    force: wipe out existing output files (default is False)
+    """
 
     # -------------------------------------------------------------------------
     # Check sanity of input files
@@ -258,17 +354,17 @@ def process_video(video_file,output_file,
         err = "video_file '{}' does not exist.\n".format(video_file)
         raise FileNotFoundError(err)
 
-    if os.path.isfile(output_file):
-        err = "output_file '{}' exists.  Will not overwrite\n".format(output_file)
+    if os.path.isfile(output_file) and not force:
+        err = "output_file '{}' exists. Stopping. Use --force to overwrite.\n".format(output_file)
         raise FileExistsError(err)
 
     if not os.path.isfile(spreadsheet_file):
         err = "spreadsheet_file '{}' does not exist.\n".format(spreadsheet_file)
         raise FileNotFoundError(err)
 
-    if timebase_file is not None:
+    if timebase_file is not None and not force:
         if os.path.isfile(timebase_file):
-            err = "timebase_file '{}' exists.  Will not overwrite\n".format(timebase_file)
+            err = "timebase_file '{}' exists. Stopping. Use --force to overwrite.\n".format(timebase_file)
             raise FileExistsError(err)
 
     # -------------------------------------------------------------------------
@@ -287,52 +383,22 @@ def process_video(video_file,output_file,
         err = "spreadsheet file type not recognized.  Should be excel or csv.\n"
         raise ValueError(err)
 
-    # Get start times of chunks from the spreadsheet
-    try:
-        starts = np.array(df[start_column])
-    except KeyError:
-        err = "spreadsheet does not have start_column '{}'\n".format(start_column)
-        raise ValueError(err)
+    # Get times of chunks from the spreadsheet
+    starts = _load_time_column(df,start_column,allow_missing=False)
+    stops = _load_time_column(df,stop_column,allow_missing=False)
+    gap_after = _load_time_column(df,gap_column,allow_missing=True)
 
-    if np.sum(df[start_column].isnull()) > 0:
-        err = "start column '{}' has missing values\n".format(start_column)
-        raise ValueError(err)
-
-    # Get stop times of chunks from the spreadsheet
-    try:
-        stops = np.array(df[end_column])
-    except KeyError:
-        err = "spreadsheet does not have end_column '{}'\n".format(end_column)
-        raise ValueError(err)
-
-    if np.sum(df[end_column].isnull()) > 0:
-        err = "end column '{}' has missing values\n".format(end_column)
-        raise ValueError(err)
-
-    # Get list of gaps after chunks to add.  If not specified, add no gaps
-    if gap_column is None:
-        gap_after = np.array(["00:00:00" for _ in range(len(ends))])
-    else:
-        try:
-            gap_after = np.array(df[gap_column])
-            gap_after[df[gap_column].isnull()] = "00:00:00"
-        except KeyError:
-            err = "spreadsheet does not have gap_column '{}'\n".format(gap_column)
-            raise ValueError(err)
-
-    # -------------------------------------------------------------------------
     # Check time sanity
-
     for i in range(len(stops)):
         stop_value = _time_to_seconds(stops[i])
         start_value = _time_to_seconds(starts[i])
 
-        if stop_value < start_value:
-            err = "stop time '{}' before start time '{}'\n".format(stops[i],start[i])
+        if stop_value <= start_value:
+            err = "stop time '{}' before or identical to start time '{}'\n".format(stops[i],starts[i])
             raise ValueError(err)
 
         if stop_value > video_props["duration"]:
-            longest_allowed = _second_to_time(video_props["duration"])
+            longest_allowed = _seconds_to_time(video_props["duration"])
             err = "stop time '{}' is longer than the video ({})".format(stops[i],
                                                                         longest_allowed)
             raise ValueError(err)
@@ -370,31 +436,35 @@ def process_video(video_file,output_file,
             stop_time_in_seconds = video_props["duration"] - fade_length
 
         # Start and stop times, accounting for fades
-        start = _second_to_time(start_time_in_seconds)
-        stop  = _second_to_time(stop_time_in_seconds)
+        start = _seconds_to_time(start_time_in_seconds)
+        stop  = _seconds_to_time(stop_time_in_seconds)
 
         # ---------------------------------------------------------------------
         # Build conversion data for timebase file
 
-        # Keep track of real start time and end time (in seconds)
+        # Keep track of real start time and stop time (in seconds)
         real_start_time = start_time_in_seconds - fade_length + real_time_offset_in_seconds
-        real_end_time = end_time_in_seconds + fade_length + real_time_offset_in_seconds
+        real_stop_time = stop_time_in_seconds + fade_length + real_time_offset_in_seconds
 
-        # Keep track of video start and end time (in seconds)
-        chunk_duration = real_end_time - real_start_time
+        # Keep track of video start and stop time (in seconds)
+        chunk_duration = real_stop_time - real_start_time
+
         if i == 0:
             # If first chunk, start at 0
             video_start_time = 0
         else:
-            # If there are previous chunks, start at prev_end + 1
-            video_start_time = video_time_list[-1][1] + 1
-        video_end_time = video_start_time + chunk_duration
+            # If there are previous chunks, start at prev_stop + 1
+            video_start_time = video_time_stops[-1] + 1
+        video_stop_time = video_start_time + chunk_duration
+
+        print(video_start_time,video_stop_time)
+        print(real_start_time,real_stop_time)
 
         # Record real and video time start and stop for this chunk
         real_time_starts.append(real_start_time)
-        real_time_stops.append(real_end_time))
+        real_time_stops.append(real_stop_time)
         video_time_starts.append(video_start_time)
-        video_time_stops.append(video_end_time)
+        video_time_stops.append(video_stop_time)
 
         # Map the gap between this chunk and the next
         if i < (len(starts) - 1):
@@ -406,14 +476,19 @@ def process_video(video_file,output_file,
 
         # Now append real and video time components of the gap between the
         # chunks
-        real_time_starts.append(real_end_time + 1)
+        real_time_starts.append(real_stop_time + 1)
         real_time_stops.append(next_start_in_seconds - 1)
-        video_time_starts.append(video_end_time + 1)
-        video_time_stops.append(video_end_time + _time_to_seconds(gaps[i]))
+        video_time_starts.append(video_stop_time + 1)
+        video_time_stops.append(video_stop_time + 1 + _time_to_seconds(gap_after[i]))
+
+        print(video_stop_time + 1 ,video_stop_time + 1 + _time_to_seconds(gap_after[i]))
+        print(real_stop_time + 1,next_start_in_seconds - 1)
+        print("---")
 
         # ---------------------------------------------------------------------
         # Construct temporary video files for this chunk
 
+        """
         # Create initial fade in (start - fade_length) -> start
         fade_in_file = "{}_{:03}_fade-in.mp4".format(file_prefix,i)
         _fade_in(video_file,fade_in_file,start,fade_length)
@@ -434,8 +509,9 @@ def process_video(video_file,output_file,
             gap_out_file = "{}_{:03}_gap.mp4".format(file_prefix,i)
             _generate_blank(video_file,gap_out_file,gap_after[i])
             file_list.append(gap_out_file)
+        """
 
-
+    """
     # Combine all streams
     inputs = []
     streams = []
@@ -447,25 +523,28 @@ def process_video(video_file,output_file,
     joined = ffmpeg.concat(*streams,v=1,a=1).node
 
     # Render final movie.
-    out = ffmpeg.output(joined[0],joined[1],"{}_final.mp4".format(file_prefix),**out_kwargs)
+    out = ffmpeg.output(joined[0],joined[1],
+                        "{}_final.mp4".format(file_prefix),
+                        **video_props["out_kwargs"])
     out.run()
 
     # Copy final file to output file name and nuke temporary files
     to_remove = glob.glob("{}*".format(file_prefix))
-    shutil.copy("{}_final.mp4".format(file_prefix),"output.mp4")
+    shutil.copy("{}_final.mp4".format(file_prefix),output_file)
     for f in to_remove:
         os.remove(f)
+    """
 
     # Write out timebase_file, if requested.
     if timebase_file is not None:
 
         out_dict = {}
-        out_dict["real_start"] = [_second_to_time(t) for t in real_time_starts]
-        out_dict["real_stop"] = [_second_to_time(t) for t in real_time_stops]
-        out_dict["video_start"] = [_second_to_time(t) for t in video_time_starts]
-        out_dict["video_stop"] = [_second_to_time(t) for t in video_time_stops]
+        out_dict["real_start"] = [_seconds_to_time(t) for t in real_time_starts]
+        out_dict["real_stop"] = [_seconds_to_time(t) for t in real_time_stops]
+        out_dict["video_start"] = [_seconds_to_time(t) for t in video_time_starts]
+        out_dict["video_stop"] = [_seconds_to_time(t) for t in video_time_stops]
 
-        pd.to_csv(timebase_file)
+        pd.DataFrame(out_dict).to_csv(timebase_file,index=False)
 
 
 class _NonDefaultAction(argparse.Action):
@@ -480,6 +559,8 @@ class _NonDefaultAction(argparse.Action):
 def main(argv=None):
     """
     Parse command line arguments and invoke process_video function.
+
+    argv: command line arguments
     """
 
     if argv is None:
@@ -496,11 +577,11 @@ def main(argv=None):
                         help='spreadsheet containing time stamps for chopping video')
     parser.add_argument('--start-column','-s',dest="start_column",
                         type=str,default="start",nargs=1,
-                        help="column in spreadsheet with chunk start time stamps",
+                        help="column in spreadsheet with chunk start time stamps [default 'start']",
                         action=_NonDefaultAction)
-    parser.add_argument('--end-column','-e',dest="end_column",
-                        type=str,default="end",nargs=1,
-                        help="column in spreadsheet with chunk end time stamps",
+    parser.add_argument('--stop-column','-p',dest="stop_column",
+                        type=str,default="stop",nargs=1,
+                        help="column in spreadsheet with chunk stop time stamps [default 'stop']",
                         action=_NonDefaultAction)
     parser.add_argument('--gap-column','-g',dest="gap_column",
                         type=str,default=None,nargs=1,
@@ -510,25 +591,30 @@ def main(argv=None):
     # Output and video arguments
     parser.add_argument('--out-file','-o',dest="out_file",
                         type=str,nargs=1,default="{video_file}.processed.mp4",
-                        help="name out output file (filetype determined by extension)",
+                        help="name of output file [default: processed_{video_file}]",
                         action=_NonDefaultAction)
     parser.add_argument('--fade-length','-f',dest="fade_length",
                         type=int,nargs=1,default=1,
-                        help="fade length for transitions, in seconds")
+                        help="fade length for transitions, in seconds [default 1]")
 
     # Timebase arguments
     parser.add_argument('--timebase-file','-t',dest="timebase_file",
                         type=str,nargs=1,default=None,
-                        help="file in which to store json mapping chopped time to real time.")
-    parser.add_argument("--real-fime","-r",dest="real_time",
+                        help="file in which to store csv mapping chopped time to real time (optional)",
+                        action=_NonDefaultAction)
+    parser.add_argument("--real-time","-r",dest="real_time",
                         type=str,nargs=1,default="00:00:00",
-                        help="real start time of first video chunk as HH:MM:SS string")
+                        help="real start time of first video chunk as HH:MM:SS string [default: 00:00:00]",
+                        action=_NonDefaultAction)
+
+    parser.add_argument("--force",dest="force",action="store_true",
+                        help="overwrite any previous output files")
 
 
     args = parser.parse_args(argv)
 
     video_file = args.video_file[0]
-    spreadsheet = args.spreadsheet[0]
+    spreadsheet_file = args.spreadsheet[0]
 
     # Grab start_column
     if hasattr(args,"start_column_nondefault"):
@@ -536,11 +622,11 @@ def main(argv=None):
     else:
         start_column = args.start_column
 
-    # Grab end_column
-    if hasattr(args,"end_column_nondefault"):
-        end_column = args.end_column[0]
+    # Grab stop_column
+    if hasattr(args,"stop_column_nondefault"):
+        stop_column = args.stop_column[0]
     else:
-        end_column = args.end_column
+        stop_column = args.stop_column
 
     # Grab gap_column
     if hasattr(args,"gap_column_nondefault"):
@@ -552,29 +638,33 @@ def main(argv=None):
     if hasattr(args,"out_file_nondefault"):
         out_file = args.out_file[0]
     else:
-        out_file = "{}.processed.mp4".format(video_file)
+        out_file = "processed_{}".format(video_file)
 
     # get fade_length
     fade_length = args.fade_length
 
-    # Grab out_file
+    # Grab timebase file
     if hasattr(args,"timebase_file_nondefault"):
         timebase_file = args.timebase_file[0]
     else:
         timebase_file = args.timebase_file
 
-    # Grab out_file
-    if hasattr(args,"real_time_file_nondefault"):
+    # Grab real time
+    if hasattr(args,"real_time_nondefault"):
         real_time = args.real_time[0]
     else:
         real_time = args.real_time
 
+    # grab force
+    force = args.force
+
     # Process the video
-    process_video(video_file,output_file,
+    process_video(video_file,out_file,
                   spreadsheet_file,
-                  start_column,end_column,gap_column,
+                  start_column,stop_column,gap_column,
                   fade_length,
-                  timebase_file,real_time)
+                  timebase_file,real_time,
+                  force)
 
 # If called from the command line.
 if __name__ == "__main__":

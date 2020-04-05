@@ -41,6 +41,7 @@ class GroupNameGenerator:
         expletives = [e.lower() for e in expletives]
         expletives.append("genitals")
         expletives.append("genitalia")
+        expletives.append("puberty")
 
         self.noun = [n for n in noun if not bad_char.search(n) and n not in expletives]
         self.adj = [a for a in adj if not bad_char.search(a) and a not in expletives]
@@ -252,8 +253,8 @@ def simple_break(scores,group_size,score_noise=None):
     return final_groups
 
 
-def assign_groups(df,score_column="score",group_size=2,use_zoom=False):
-
+def assign_groups(df,score_column="score",id_column="email",group_size=2,
+                  use_zoom=False):
 
     try:
         score = df[score_column]
@@ -267,10 +268,11 @@ def assign_groups(df,score_column="score",group_size=2,use_zoom=False):
 
     if use_zoom:
         try:
-            email = df['email']
+            email = df[id_column]
         except KeyError:
             err = "if writing a zoom breakout room file, the input dataframe\n"
-            err += "must have an `email` column.\n"
+            err += "must have an id_column specifying student email used to log\n"
+            err += "in to zoom.\n"
             raise ValueError(err)
 
     if group_size == 2:
@@ -297,6 +299,15 @@ def assign_groups(df,score_column="score",group_size=2,use_zoom=False):
 
     return final_df
 
+class _NonDefaultAction(argparse.Action):
+    """
+    Subclass of argparse.Action that reports whether a non-default value of the
+    argument was used.
+    """
+    def __call__(self, parser, namespace, values, option_string=None):
+        setattr(namespace, self.dest, values)
+        setattr(namespace, self.dest+'_nondefault', True)
+
 
 def main(argv=None):
 
@@ -308,22 +319,52 @@ def main(argv=None):
                         help='spreadsheet containing student identifiers and scores')
     parser.add_argument('--score-column','-s',dest="score_column",
                         type=str,default="score",nargs=1,
-                        help="column in spreadsheet with scores for group assignments")
+                        help="column in spreadsheet with scores for group assignments",
+                        action=_NonDefaultAction)
+    parser.add_argument('--id-column','-i',dest="id_column",
+                        type=str,default="email",nargs=1,
+                        help="column in spreadsheet with student identifiers for assignments",
+                        action=_NonDefaultAction)
     parser.add_argument('--group-size','-g',dest="group_size",default=2,
-                        type=int,nargs=1,help="group size")
+                        type=int,nargs=1,help="group size",
+                        action=_NonDefaultAction)
     parser.add_argument('--zoom','-z', dest="use_zoom",action='store_true',
                         help="generate a zoom-compatible .csv output")
     parser.add_argument('--out-file','-o',dest="out_file",default=None,
                         type=str,nargs=1,
-                        help="name out output file (filetype determined by extension)")
+                        help="name out output file (filetype determined by extension)",
+                        action=_NonDefaultAction)
 
     args = parser.parse_args(argv)
 
+
     spreadsheet = args.spreadsheet[0]
-    score_column = args.score_column
-    group_size = args.group_size
+
+    # Grab score_column
+    if hasattr(args,"score_column_nondefault"):
+        score_column = args.score_column[0]
+    else:
+        score_column = args.score_column
+
+    # Grab id_column
+    if hasattr(args,"id_column_nondefault"):
+        id_column = args.id_column[0]
+    else:
+        id_column = args.id_column
+
+    # Grab group_size
+    if hasattr(args,"group_size_nondefault"):
+        group_size = args.group_size[0]
+    else:
+        group_size = args.group_size
+
     use_zoom = args.use_zoom
-    out_file = args.out_file[0]
+
+    # Grab out_file
+    if hasattr(args,"out_file_nondefault"):
+        out_file = args.out_file[0]
+    else:
+        out_file = args.out_file
 
     if spreadsheet.split(".")[-1] in ["xlsx","xls"]:
         df = pd.read_excel(spreadsheet)
@@ -335,11 +376,12 @@ def main(argv=None):
 
     group_df = assign_groups(df,
                              score_column=score_column,
+                             id_column=id_column,
                              group_size=group_size,
                              use_zoom=use_zoom)
 
     if out_file is None:
-        print(df.to_string())
+        print(group_df.to_csv())
     else:
         if os.path.isfile(out_file):
             err = "file '{}' already exists\n".format(out_file)
