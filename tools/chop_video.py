@@ -29,7 +29,6 @@ time in the chopped video and real time.
 
 __author__ = "Michael J. Harms"
 __date__ = "2020-04-03"
-__usage__ = "./process_video.py video_file spreadsheet_file"
 
 import ffmpeg
 
