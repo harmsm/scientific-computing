@@ -2,8 +2,7 @@
 __description__ = \
 """
 Take a video file, extract the sections identified in a spreadsheet, and
-then combine them into a single video.  Fades to black between clips. Uses
-ffmpeg under the hood.
+then combine them into a single video.  Fades to black between clips.
 
 Spreadsheet should specify the time stamps in HH:MM:SS format. Example:
 
@@ -16,10 +15,13 @@ This would take the input video and extract two chunks:
     from 00:05:00 (5 min) to 00:15:12 (15 min, 12 sec)
     from 00:22:17 (22 min, 17 sec) to 01:07:06 (1 hr, 7 min, 6 sec)
 
-and then combine them, inserting a 5 second gap (black screen) between them.
+and then combine them.  The program will optionally look at the 'gap' column
+to find the length of gaps to insert between clips.  In this case, it would
+add a 5 second gap (black screen) between the clips but no gap after.
+
 The codecs and resolution of the input video file should be (largely)
 preserved.  This implementation assumes there is both an audio and a video
-stream in the video file.
+stream in the video file.  It uses ffmpeg under the hood.
 
 The program will also optionally dump out a csv file mapping between the
 time in the chopped video and real time.
@@ -191,8 +193,8 @@ def _fade_in(input_file,output_file,stop_fade,fade_length):
     out_kwargs["filter:v"] = "fade=in:0:{}".format(fade_length*video_props['frame_rate'])
 
     # Fade length
-    start_fade_in_seconds = _time_to_seconds(stop_fade) - fade_length
-    start_fade = _seconds_to_time(start_fade_in_seconds)
+    start_fade_sec = _time_to_seconds(stop_fade) - fade_length
+    start_fade = _seconds_to_time(start_fade_sec)
 
     (
         ffmpeg
@@ -233,8 +235,8 @@ def _fade_out(input_file,output_file,start_fade,fade_length):
     out_kwargs["filter:v"] = "fade=out:0:{}".format(fade_length*video_props['frame_rate'])
 
     # Fade length
-    stop_fade_in_seconds = _time_to_seconds(start_fade) + fade_length
-    stop_fade = _seconds_to_time(stop_fade_in_seconds)
+    stop_fade_sec = _time_to_seconds(start_fade) + fade_length
+    stop_fade = _seconds_to_time(stop_fade_sec)
 
     (
         ffmpeg
@@ -319,7 +321,6 @@ def _load_time_column(df,column_name=None,allow_missing=False):
         _ = _time_to_seconds(v)
 
     return values
-
 
 
 def process_video(video_file,output_file,
@@ -410,98 +411,156 @@ def process_video(video_file,output_file,
     file_prefix = "tmp_{}".format("".join([random.choice(string.ascii_letters)
                                            for _ in range(8)]))
 
-    # Information for keeping track of timebase
-    real_time_offset_in_seconds = _time_to_seconds(real_time)
+    section_type = []
+    real_starts_sec = []
+    real_stops_sec = []
+    output_starts_sec = []
+    output_stops_sec = []
 
-    real_time_starts = []
-    real_time_stops = []
-    video_time_starts = []
-    video_time_stops = []
+    real_time_sec = _time_to_seconds(real_time)
 
-    # Now go through each chunk to chop out
+    # Now go through each chunk to chop out and construct timebase and video
+    # chunks
+
+    # There are *three* sets of times that we have to keep track of to build
+    # a map between the final video time and real time.
+    # 1) SOURCE time.  This is the time index of the original source file
+    # 2) OUTPUT time.  This is the time index in the final output video
+    # 3) REAL time.  This is the real time.  It is related to the SOURCE time
+    #    by a simple offset.  Because we chop out chunks to make OUTPUT time,
+    #    it is not simply related to OUTPUT time...
+    #
+    # Below, I denote variables as {start|stop}_{source|output|real}_{sec|string}
+    # The last field indicates whether the variable is a HH:MM:SS string or an
+    # integer of seconds.
+    #
+    # Final note on indexing.  I chop up chunks as fade-in + chunk and then
+    # fade-in + gap.  Everything has 1 second resolution.
+    # |fadein0chunk0|fadeout0gap0|fadein1chunk1|fadeout1gap1|...
+    #  ^           ^ ^
+    #  1           2 3
+    # 1: 0
+    # 2: t
+    # 3: t+1
+    # ...
+
     file_list = []
     for i in range(len(starts)):
 
         # ---------------------------------------------------------------------
-        # Account for fades in start and stop times
+        # Build conversion data for timebase file
+        # ---------------------------------------------------------------------
 
-        # Convert time-string to seconds for start and stop
-        start_time_in_seconds = _time_to_seconds(starts[i])
-        stop_time_in_seconds = _time_to_seconds(stops[i])
+        # ---------------- Source time ------------------
+
+        # Chunk start and stop SOURCE times in seconds
+        start_source_sec = _time_to_seconds(starts[i])
+        stop_source_sec = _time_to_seconds(stops[i])
 
         # Make sure the start and stop have room for fading in and out
-        if (start_time_in_seconds - fade_length) < 0:
-            start_time_in_seconds = 0 + fade_length
-        if stop_time_in_seconds + fade_length > video_props["duration"]:
-            stop_time_in_seconds = video_props["duration"] - fade_length
+        if (start_source_sec - fade_length) < 0:
+            start_source_sec = 0 + fade_length
+        if stop_source_sec + fade_length > video_props["duration"]:
+            stop_source_sec = video_props["duration"] - fade_length
 
-        # Start and stop times, accounting for fades
-        start = _seconds_to_time(start_time_in_seconds)
-        stop  = _seconds_to_time(stop_time_in_seconds)
+        # Start and stop SOURCE times as strings
+        start_source_string = _seconds_to_time(start_source_sec)
+        stop_source_string  = _seconds_to_time(stop_source_sec)
 
-        # ---------------------------------------------------------------------
-        # Build conversion data for timebase file
+        # How long is the chunk (includes *one* of the fades)
+        chunk_duration = stop_source_sec - start_source_sec + fade_length
 
-        # Keep track of real start time and stop time (in seconds)
-        real_start_time = start_time_in_seconds - fade_length + real_time_offset_in_seconds
-        real_stop_time = stop_time_in_seconds + fade_length + real_time_offset_in_seconds
-
-        # Keep track of video start and stop time (in seconds)
-        chunk_duration = real_stop_time - real_start_time
-
+        # The first start corresponds to the specified real time. The first
+        # time through the loop, calculate the appropriate offset.
         if i == 0:
-            # If first chunk, start at 0
-            video_start_time = 0
+            real_time_offset = real_time_sec - (start_source_sec - fade_length)
+
+        # ----------------------------------------------------------------------
+        # Work on main chunk:
+        # |fadein0chunk0|fadeout0gap0|
+        #  *************  <- indexes for fade-in through chunk
+        # ----------------------------------------------------------------------
+
+        section_type.append("content")
+
+        # ---------------- Output time ------------------
+
+        # If this is the first chunk, output start time is zero.  If not, the
+        # output start time is the previous output stop + 1.
+        if i == 0:
+            start_output_sec = 0
         else:
-            # If there are previous chunks, start at prev_stop + 1
-            video_start_time = video_time_stops[-1] + 1
-        video_stop_time = video_start_time + chunk_duration
+            start_output_sec = output_stops_sec[-1] + 1
 
-        print(video_start_time,video_stop_time)
-        print(real_start_time,real_stop_time)
+        stop_output_sec = start_output_sec + chunk_duration
 
-        # Record real and video time start and stop for this chunk
-        real_time_starts.append(real_start_time)
-        real_time_stops.append(real_stop_time)
-        video_time_starts.append(video_start_time)
-        video_time_stops.append(video_stop_time)
+        output_starts_sec.append(start_output_sec)
+        output_stops_sec.append(stop_output_sec)
 
-        # Map the gap between this chunk and the next
-        if i < (len(starts) - 1):
-            # If we aren't at the last chunk, grab the next start for the gap
-            next_start_in_seconds = _time_to_seconds(starts[i+1])
+        # ---------------- Real time ------------------
+
+        # Second, calculate real time for this chunk
+        start_real_sec = (start_source_sec - fade_length) + real_time_offset
+        stop_real_sec = start_real_sec + chunk_duration
+
+        real_starts_sec.append(start_real_sec)
+        real_stops_sec.append(stop_real_sec)
+
+        # ----------------------------------------------------------------------
+        # Work on gap chunk:
+        # |fadein0chunk0|fadeout0gap0|
+        #                ************ <- indexes for fade-out through gap
+        # ----------------------------------------------------------------------
+
+        section_type.append("gap")
+
+        # ---------------- Output time ------------------
+
+        # On the final video the gap will go:
+        # (prev_stop + 1) -> (prev_stop + 1 + gap_duration)
+        start_output_sec = output_stops_sec[-1] + 1
+        gap_duration_sec = _time_to_seconds(gap_after[i]) + fade_length
+        stop_output_sec = start_output_sec + gap_duration_sec
+
+        output_starts_sec.append(start_output_sec)
+        output_stops_sec.append(stop_output_sec)
+
+        # ---------------- Real time ------------------
+
+        # The real start time is the last real time seen + 1
+        start_real_sec = real_stops_sec[-1] + 1
+
+        # Get the next chunk start SOURCE time (either the start of the next
+        # chunk or the end of the video).
+        if i != len(starts) - 1:
+            start_source_next_chunk = _time_to_seconds(starts[i+1]) - fade_length
         else:
-            # If at the last chunk, grab the total video duration as the gap
-            next_start_in_seconds = video_props["duration"]
+            start_source_next_chunk = video_props["duration"]
 
-        # Now append real and video time components of the gap between the
-        # chunks
-        real_time_starts.append(real_stop_time + 1)
-        real_time_stops.append(next_start_in_seconds - 1)
-        video_time_starts.append(video_stop_time + 1)
-        video_time_stops.append(video_stop_time + 1 + _time_to_seconds(gap_after[i]))
+        # Gap duration the time between the (start of next chunk - 1) and the
+        # end of the chunk.
+        gap_duration = (start_source_next_chunk - 1) - (stop_source_sec + 1)
+        stop_real_sec = start_real_sec + gap_duration
 
-        print(video_stop_time + 1 ,video_stop_time + 1 + _time_to_seconds(gap_after[i]))
-        print(real_stop_time + 1,next_start_in_seconds - 1)
-        print("---")
+        real_starts_sec.append(start_real_sec)
+        real_stops_sec.append(stop_real_sec)
 
         # ---------------------------------------------------------------------
         # Construct temporary video files for this chunk
 
-        """
         # Create initial fade in (start - fade_length) -> start
         fade_in_file = "{}_{:03}_fade-in.mp4".format(file_prefix,i)
-        _fade_in(video_file,fade_in_file,start,fade_length)
+        _fade_in(video_file,fade_in_file,start_source_string,fade_length)
         file_list.append(fade_in_file)
 
         # Chop out video chunk from start -> stop
         chunk_out_file = "{}_{:03}.mp4".format(file_prefix,i)
-        _slice_out(video_file,chunk_out_file,start,stop)
+        _slice_out(video_file,chunk_out_file,start_source_string,stop_source_string)
         file_list.append(chunk_out_file)
 
         # Generate fade out (stop -> stop + fade_length)
         fade_out_file = "{}_{:03}_fade-out.mp4".format(file_prefix,i)
-        _fade_out(video_file,fade_out_file,stop,fade_length)
+        _fade_out(video_file,fade_out_file,stop_source_string,fade_length)
         file_list.append(fade_out_file)
 
         # Generate a black screen for gap_after if requested
@@ -509,9 +568,7 @@ def process_video(video_file,output_file,
             gap_out_file = "{}_{:03}_gap.mp4".format(file_prefix,i)
             _generate_blank(video_file,gap_out_file,gap_after[i])
             file_list.append(gap_out_file)
-        """
 
-    """
     # Combine all streams
     inputs = []
     streams = []
@@ -533,16 +590,17 @@ def process_video(video_file,output_file,
     shutil.copy("{}_final.mp4".format(file_prefix),output_file)
     for f in to_remove:
         os.remove(f)
-    """
+
 
     # Write out timebase_file, if requested.
     if timebase_file is not None:
 
         out_dict = {}
-        out_dict["real_start"] = [_seconds_to_time(t) for t in real_time_starts]
-        out_dict["real_stop"] = [_seconds_to_time(t) for t in real_time_stops]
-        out_dict["video_start"] = [_seconds_to_time(t) for t in video_time_starts]
-        out_dict["video_stop"] = [_seconds_to_time(t) for t in video_time_stops]
+        out_dict["section_type"] = section_type
+        out_dict["real_start"] = [_seconds_to_time(t) for t in real_starts_sec]
+        out_dict["real_stop"] = [_seconds_to_time(t) for t in real_stops_sec]
+        out_dict["video_start"] = [_seconds_to_time(t) for t in output_starts_sec]
+        out_dict["video_stop"] = [_seconds_to_time(t) for t in output_stops_sec]
 
         pd.DataFrame(out_dict).to_csv(timebase_file,index=False)
 
@@ -585,26 +643,26 @@ def main(argv=None):
                         action=_NonDefaultAction)
     parser.add_argument('--gap-column','-g',dest="gap_column",
                         type=str,default=None,nargs=1,
-                        help="column in spreadsheet with gaps to add after chunks (optional)",
+                        help="column in spreadsheet with gaps to add after chunks [default 'None']",
                         action=_NonDefaultAction)
 
     # Output and video arguments
     parser.add_argument('--out-file','-o',dest="out_file",
                         type=str,nargs=1,default="{video_file}.processed.mp4",
-                        help="name of output file [default: processed_{video_file}]",
+                        help="name of output file [default: 'processed_{video_file}'']",
                         action=_NonDefaultAction)
     parser.add_argument('--fade-length','-f',dest="fade_length",
                         type=int,nargs=1,default=1,
-                        help="fade length for transitions, in seconds [default 1]")
+                        help="fade length for transitions, in seconds [default '1']")
 
     # Timebase arguments
     parser.add_argument('--timebase-file','-t',dest="timebase_file",
                         type=str,nargs=1,default=None,
-                        help="file in which to store csv mapping chopped time to real time (optional)",
+                        help="file in which to store csv mapping chopped time to real time [default 'None'; do not write out]",
                         action=_NonDefaultAction)
     parser.add_argument("--real-time","-r",dest="real_time",
                         type=str,nargs=1,default="00:00:00",
-                        help="real start time of first video chunk as HH:MM:SS string [default: 00:00:00]",
+                        help="real start time of first video chunk as HH:MM:SS string [default: '00:00:00']",
                         action=_NonDefaultAction)
 
     parser.add_argument("--force",dest="force",action="store_true",
