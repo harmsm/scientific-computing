@@ -13,7 +13,6 @@ import pandas as pd
 import json, random, re, random, argparse, sys, os
 import urllib.request
 
-
 class GroupNameGenerator:
     """
     Generate random group names by combining adjective/noun pairs.
@@ -21,45 +20,70 @@ class GroupNameGenerator:
     expletives.
     """
 
-    def __init__(self,max_word_len=8,loop_timeout=100):
+    def __init__(self,max_word_len=8,loop_timeout=100,all_nouns=False):
         """
         max_word_len: longest word length allowed
         loop_timeout: after loop_timeout tries, give up making a new unique name
+        all_nouns: by default, this uses an internal list of animals for the
+                   names.  if all_nouns is True, a list of nouns is downloaded.
+                   Warning: this can lead to some strangely inapprorpriate/
+                   uncomfortable names, even with expletive filtering...
         """
 
         self._loop_timeout = loop_timeout
 
+        # characters we don't want in names in case they come in from one of our
+        # servers
         bad_char = re.compile("\W")
 
+        # Download adjectives
         adj = self._download_json("https://github.com/dariusk/corpora/raw/master/data/words/adjs.json")
         adj = [a.lower() for a in adj["adjs"] if len(a) <= max_word_len]
 
-        noun = self._download_json("https://github.com/dariusk/corpora/raw/master/data/words/nouns.json")
-        noun = [n.lower() for n in noun["nouns"] if len(n) <= max_word_len]
+        # Either use a list of animals included with scripts or random nouns
+        if all_nouns:
+            noun = self._download_json("https://github.com/dariusk/corpora/raw/master/data/words/nouns.json")["nouns"]
+        else:
+            animal_file = os.path.join(os.path.split(__file__)[0],"data","animals.txt")
+            noun = []
+            with open(animal_file,'r') as f:
+                for line in f.readlines():
+                    noun.append(line.strip().lower())
 
+        # Clean up noun list
+        noun = [n for n in noun if len(n) <= max_word_len]
+
+        # Remove expletives
         expletives = self._download_json("https://github.com/dariusk/corpora/raw/master/data/words/expletives.json")
         expletives = [e.lower() for e in expletives]
         expletives.append("genitals")
         expletives.append("genitalia")
         expletives.append("puberty")
 
+        # Final, cleaned up list of words
         self.noun = [n for n in noun if not bad_char.search(n) and n not in expletives]
         self.adj = [a for a in adj if not bad_char.search(a) and a not in expletives]
 
         self._groups_generated = {}
 
     def _download_json(self,url):
+        """
+        Download a json from the url
+        """
 
         response = urllib.request.urlopen(url)
         return json.loads(response.read().decode('ascii'))
 
-
     @property
     def current_group(self):
+        """
+        Return a new, unique group name.
+        """
 
         counter = 0
         while True:
 
+            # Grab random adjective and noun with same first letter
             adj = random.choice(self.adj)
             noun = random.choice([n for n in self.noun if n.startswith(adj[0])])
             group = "{}_{}".format(adj,noun)
@@ -71,6 +95,7 @@ class GroupNameGenerator:
                 self._groups_generated[group] = None
                 break
 
+            # If we've tried a bunch of times, die
             if counter > self._loop_timeout:
                 err = "could not find another unique name ({} total generated)\n".format(len(self._groups_generated))
                 raise ValueError(err)
@@ -106,7 +131,7 @@ def create_partners(scores,score_noise=2.0,num_chunks=4):
     returns
     -------
 
-    list of lists containing integer ind
+    list of lists containing integer indicating roup assignments
     """
 
     # Names is list of integers corresponding to the order in which the
@@ -175,7 +200,6 @@ def create_partners(scores,score_noise=2.0,num_chunks=4):
     # Shuffle the partners so the lowest student doesn't always appear first
     random.shuffle(partners)
 
-
     return partners
 
 def simple_break(scores,group_size,score_noise=None):
@@ -210,7 +234,7 @@ def simple_break(scores,group_size,score_noise=None):
     noisy_scores = np.array(scores) + np.random.normal(0,2,len(scores))
 
     # Figure out how many groups to include
-    num_groups = len(scores) // break_size
+    num_groups = len(scores) // group_size
 
     # Sort names by scores
     to_chop = [(s,i) for i, s in enumerate(noisy_scores)]
@@ -230,7 +254,7 @@ def simple_break(scores,group_size,score_noise=None):
 
     # Create list of break groups
     break_groups = []
-    for b in range(break_size):
+    for b in range(group_size):
         break_groups.append(to_chop[(b*num_groups):((b+1)*num_groups)])
     if num_extras > 0:
         break_groups.append(to_chop[((b+1)*num_groups):])
@@ -253,49 +277,52 @@ def simple_break(scores,group_size,score_noise=None):
     return final_groups
 
 
-def assign_groups(df,score_column="score",id_column="email",group_size=2,
-                  use_zoom=False):
+def assign_groups(df,score_column=None,out_column="group_assignment",group_size=2,all_nouns=False):
+    """
+    Assign students in a dataframe into groups.  The group assignment will be
+    added as a column in the data frame.
 
-    try:
-        score = df[score_column]
-    except KeyError:
-        err = "input dataframe does not have column '{}'\n".format(score_column)
-        raise ValueError(err)
+    df: data frame containing student scores
+    score_column: column with scores.  If None, assign all students the same score
+    out_column: column to write group assignment to.
+    group_size: group size
+    all_nouns: whether or not to use all_nouns (rather than just animals) for
+               group names.  This makes number of possible groups larger, but
+               can also lead to some alarming names.
+    """
 
+    # If score column is not specified, assign everyone a score of 1
+    if score_column is None:
+        score = np.ones(len(df.iloc[:,0]))
+    else:
+        try:
+            score = df[score_column]
+        except KeyError:
+            err = "input dataframe does not have column '{}'\n".format(score_column)
+            raise ValueError(err)
+
+    # Sanity check on group size
     if group_size < 1 or group_size > len(score) // 2:
         err = "group_size must be between 1 and num_students/2\n"
         raise ValueError(err)
 
-    if use_zoom:
-        try:
-            email = df[id_column]
-        except KeyError:
-            err = "if writing a zoom breakout room file, the input dataframe\n"
-            err += "must have an id_column specifying student email used to log\n"
-            err += "in to zoom.\n"
-            raise ValueError(err)
-
+    # Assign groups
     if group_size == 2:
         groups = create_partners(score)
     else:
         groups = simple_break(score,group_size)
 
+    # Give groups names
     final_groups = [None for _ in range(len(score))]
-    G = GroupNameGenerator()
+    G = GroupNameGenerator(all_nouns=all_nouns)
     for group in groups:
-
         group_name = G.current_group
         for member in group:
             final_groups[member] = group_name
 
-    if use_zoom:
-        out_dict = {"Pre-assign Room Name":final_groups,
-                    "Email Address":df["email"]}
-        final_df = pd.DataFrame(out_dict)
-        final_df = final_df.sort_values("Pre-assign Room Name")
-    else:
-        final_df = df.copy()
-        final_df["group_assignment"] = final_groups
+    # Record groups in data frame
+    final_df = df.copy()
+    final_df[out_column] = final_groups
 
     return final_df
 
@@ -317,34 +344,51 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__description__)
     parser.add_argument('spreadsheet',type=str,nargs=1,
                         help='spreadsheet containing student identifiers and scores')
-    parser.add_argument('--score-column','-s',dest="score_column",
-                        type=str,default="score",nargs=1,
-                        help="column in spreadsheet with scores for group assignments",
-                        action=_NonDefaultAction)
-    parser.add_argument('--id-column','-i',dest="id_column",
-                        type=str,default="email",nargs=1,
-                        help="column in spreadsheet with student identifiers for assignments",
-                        action=_NonDefaultAction)
+    parser.add_argument('out_file',type=str,nargs=1,
+                        help='file to store output (type determined by extension)')
+
+    # Group generation options
     parser.add_argument('--group-size','-g',dest="group_size",default=2,
                         type=int,nargs=1,help="group size",
                         action=_NonDefaultAction)
+    parser.add_argument('--all-nouns','-n', dest="all_nouns",action='store_true',
+                        help="use all nouns (not just animals) to name rooms.")
+
+    # Spreadsheet options
+    parser.add_argument('--score-column','-s',dest="score_column",
+                        type=str,default=None,nargs=1,
+                        help="column in spreadsheet with scores for group assignments (if not specified, do not weight by score)",
+                        action=_NonDefaultAction)
+    parser.add_argument('--out-column','-c',dest="out_column",
+                        type=str,default="group_assignment",nargs=1,
+                        help="column in spreadsheet where group assignment will be written",
+                        action=_NonDefaultAction)
+
+    # Zoom-specific arguments
     parser.add_argument('--zoom','-z', dest="use_zoom",action='store_true',
                         help="generate a zoom-compatible .csv output")
-    parser.add_argument('--out-file','-o',dest="out_file",default=None,
-                        type=str,nargs=1,
-                        help="name out output file (filetype determined by extension)",
+
+    parser.add_argument('--id-column','-i',dest="id_column",
+                        type=str,default="email",nargs=1,
+                        help="column in spreadsheet with student identifiers for group assignments (only used for zoom spreadsheet)",
                         action=_NonDefaultAction)
 
     args = parser.parse_args(argv)
 
-
     spreadsheet = args.spreadsheet[0]
+    out_file = args.out_file[0]
 
     # Grab score_column
     if hasattr(args,"score_column_nondefault"):
         score_column = args.score_column[0]
     else:
         score_column = args.score_column
+
+    # Grab out_column
+    if hasattr(args,"out_column_nondefault"):
+        out_column = args.out_column[0]
+    else:
+        out_column = args.out_column
 
     # Grab id_column
     if hasattr(args,"id_column_nondefault"):
@@ -359,13 +403,9 @@ def main(argv=None):
         group_size = args.group_size
 
     use_zoom = args.use_zoom
+    all_nouns = args.all_nouns
 
-    # Grab out_file
-    if hasattr(args,"out_file_nondefault"):
-        out_file = args.out_file[0]
-    else:
-        out_file = args.out_file
-
+    # Load spreadsheet into a data frame
     if spreadsheet.split(".")[-1] in ["xlsx","xls"]:
         df = pd.read_excel(spreadsheet)
     elif spreadsheet.split(".")[-1] == ".csv":
@@ -374,33 +414,46 @@ def main(argv=None):
         err = "spreadsheet type must be .xlsx or .csv\n"
         raise ValueError(err)
 
-    group_df = assign_groups(df,
+    # Create data frame with groups assigned
+    final_df = assign_groups(df,
                              score_column=score_column,
-                             id_column=id_column,
+                             out_column=out_column,
                              group_size=group_size,
-                             use_zoom=use_zoom)
+                             all_nouns=all_nouns)
 
-    if out_file is None:
-        print(group_df.to_csv())
-    else:
-        if os.path.isfile(out_file):
-            err = "file '{}' already exists\n".format(out_file)
-            raise FileExistsError(err)
+    # Before writing output, make sure it does not exist
+    if os.path.isfile(out_file):
+        err = "file '{}' already exists\n".format(out_file)
+        raise FileExistsError(err)
 
-        if out_file.split(".")[-1] == "xlsx":
-            group_df.to_excel(out_file)
-        elif out_file.split(".")[-1] == "csv":
+    if use_zoom:
 
-            if use_zoom:
-                group_df.to_csv(out_file,index=False)
-            else:
-                group_df.to_csv(out_file)
-        else:
-            err = "output file format must be .xslx or .csv\n"
+        try:
+            email = final_df[id_column]
+        except KeyError:
+            err = "column '{}' not found in data frame.\n".format(id_column)
+            err += "if writing a zoom breakout room file, the input dataframe\n"
+            err += "must have an id_column specifying student email used to log\n"
+            err += "in to zoom.\n"
             raise ValueError(err)
 
+        out_dict = {"Pre-assign Room Name":final_df[out_column],
+                    "Email Address":final_df[id_column]}
+        final_df = pd.DataFrame(out_dict)
+        final_df = final_df.sort_values("Pre-assign Room Name")
 
+    # Write output
+    if out_file.split(".")[-1] == "xlsx":
+        final_df.to_excel(out_file)
 
+    elif out_file.split(".")[-1] == "csv":
+        if use_zoom:
+            final_df.to_csv(out_file,index=False)
+        else:
+            final_df.to_csv(out_file)
+    else:
+        err = "output file format must be .xslx or .csv\n"
+        raise ValueError(err)
 
 
 
