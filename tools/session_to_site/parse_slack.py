@@ -20,7 +20,7 @@ class StringHandler:
 
         self._pattern = pattern
         self._replace_dict = replace_dict
-        self._search_pattern = re.compile(self._pattern)
+        self._search_pattern = re.compile(self._pattern,re.DOTALL)
 
 
     def filter_string(self,text_string):
@@ -159,6 +159,20 @@ class CodeHandler(SymmetricalStringHandler):
         field, status = self._replace_match(field)
         return "<code>{}</code>".format(field)
 
+class CodeBlockHandler(SymmetricalStringHandler):
+    """
+    Process ```code``` fields.
+    """
+
+    def __init__(self,pattern="```.*?```",replace_dict={}):
+
+        super().__init__(pattern,replace_dict)
+
+    def _process_match(self,field):
+
+        field, status = self._replace_match(field)
+
+        return "<div class=\"card m-1 bg-light p-2\"><pre><code>{}</code></pre></div>".format(field[2:-2])
 
 def _process_polly_poll(msg):
 
@@ -190,7 +204,7 @@ def _process_polly_poll(msg):
     filled_bar_pattern = re.compile("\u2588")
     response_bar_pattern = re.compile("\`.*?\`")
 
-    text.append("<table class=\"table table-striped p-2\"><tbody>")
+    text.append("<table class=\"table table-striped p-3\"><tbody>")
     for response in responses:
 
         r = response['text']
@@ -287,6 +301,7 @@ def parse_slack_channel(slack_zip_file,
     handlers = [UrlHandler(),
                 AtUserHandler(replace_dict=names_dict),
                 HashChannelHandler(),
+                CodeBlockHandler(),
                 CodeHandler()]
 
     # Go through messages, keeping track of threading
