@@ -57,7 +57,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
     | 4/3   | Conditionals, loops, lists, arrays.            | `lab_00_0`_                      |                                                            | `class3`_  |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
-    | 4/6   | Functions and namespace                        |                                  |                                                            |            |
+    | 4/6   | Functions and namespace                        |                                  |                                                            | `class4`_  |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
     | 4/8   | Graphing and matplotlib                        |                                  |                                                            |            |
     +-------+------------------------------------------------+----------------------------------+------------------------------------------------------------+------------+
@@ -130,6 +130,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`class1`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/00/index.html
 .. _`class2`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/01/index.html
 .. _`class3`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/02/index.html
+.. _`class4`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/index.html
 
 .. toctree::
    syllabus

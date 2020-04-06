@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>Class 4: Lists</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>Class 4: Lists</h3>
+                <p>April 6, 2020</p>
+            </div>
+
+            
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/05_lists.ipynb">05_lists.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/05_lists_key.ipynb">Key: 05_lists.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+
+                <div class="card bg-light p-2">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width=“560” height=“315" src="https://www.youtube.com/embed/HagMUCK8r_Q" frameborder=“0" allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+                        </div>
+
+                </div>
+
+            
+
+            
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:00:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class started**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:05:46</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:05:54</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help! We need a TA! (Reply to this message with the name of your breakout room if you need help)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:14:38</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Share one new thing you learned from the <code>05_lists</code>notebook?  (Reply in thread.)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1038029873206_ece4bc4c49764d06aa82_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Cori Cahoon</div>
+                                            <div class="time">2020-04-06 09:17:00</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">how to replace a value in a list in one line without using .insert or .remove</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-06 09:17:23</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that when using some_list I can replace one object with another.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-02/1043186752981_97f0e63cee186224b8c1_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Andrew Holston</div>
+                                            <div class="time">2020-04-06 09:18:00</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What the colon does when it is inside the brackets</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/e6538b403b22c3fe6adbdf3cce8329a3.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Patrick Connor</div>
+                                            <div class="time">2020-04-06 09:18:03</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">how to copy a list</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-06 09:18:09</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">.insert .pop .remove to modify index positions</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1035625810836_f7a7608525e30614ce98_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Hannah Markovic</div>
+                                            <div class="time">2020-04-06 09:18:59</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Copying a list just assigns another name to the same values so you need to use the “deepcopy” function</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1033563428644_7412fea20f219f019b0d_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Juan Tirado-Garcia</div>
+                                            <div class="time">2020-04-06 09:19:14</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Learned how to insert a number on some_list</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1034345230309_77e476d3da36dfd9a600_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Daria Wonderlick</div>
+                                            <div class="time">2020-04-06 09:19:32</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">.insert to specify index for inserted object</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1022554999747_6544211a79a4694f187e_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Abbey Lasseigne</div>
+                                            <div class="time">2020-04-06 09:19:46</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">.remove only removes the first instance of the value you specifiy</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/019c0ffd3bfab75632f9aa41198efa2c.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Vickie</div>
+                                            <div class="time">2020-04-06 09:19:52</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">how to identify elements in a list</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-06/1048359205094_3b5ff225ca0783106682_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Acadia DiNardo</div>
+                                            <div class="time">2020-04-06 09:20:24</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">how replace different elements in a list</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-01/1043922210454_5a7c9f7f382200be6311_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Heather Foote</div>
+                                            <div class="time">2020-04-06 09:20:31</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that .pop removes a position while .remove, removes a specific integer.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1034355549664_5dc2031c564be39aca0f_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Dillon Willis</div>
+                                            <div class="time">2020-04-06 09:20:31</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">the difference between copy and deepcopy</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/e6aeaf43914663ffc8ee45dfdcd36641.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Jon Muyskens</div>
+                                            <div class="time">2020-04-06 09:20:56</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Remove only removes the first instance, not all of the instances</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1026838872657_d2e82687d99cc27a7a67_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Philip Nosler</div>
+                                            <div class="time">2020-04-06 09:22:14</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">That some_list.remove only removes the first instance of the value in the parentheses</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-06 09:22:50</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that you need to use copy.deepcopy to create two independent lists / variables</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1034203941479_2d6a24187d3f8df9512b_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Ben Camel</div>
+                                            <div class="time">2020-04-06 09:23:13</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Pop is a command to remove something from a list by its index</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b85b5e5260ef4c83a535791e5831cc31.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Sophia Phillips</div>
+                                            <div class="time">2020-04-06 09:23:42</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that you can call either positions of elements or the numbers themselves in a list!</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:15:42</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What should we discuss in the main session from the <code>05_lists</code>notebook? (Reply in thread).</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1038029873206_ece4bc4c49764d06aa82_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Cori Cahoon</div>
+                                            <div class="time">2020-04-06 09:17:47</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">the duplicating a list vs deepcopy a list - not quite sure why we need to make this distinction</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">💯<span class="badge badge-light">2</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-06 09:18:34</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">How are lists used?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-02/1043186752981_97f0e63cee186224b8c1_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Andrew Holston</div>
+                                            <div class="time">2020-04-06 09:21:32</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Why the extension .pop is used; what does .pop stand for?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">3</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/f2fb7f99610035eda7e04dafdc8fa8e5.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0020-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Alice Barkan</div>
+                                            <div class="time">2020-04-06 09:16:10</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">pop vs remove</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/9b3b8fd3f6a8c1b3ca61e88489396893.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Tory Herman</div>
+                                            <div class="time">2020-04-06 09:16:10</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><a href="http://copy.de">http://copy.de</a></div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                                
+                                                    <span class="button">💯<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-06 09:16:21</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>05_lists</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>8</td></tr><tr><td>😄</td><td>████████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>16</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:22:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Leaving breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-06 09:38:40</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">When I tried Mike's code to replace 5 with 423, I got an error: some_list = list(range(10))
+some_list[5] = 423
+print(some_list)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-06 09:39:10</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Said 'list' object was not callable</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:41:36</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Try restarting the kernel, I just copied the code into my jupyter notebook and it ran fine</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👌<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-06 09:43:19</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Yup now it works... stupid kernel... thanks!</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:45:14</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">You're welcome! And just a quick note, lets post all questions in the <span class="font-italic">#help </span>thread</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-06 09:47:52</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Gotcha my bad I'll figure out all the channels eventually :P</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/5fd9e1def16e79c4cc2d0c018490b311.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Lila Kaye</div>
+                                            <div class="time">2020-04-06 09:49:22</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I had the same issue, thanks for asking <span class="font-italic">@Amy Robbins </span></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-06 09:50:04</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">If I wanted to set the 11th entry in a list named <code>some_list</code>to `5`, I should type:</div><table class="table table-striped p-3"><tbody><tr><td>*1*:</td><td>some_list.set(10) = 5</td><td>0</td></tr><tr><td>*2*:</td><td>some_list[11] = 5</td><td>0</td></tr><tr><td>*3*:</td><td>some_list[10] = 5</td><td>0</td></tr><tr><td>*4*:</td><td>some_list(10) = 5</td><td>0</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:51:42</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card m-1 bg-light p-2"><pre><code>some_list = [-1,0,1,2,3]
+print(some_list[1:-1])</code></pre></div></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-06 09:51:59</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">What would the code block above print?</div><table class="table table-striped p-3"><tbody><tr><td>[0,1,2]</td><td>█████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>9</td></tr><tr><td>[-1,0,1,2]</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>[0,1,2,3]</td><td>██████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>14</td></tr><tr><td>[0,1,2,3]</td><td>█ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>1</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-06 09:52:43</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I don't see the difference between 3 and 4</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:54:13</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">poll error</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/5fd9e1def16e79c4cc2d0c018490b311.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Lila Kaye</div>
+                                            <div class="time">2020-04-06 09:54:54</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Darn n-1 convention</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">😅<span class="badge badge-light">3</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-06 09:55:32</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I'm with you on that one. Matlab didn't format my brain for this</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-06 09:56:54</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class ending**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
