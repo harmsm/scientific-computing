@@ -22,7 +22,7 @@ Office hours:
 Check slack :code:`#general` channel for zoom links to office hours.
 
 + Anneliese: 4 pm on Mondays
-+ Luis: 11 am on Wednesdays
++ Luis: 10 am on Mondays and 11 am on Wednesdays
 + Michael: 2 pm on Wednesdays
 + Joseph: 2 pm on Thursdays
 + Mike: 1 pm on Fridays
