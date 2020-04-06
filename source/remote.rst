@@ -12,16 +12,40 @@ Class time
   around 8:50 am each day.  I will post the link in the slack :code:`#general`
   channel.
 + *Please mute your microphone unless you are speaking*
-+ We will make liberal use of breakout rooms during class.  Be prepared to
-  work in assigned pairs and small groups during class.
-+ If you have questions and comments during class you can:
++ **Breakout Rooms**: We will make liberal use of breakout rooms during class.
+  Be prepared to work in assigned pairs and small groups during class.
 
-    * `Raise your blue hand <https://support.zoom.us/hc/en-us/articles/205566129-Raise-Hand-In-Webinar>`_
-    * Post your question in the :code:`#in_class` slack channel.  The TAs and I
-      will monitor this channel.  Depending on the situation, we may start a class
-      discussion, join you in your breakout room or start a DM chat. This channel
-      will be posted after class, so it will be a handy record of things that
-      were confusing and clarified. 
+  * **Please reserve the** :code:`#in_class` **channel for discussions of class
+    material.** If something wacky is going on (you’re in a breakout room alone,
+    you just got kicked off of zoom, jupyter suddenly stopped working etc.),
+    please post this on :code:`#help.`   We’ll monitor this as well and can chat
+    with you there.
+
+  * **When we start a breakout session, we will post a message on** :code:`#in_class`
+    **that says “WE NEED A TA!”**  While you’re in your breakout room, you can reply
+    to the “WE NEED A TA” message to get help.  Include your breakout room name
+    in the message.  (The breakout room name will be in the title bar of your
+    main zoom window).  We’ll react with a thumbs up and someone in as soon as
+    we can.
+
+  * **When there are a couple minutes left in the breakout session, we will post
+    three interactive messages:**
+
+    + POINTS FOR DISCUSSION: Reply to this message with questions or thoughts
+      you’d like to discuss in the main session. Emoji reactions on others’
+      questions help us judge which questions are most important to address as
+      a whole group.
+
+    + SOMETHING I LEARNED: Reply to this message with something(s) you learned
+      during the breakout session that you did not know previously.  Again, feel
+      free to react to others.
+
+    + ASSESSMENT POLL: Answer the poll so we can get a feel for overall
+      understanding of the material.
+
++ If you have a question during the in-class discussion, you can
+  `Raise your blue hand <https://support.zoom.us/hc/en-us/articles/205566129-Raise-Hand-In-Webinar>`_
+
 
 Material
 --------
@@ -52,26 +76,28 @@ Direct messages
 Channels
 ........
 
-+ **#general**:
++ :code:`#general`:
 
     * I'll post announcements here.
     * I'll post zoom links to class and office hours here.
     * Feel free to use this to organize study sessions, group work, etc.
 
-+ **#random**:
++ :code:`#random`:
 
     * Fun stuff not directly related to the class.
     * Great for building community.
     * Remember to keep things respectful.
 
-+ **#in_class**:
++ :code:`#in_class`:
 
     * This channel is for conversations, questions, and polls from class.
-    * Post questions at any time during the class session itself.
+    * Post questions and thoughts about *course content* on this channel at any
+      time during the class session itself.   (If you are having technical
+      difficulties, please use :code:`#help` during class).
     * Reactions and replies to others' questions will be very helpful.
     * I will post the :code:`#in_class` log after each class.
 
-+ **#help**:
++ :code:`#help`:
 
     * Use this any time throughout the week if you have questions on homework or
       content.
