@@ -3,15 +3,14 @@
 
 + **repo_to_zip.py**: construct easy-to-download zip files from directories
   containing jupyter notebooks and supporting files.
-+ **session_to_html.py**: convert a slack .zip export file and other links into
-  into pretty, bootstrap-enabled html.
++ **session_to_html.py**: convert a class session into pretty html.
 + **polly_generator.py**: generate polly-style quizzes for slack from a
   spreadsheet.
 + **assign_groups.py**: assign students into groups randomly, potentially
   weighted by their scores on a placement quiz.
 + **spreadsheet-to-rst.py**: construct an .rst table of assignments and topics
   from a spreadsheet.
-+ **notebook-to-html.py**: convert a notebook into html
++ **chop_video.py**: chop out sections of a video and paste them together.
 
 
 ### Workflow:
@@ -28,8 +27,8 @@ Right before class:
 After class:
  + Process the video and post it to youtube.
  + Export the slack session to a zip file.
- + Export the notebook to html using nbconvert
  + Update the class-schedule spreadsheet with the new links.
+ + Update the 
  + Run session_to_html.py to convert the zip file, youtube link, and content
    links into html.
  + Update the docs/ folder and commit to github.
