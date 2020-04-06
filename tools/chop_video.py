@@ -35,7 +35,7 @@ import ffmpeg
 import pandas as pd
 import numpy as np
 
-import sys, random, string, copy, glob, shutil, os, argparse
+import sys, random, string, copy, glob, shutil, os, argparse, datetime
 
 def _time_to_seconds(time_string):
     """
@@ -46,7 +46,12 @@ def _time_to_seconds(time_string):
 
     # Make sure it's a string (should catch strings or numpy strings)
     if not isinstance(time_string,str):
-        raise ValueError(error_string)
+
+        # If pandas interpreted as a datetime object, turn into a string
+        if isinstance(time_string,datetime.time):
+            time_string = str(time_string)
+        else:
+            raise ValueError(error_string)
 
     # Make sure it splits into three with ":"
     t_list = time_string.split(":")
@@ -273,9 +278,9 @@ def _generate_blank(input_file,output_file,length):
 
     # Combine video and audio
     if video_props["audio_first"]:
-        stream = ffmpeg.concat(video.audio,audio.video,a=1,v=1).node
+        stream = ffmpeg.concat(video.video,audio.audio,a=1,v=1).node
     else:
-        stream = ffmpeg.concat(video.video,audio.audio,v=1,a=1).node
+        stream = ffmpeg.concat(video.audio,audio.video,v=1,a=1).node
 
     # Write output
     out = ffmpeg.output(stream[0],stream[1],output_file,**out_kwargs)
@@ -296,7 +301,7 @@ def _load_time_column(df,column_name=None,allow_missing=False):
     # Get time values from spreadsheets
     try:
 
-        values = np.array(df[column_name])
+        values = np.array(df[column_name],dtype=np.str)
 
         # Deal with missing values. Either replace with 00:00:00 or throw error
         if allow_missing:

@@ -8,22 +8,25 @@ __date__ = "2020-03-30"
 
 import session_to_site
 
+import jinja2
 import argparse, sys, json
 
 
-def session_to_html(control):
+def session_to_html(control,template_file):
 
     threads = session_to_site.parse_slack_channel(control["slack"]["zipfile"],
                                                   control["slack"]["channel"])
 
-    downloads = {"pre_class":[{"url":"test","text":"this"}],
-                 "post_class":[{"url":"test","text":"this"},
-                               {"url":"stuff","text":"out"}]}
-
     control["threads"] = threads
 
+    template_loader = jinja2.FileSystemLoader(searchpath="./")
+    template_env = jinja2.Environment(loader=template_loader,
+                                      autoescape=jinja2.select_autoescape("html"))
+    template = template_env.get_template(template_file)
+    output = template.render(session=control)
+
     f = open("index.html","w")
-    f.write(session_to_site.render(control,"parent.html"))
+    f.write(output) #"parent.html"))
     f.close()
 
 
@@ -34,8 +37,20 @@ def main(argv=None):
 
     json_file = argv[0]
     control = json.load(open(json_file,'r'))[0]
+    template_file = argv[1]
 
-    session_to_html(control)
+
+
+
+    #from jinja2 import Template
+    #with open(template_file) as file_:
+#        template = Template(file_.read())
+#    template.render(
+
+
+    session_to_html(control,template_file)
+
+    return
 
     """
 
