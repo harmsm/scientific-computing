@@ -79,6 +79,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------+
     | 4/13  | Pandas data frames                                                      |
     |       |                                                                         |
+    |       |  + **Due**: `lab_00_0`_                                                 |
     |       |  + **Preclass**: 00_09                                                  |
     +-------+-------------------------------------------------------------------------+
     | 4/15  | Graphing and matplotlib                                                 |
@@ -87,7 +88,6 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------+
     | 4/17  | Lab: programming puzzles                                                |
     |       |                                                                         |
-    |       |  + **Due**: `lab_00_0`_                                                 |
     |       |  + **Preclass**: `lab_01`_                                              |
     +-------+-------------------------------------------------------------------------+
     | 4/20  | Simulation                                                              |
@@ -200,6 +200,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 2: Python as a Calculator`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/01/index.html
 .. _`Class 3: Conditionals and Loops`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/02/index.html
 .. _`Class 4: Lists`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/index.html
+
 
 
 
