@@ -72,6 +72,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 4/8   | Numpy arrays                                                            |
     |       |                                                                         |
     |       |  + **Preclass**: `06 numpy arrays`_                                     |
+    |       |  + **Postclass**: `Class 5: Numpy Arrays`_                              |
     +-------+-------------------------------------------------------------------------+
     | 4/10  | Tuples, dicts, and strings; functions                                   |
     |       |                                                                         |
@@ -200,9 +201,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 2: Python as a Calculator`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/01/index.html
 .. _`Class 3: Conditionals and Loops`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/02/index.html
 .. _`Class 4: Lists`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/index.html
-
-
-
+.. _`Class 5: Numpy Arrays`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/04/index.html
 
 
 .. toctree::
