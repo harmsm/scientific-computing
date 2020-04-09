@@ -125,6 +125,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------+
     | 5/8   | Lab: classification using machine learning                              |
     |       |                                                                         |
+    |       |  + **Due**: `prospectus`_                                               |
     |       |  + **Preclass**: lab_04                                                 |
     +-------+-------------------------------------------------------------------------+
     | 5/11  | Molecular structures                                                    |
@@ -137,7 +138,6 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------+
     | 5/15  | Lab: calculating structural properties                                  |
     |       |                                                                         |
-    |       |  + **Due**: `prospectus`_                                               |
     |       |  + **Preclass**: lab_03                                                 |
     +-------+-------------------------------------------------------------------------+
     | 5/18  | Big(ish) data                                                           |
@@ -172,6 +172,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------+
     | 6/5   | Final project, in-class work                                            |
     |       |                                                                         |
+    |       |  + **Due**: lab_06                                                      |
     +-------+-------------------------------------------------------------------------+
     | 6/8   | Final project due                                                       |
     |       |                                                                         |
