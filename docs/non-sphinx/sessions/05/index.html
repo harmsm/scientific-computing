@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>Class 6: tuples, dicts, strings, and functions</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>Class 6: tuples, dicts, strings, and functions</h3>
+                <p>April 10, 2020</p>
+            </div>
+
+            
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/07_tuples-and-dicts-and-strings.ipynb">07_tuples-and-dicts-and-strings.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/08_functions.ipynb">08_funtions.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/07_tuples-and-dicts-and-strings_key.ipynb">Key: 07_tuples-and-dicts-and-strings.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/08_functions_key.ipynb">Key: 08_functions.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/python-in-file-example.zip">example showing how to write functions in a python file that can be imported into a notebook</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+
+                <div class="card bg-light p-2">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width=“560” height=“315" src="https://www.youtube.com/embed/TnqLcRXl4eE" frameborder=“0" allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+                        </div>
+
+                </div>
+
+            
+
+            
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 08:59:45</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class started**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:11:57</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:12:18</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help! We need a TA!</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:12:33</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Share one new thing you learned from the <code>07_tuples-and-dicts-and-strings</code>notebook?  (Reply in thread.)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/164ab32970f86598dbf294d5317b5bab.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0020-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Zach Garrison</div>
+                                            <div class="time">2020-04-10 09:28:01</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">you can make adjustments to a dictionary with the same commands that you would to a list</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-10 09:32:25</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Dictionary pairs are comprised of key-values</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/4b85a201c5d588cb6485f06233fc2686.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Benjamin Duewell</div>
+                                            <div class="time">2020-04-10 09:33:32</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">You can have a dictionary pair be number-to-word or word-to word (sorry probably a horrible way to explain that)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1022554999747_6544211a79a4694f187e_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Abbey Lasseigne</div>
+                                            <div class="time">2020-04-10 09:33:58</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Strings and tuples are similar in that they are ordered collections where you can access individual elements by indexing. Neither can be changed once they have been made.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-02/1043186752981_97f0e63cee186224b8c1_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Andrew Holston</div>
+                                            <div class="time">2020-04-10 09:37:03</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">For dictionaries, it seems as if you can look up a value by its key, but not a key by its value.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1033563428644_7412fea20f219f019b0d_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Juan Tirado-Garcia</div>
+                                            <div class="time">2020-04-10 09:37:36</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Learned from Sophia that you can add “” to a word to spit out the word in dictionary </div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b85b5e5260ef4c83a535791e5831cc31.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Sophia Phillips</div>
+                                            <div class="time">2020-04-10 09:37:51</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Elements in tuples can be called the same way as in lists.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-10 09:38:24</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that you can edit existing keys in dictionaries but also define new keys using the same function.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/ac069e6efe4b8366b95dc6856c8d6c6c.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Jessica Puente</div>
+                                            <div class="time">2020-04-10 09:39:08</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learn that keys is in left side and values in on the right side in dictionaries </div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:12:50</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What should we discuss in the main session from the <code>07_tuples-and-dicts-and-strings</code>notebook? (Reply in thread)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-10 09:32:06</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">How do built-in functions work within dictionaries? Can we have an example of how to use this?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-10 09:38:50</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">In what case would tuples be used compared to lists?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-10 09:14:28</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Everyone should now be in a breakout room with other people …</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/9b3b8fd3f6a8c1b3ca61e88489396893.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Tory Herman</div>
+                                            <div class="time">2020-04-10 09:22:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">could we have a TA in cosmic_caiman?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-10 09:22:28</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">yep</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-01/1044063468375_58cf4702a0e894de5123_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Adam Fries</div>
+                                            <div class="time">2020-04-10 09:28:56</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">It seems that we can have multiple identical keys in a dictionary, but only the 2nd (not-preceding) key gets recognized.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-10 09:35:24</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Actually, the second key wipes out the first</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 09:33:13</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>07_tuples-and-dicts-and-strings</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>█████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>5</td></tr><tr><td>😄</td><td>███████████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>19</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 09:33:24</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>07_tuples-and-dicts-and-strings</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>█████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>5</td></tr><tr><td>😄</td><td>████████████████████ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>20</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:41:53</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Leaving breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 09:58:59</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/9b3b8fd3f6a8c1b3ca61e88489396893.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Tory Herman</div>
+                                            <div class="time">2020-04-10 10:07:20</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">could we have a TA in cosmic_caiman?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/5fd9e1def16e79c4cc2d0c018490b311.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Lila Kaye</div>
+                                            <div class="time">2020-04-10 10:09:03</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">We would like a TA in terran_tiffany</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1034203941479_2d6a24187d3f8df9512b_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Ben Camel</div>
+                                            <div class="time">2020-04-10 10:16:04</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can we get a TA in running_rabbit?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 10:16:49</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Mike Harms </span></div><div class="font-italic">I would rate my understanding of the material in the <code>functions</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>██ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>2</td></tr><tr><td>🙂</td><td>█████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>9</td></tr><tr><td>😄</td><td>█████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>13</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 10:25:28</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>08_functions notebook</code>as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>█ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>1</td></tr><tr><td>🙂</td><td>██████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>10</td></tr><tr><td>😄</td><td>█████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>13</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 10:29:49</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Leaving breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 10:32:17</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>07_tuples-and-dicts-and-strings</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>█████████████████████████</td><td>25</td></tr><tr><td>😄</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-10 10:32:51</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>07_tuples-and-dicts-and-strings</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>12</td></tr><tr><td>😄</td><td>████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>12</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-10 10:53:48</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class ending**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-10 11:28:22</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I said in class I would provide an example of how to write functions and store them in a .py file so you can use them in multiple notebooks.  Here’s the example.  You should be able to run the notebook <code>example-using-module.ipynb</code>.  Check out the file `my_<a href="http://module.py">http://module.py</a> to see how the functions are defined.  Check out the `run_from_command_<a href="http://line.py">http://line.py</a> to see how to run the code from the command line.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>

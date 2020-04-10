@@ -77,6 +77,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 4/10  | Tuples, dicts, and strings; functions                                   |
     |       |                                                                         |
     |       |  + **Preclass**: `07 tuples dicts and strings`_; `08 functions`_        |
+    |       |  + **Postclass**: `Class 6: Tuples; Stings; Dicts and Functions`_       |
     +-------+-------------------------------------------------------------------------+
     | 4/13  | Pandas data frames                                                      |
     |       |                                                                         |
@@ -203,7 +204,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 3: Conditionals and Loops`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/02/index.html
 .. _`Class 4: Lists`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/index.html
 .. _`Class 5: Numpy Arrays`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/04/index.html
-
+.. _`Class 6: Tuples; Stings; Dicts and Functions`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/index.html
 
 .. toctree::
    syllabus
