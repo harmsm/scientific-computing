@@ -87,7 +87,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------------------------+
     | 4/15  | Graphing and matplotlib                                                                   |
     |       |                                                                                           |
-    |       |  + **Preclass**: Inductive 10: Graphing in matplotlib                                     |
+    |       |  + **Preclass**: `Inductive 10: Graphing in matplotlib`_                                  |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/17  | Lab: programming puzzles                                                                  |
     |       |                                                                                           |
@@ -191,6 +191,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Inductive 07: Tuples; Dicts and Strings`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/07_tuples-and-dicts-and-strings.ipynb
 .. _`Inductive 08: Functions`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/08_functions.ipynb
 .. _`Inductive 09: pandas DataFrames`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/09_pandas.ipynb
+.. _`Inductive 10: Graphing in matplotlib`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/10_matplotlib.ipynb
 .. _`Lab 00.1: Programming Puzzles`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/00.1_programming-puzzles.zip
 .. _`Chapter 1: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/01_simulation.zip
 .. _`Lab 01: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/01_simulation.zip
