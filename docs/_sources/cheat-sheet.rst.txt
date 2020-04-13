@@ -334,8 +334,9 @@ Important libraries:
 + math (math functions)
 + random (generate random numbers)
 + numpy (fast arrays and some math functions)
-+ scipy (tons of scienc-y extensions of python)
++ pandas (dataframes in python)
 + matplotlib (used for making complex plots)
++ scipy (tons of scienc-y extensions of python)
 + os (used for doing things like listing files in a directory
 + combinations (used to make combinations and permutations efficiently)
 
@@ -365,8 +366,70 @@ every time the function is run.
 
 .. warning::
 
-    Functions "know" about varibles outside the function.  If I used :code:`z`
+    Functions "know" about variables outside the function.  If I used :code:`z`
     inside of :code:`my_function`, the program would run fine.  This is a **bad**
     idea because :code:`z` is then implicitly defined.  I could get a different
     result if I run :code:`my_function(5)` **Always** pass in variables as
     arguments (like :code:`x` above) rather than accessing them implicitly.
+
+
+pandas
+------
+
+Construction
+............
+
+.. code-block:: python
+
+    # column-centric construction
+    import pandas as pd
+    df = pd.DataFrame({"col1":[v1,v2,...],"col2":[vi,vj,...],...})
+
+.. code-block:: python
+
+    # Read from csv
+    df = pd.read_csv("some_csv_file.csv")
+
+    # Read from excel
+    df = pd.read_excel("some_excel_file.xlsx")
+
+Writing out
+...........
+
+.. code-block:: python
+
+    df.to_excel("some_excel_file.xlsx")
+    df.to_csv("some_csv_file.csv")
+
+Accessing data
+..............
+
++ :code:`df.iloc[i,j]` accesses the ith row and jth column in the data frame.
+ * :code:`iloc[i,j]` will **always refer to the same place in the data
+   frame.** :code:`iloc[0,0]` is the top-left, :code:`iloc[n_row-1,n_col-1]` is
+   the bottom-right.
+ * :code:`iloc[i,j]` will *not* always refer to the same data.  If you
+   delete or reorder rows and columns, different data could be
+   in each cell.
++ :code:`df.loc['x','y']`:
+ * :code:`loc['x','y']` will **always refer to the same data.**  This
+   is true even if you delete or reorder rows and columns.
+ * :code:`loc['x','y']` will **not** always refer to the same place
+   in the data frame.
+
+.. warning::
+    :code:`pandas` DataFrames often have rows whose indexes are numbers.
+    :code:`df = pd.DataFrame({"col1":[1,2,3],"col2":[4,5,6]})` will yield a
+    dataframe where the rows are named :code:`0,1,2`. If we delete row
+    :code:`0`, rows :code:`1` and :code:`2` will still be accessed by
+    :code:`loc[1,:]` and :code:`loc[2,:]`.
+
++ You can slice a pandas DataFrame like a numpy array.
+
++ Both :code:`iloc` and :code:`loc` can be used for setting values:
+
+    .. code-block:: python
+
+        df = pd.DataFrame({"col1":[1,2,3],"col2":[4,5,6]})
+        df.loc[1,"col1"] = 17 # set row 1, "col1" (the 2 above) to 17
+        df.iloc[1,1] = 23 # set the second row, second column (the 5 above) to 17

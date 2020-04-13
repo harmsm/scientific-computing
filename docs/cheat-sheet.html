@@ -118,6 +118,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pandas">pandas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#construction">Construction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-out">Writing out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-data">Accessing data</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -643,8 +649,9 @@ following would do exactly the same as the above program.</p>
 <li><p>math (math functions)</p></li>
 <li><p>random (generate random numbers)</p></li>
 <li><p>numpy (fast arrays and some math functions)</p></li>
-<li><p>scipy (tons of scienc-y extensions of python)</p></li>
+<li><p>pandas (dataframes in python)</p></li>
 <li><p>matplotlib (used for making complex plots)</p></li>
+<li><p>scipy (tons of scienc-y extensions of python)</p></li>
 <li><p>os (used for doing things like listing files in a directory</p></li>
 <li><p>combinations (used to make combinations and permutations efficiently)</p></li>
 </ul>
@@ -670,11 +677,83 @@ function.  <code class="code docutils literal notranslate"><span class="pre">a</
 every time the function is run.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Functions “know” about varibles outside the function.  If I used <code class="code docutils literal notranslate"><span class="pre">z</span></code>
+<p>Functions “know” about variables outside the function.  If I used <code class="code docutils literal notranslate"><span class="pre">z</span></code>
 inside of <code class="code docutils literal notranslate"><span class="pre">my_function</span></code>, the program would run fine.  This is a <strong>bad</strong>
 idea because <code class="code docutils literal notranslate"><span class="pre">z</span></code> is then implicitly defined.  I could get a different
 result if I run <code class="code docutils literal notranslate"><span class="pre">my_function(5)</span></code> <strong>Always</strong> pass in variables as
 arguments (like <code class="code docutils literal notranslate"><span class="pre">x</span></code> above) rather than accessing them implicitly.</p>
+</div>
+</div>
+<div class="section" id="pandas">
+<h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="construction">
+<h3>Construction<a class="headerlink" href="#construction" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># column-centric construction</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;col1&quot;</span><span class="p">:[</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="o">...</span><span class="p">],</span><span class="s2">&quot;col2&quot;</span><span class="p">:[</span><span class="n">vi</span><span class="p">,</span><span class="n">vj</span><span class="p">,</span><span class="o">...</span><span class="p">],</span><span class="o">...</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read from csv</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;some_csv_file.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Read from excel</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;some_excel_file.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-out">
+<h3>Writing out<a class="headerlink" href="#writing-out" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;some_excel_file.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;some_csv_file.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-data">
+<h3>Accessing data<a class="headerlink" href="#accessing-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">df.iloc[i,j]</span></code> accesses the ith row and jth column in the data frame.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">iloc[i,j]</span></code> will <strong>always refer to the same place in the data
+frame.</strong> <code class="code docutils literal notranslate"><span class="pre">iloc[0,0]</span></code> is the top-left, <code class="code docutils literal notranslate"><span class="pre">iloc[n_row-1,n_col-1]</span></code> is
+the bottom-right.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">iloc[i,j]</span></code> will <em>not</em> always refer to the same data.  If you
+delete or reorder rows and columns, different data could be
+in each cell.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">df.loc['x','y']</span></code>:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">loc['x','y']</span></code> will <strong>always refer to the same data.</strong>  This
+is true even if you delete or reorder rows and columns.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">loc['x','y']</span></code> will <strong>not</strong> always refer to the same place
+in the data frame.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="code docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames often have rows whose indexes are numbers.
+<code class="code docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.DataFrame({&quot;col1&quot;:[1,2,3],&quot;col2&quot;:[4,5,6]})</span></code> will yield a
+dataframe where the rows are named <code class="code docutils literal notranslate"><span class="pre">0,1,2</span></code>. If we delete row
+<code class="code docutils literal notranslate"><span class="pre">0</span></code>, rows <code class="code docutils literal notranslate"><span class="pre">1</span></code> and <code class="code docutils literal notranslate"><span class="pre">2</span></code> will still be accessed by
+<code class="code docutils literal notranslate"><span class="pre">loc[1,:]</span></code> and <code class="code docutils literal notranslate"><span class="pre">loc[2,:]</span></code>.</p>
+</div>
+<ul>
+<li><p>You can slice a pandas DataFrame like a numpy array.</p></li>
+<li><p>Both <code class="code docutils literal notranslate"><span class="pre">iloc</span></code> and <code class="code docutils literal notranslate"><span class="pre">loc</span></code> can be used for setting values:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;col1&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="s2">&quot;col2&quot;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17</span> <span class="c1"># set row 1, &quot;col1&quot; (the 2 above) to 17</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">23</span> <span class="c1"># set the second row, second column (the 5 above) to 17</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
 </div>
 </div>
 </div>
