@@ -56,9 +56,7 @@ class GroupNameGenerator:
         # Remove expletives
         expletives = self._download_json("https://github.com/dariusk/corpora/raw/master/data/words/expletives.json")
         expletives = [e.lower() for e in expletives]
-        expletives.append("genitals")
-        expletives.append("genitalia")
-        expletives.append("puberty")
+        expletives.extend(["genitals","genitalia","puberty","virgin"])
 
         # Final, cleaned up list of words
         self.noun = [n for n in noun if not bad_char.search(n) and n not in expletives]
