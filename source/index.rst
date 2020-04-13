@@ -83,6 +83,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     |       |                                                                                           |
     |       |  + **Due**: `Lab 00.0: Python Practice`_                                                  |
     |       |  + **Preclass**: `Inductive 09: pandas DataFrames`_                                       |
+    |       |  + **Postclass**: `Class 7: Pandas DataFrames`_; `Lab 00.0: Python Practice Key`_         |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/15  | Graphing and matplotlib                                                                   |
     |       |                                                                                           |
@@ -206,6 +207,9 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 4: Lists`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/03/index.html
 .. _`Class 5: Numpy Arrays`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/04/index.html
 .. _`Class 6: Tuples; Stings; Dicts and Functions`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/index.html
+.. _`Class 7: Pandas DataFrames`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/index.html
+.. _`Lab 00.0: Python Practice Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/00.0_python-practice_key.zip
+
 
 
 .. toctree::

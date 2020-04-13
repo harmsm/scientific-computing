@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>Class 7: pandas dataframes</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>Class 7: pandas dataframes</h3>
+                <p>April 13, 2020</p>
+            </div>
+
+            
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/09_pandas.ipynb">09_pandas.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/09_pandas_key.ipynb">Key: 09_pandas_key.ipynb (right-click to download)</a>
+                                    </li>
+
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/00.0_python-practice_key.zip">00.0_python-practice key</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+
+                <div class="card bg-light p-2">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width=“560” height=“315" src="https://www.youtube.com/embed/fsyO3O-WxyE" frameborder=“0" allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+                        </div>
+
+                </div>
+
+            
+
+            
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 08:58:45</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class started**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:07:03</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:07:23</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help! We need a TA! (reply in thread if you need a TA)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1033919046836_4ac831f929bccbaac91b_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Cathy Robinson</div>
+                                            <div class="time">2020-04-13 09:32:49</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can we get a TA please? (…._Emu)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:07:33</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Share one new thing you learned from the <code>09_pandas</code>notebook?  (Reply in thread.)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-13 09:14:53</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">You can call a value by row/column titles or index position</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1031750862080_37738d444fe38fb54b1a_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Rachel Lutz</div>
+                                            <div class="time">2020-04-13 09:15:30</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">We can make really accessible tables with panda</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/ac069e6efe4b8366b95dc6856c8d6c6c.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Jessica Puente</div>
+                                            <div class="time">2020-04-13 09:16:53</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Loc= means location </div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-13 09:38:20</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">You can load .csv into pd dataframes</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-02/1043186752981_97f0e63cee186224b8c1_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Andrew Holston</div>
+                                            <div class="time">2020-04-13 09:38:28</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">You can save the dataframes to csv and excel files.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/164ab32970f86598dbf294d5317b5bab.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0020-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Zach Garrison</div>
+                                            <div class="time">2020-04-13 09:39:09</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">there are two ways to access elements within a panda data set and one of which will not work if you try to access a deleted element where the other location command will work as long as the location still exists (even if the data has changed)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:07:52</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What should we discuss in the main session from the <code>09_pandas</code>notebook? (Reply in thread).</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1021800774642_bd299c0e555acdc7709d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Amy Robbins</div>
+                                            <div class="time">2020-04-13 09:14:27</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">This is probably really simple but we need help on: Change the cell below so it prints out all of column "y" (hint: you can slice)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:15:36</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Try checking what <code>[:,:]</code> does</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1031750862080_37738d444fe38fb54b1a_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Rachel Lutz</div>
+                                            <div class="time">2020-04-13 09:16:08</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Same as Amy. I feel like it should be simple but I am having a bit of a hard time indexing</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:16:55</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Okay, anytime you have <code>name_of_dataframe.iloc[]</code>you can have slicing inside of the `[]` , so having <code>name_of_dataframe.iloc[:,:]</code>will print all rows and all columns</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1024226818211_cb8b387d949e0182aa51_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Roz Carrier</div>
+                                            <div class="time">2020-04-13 09:17:14</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help? How do you print just column y (4,5,6) without (a,b,c)?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1031750862080_37738d444fe38fb54b1a_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Rachel Lutz</div>
+                                            <div class="time">2020-04-13 09:19:47</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">@ Roz we got it to work with df.loc[:, "y"]</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1033862858804_000ec71d46a8f3eeb8a2_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Katie Fisher</div>
+                                            <div class="time">2020-04-13 09:21:17</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">can you ever get back the data that you remove from your data frame? For example we removed row 2 but can you ever access that row again?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-13 09:24:16</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Does every cell have to be the same type of object in a panda dataframe? For example, if I want to have a column with single float values but another column with vectors or lists or another one with strings?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1031750862080_37738d444fe38fb54b1a_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Rachel Lutz</div>
+                                            <div class="time">2020-04-13 09:25:30</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I don't particularly understand this:</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:26:19</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><code>loc</code>always looks stuff up by name, and `iloc` will always go by index</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b7cd8c9897157ef1a784f2c5ee312021.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Joseph Harman</div>
+                                            <div class="time">2020-04-13 09:37:46</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><span class="font-italic">@Laura Desban </span>you can set any part (or all) of a dataframe to any datatype. You can also change datatype at will using
+<div class="card m-1 bg-light p-2"><pre><code>astype()</code></pre></div>For example - change every value in column "a" to an integer:
+<code></code>df["a"] = df["a"].astype(int)`<code></code>Note that you have to explicitly assign df["a"] to save the change within your dataframe. This is really useful if, for example, your data comes off an instrument as strings or some other weird datatype</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-13 09:38:42</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Once we load .csv into a pd dataframe, how can it be processed/analyzed downstream?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b7cd8c9897157ef1a784f2c5ee312021.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Joseph Harman</div>
+                                            <div class="time">2020-04-13 09:40:28</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><span class="font-italic">@Katie Fisher </span>if you delete from a dataframe, the data is gone from that dataframe. However, you can always 1) save dataframes as you go and/or 2) read in your data again (if it's coming from a .csv, for example)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1038029873206_ece4bc4c49764d06aa82_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Cori Cahoon</div>
+                                            <div class="time">2020-04-13 09:41:01</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">For saving a pandas dataframe to a csv is there a way to specify the directory it will save the csv into?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b7cd8c9897157ef1a784f2c5ee312021.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Joseph Harman</div>
+                                            <div class="time">2020-04-13 09:44:25</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><span class="font-italic">@Cori Cahoon </span>yep! If i want to save "file1" to "folder1", you would say
+<div class="card m-1 bg-light p-2"><pre><code><a href="http://df.to">http://df.to</a>csv("folder1/file1")</code></pre></div>assuming "folder1" is in the same directory as the notebook you're working in.
+
+I use the package <code>os</code>often for file writing - you can do things like `os.mkdir("folder1")` to make folders from your jupyter notebook environment</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">2</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/5fd9e1def16e79c4cc2d0c018490b311.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Lila Kaye</div>
+                                            <div class="time">2020-04-13 09:46:27</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">How the Boolean values have anything to do with whats going on</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-13 09:47:24</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can you create a dataframe with only the column names for information and then fill it progressively with your data? (while specifying rows progressively as well?)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b7cd8c9897157ef1a784f2c5ee312021.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Joseph Harman</div>
+                                            <div class="time">2020-04-13 09:54:07</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><span class="font-italic">@Laura Desban </span>here's a quick example of that:
+
+<div class="card m-1 bg-light p-2"><pre><code>df = pd.DataFrame(columns=["A", "B"])
+
+for i in range(2):
+    df.loc[i] = [1,2]</code></pre></div>returns:
+"A"  "B"
+  1    2
+  1    2
+  1    2</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-13 09:58:14</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can you specify the name of the rows too?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/b7cd8c9897157ef1a784f2c5ee312021.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Joseph Harman</div>
+                                            <div class="time">2020-04-13 10:12:56</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">yep
+<div class="card m-1 bg-light p-2"><pre><code>df = pd.DataFrame(columns=["A", "B"])
+
+for i in ["x", "y", "z"]:
+    df.loc[i] = [1,2]
+df</code></pre></div>returns:
+     "A" "B"
+ x   1   2
+ y   1   2
+ z   1   2</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-13 09:08:39</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>09_pandas</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td> ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>█████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>5</td></tr><tr><td>🙂</td><td>█████████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>13</td></tr><tr><td>😄</td><td>██████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>6</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1033919046836_4ac831f929bccbaac91b_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Cathy Robinson</div>
+                                            <div class="time">2020-04-13 09:32:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can we get a TA in Emu?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:38:09</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Leaving breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-13 09:54:57</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class ending**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
