@@ -90,7 +90,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+-------------------------------------------------------------------------------------------+
     | 4/17  | Lab: programming puzzles                                                                  |
     |       |                                                                                           |
-    |       |  + **Preclass**: `Lab 01: Simulation`_                                                    |
+    |       |  + **Preclass**: lab_00_01                                                                |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/20  | Simulation                                                                                |
     |       |                                                                                           |
@@ -190,8 +190,8 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Inductive 07: Tuples; Dicts and Strings`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/07_tuples-and-dicts-and-strings.ipynb
 .. _`Inductive 08: Functions`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/08_functions.ipynb
 .. _`Inductive 09: pandas DataFrames`: https://github.com/harmsm/pythonic-science/raw/master/chapters/00_inductive-python/09_pandas.ipynb
-.. _`Lab 01: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/01_simulation.zip
 .. _`Chapter 1: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/01_simulation.zip
+.. _`Lab 01: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/01_simulation.zip
 .. _`Chapter 2: Regression`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/02_regression.zip
 .. _`Lab 02: Regression`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/02_regression.zip
 .. _`Configure Environment`: https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html
