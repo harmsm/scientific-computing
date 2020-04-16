@@ -88,6 +88,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 4/15  | Graphing and matplotlib                                                                   |
     |       |                                                                                           |
     |       |  + **Preclass**: `Inductive 10: Graphing in matplotlib`_                                  |
+    |       |  + **Postclass**: `Class 8: Matplotlib`_                                                  |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/17  | Lab: programming puzzles                                                                  |
     |       |                                                                                           |
@@ -210,7 +211,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 6: Tuples; Stings; Dicts and Functions`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/05/index.html
 .. _`Class 7: Pandas DataFrames`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/index.html
 .. _`Lab 00.0: Python Practice Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/00.0_python-practice_key.zip
-
+.. _`Class 8: Matplotlib`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/07/index.html
 
 
 .. toctree::
