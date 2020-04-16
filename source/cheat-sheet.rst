@@ -5,11 +5,18 @@ Python quick reference
 Resources
 ---------
 
+Cheat sheets
+.............
+
+* `standard python <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_
+* `numpy <https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf>`_
+* `pandas <https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf>`_
+* `matplotlib <https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf>`_
+
 General python resources
 ........................
 
 * `socratica youtube channel <http://bit.ly/PythonSocratica>`_: an amazing set of introductory python videos.
-* `insane python cheat sheet <https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf>`_: most of python syntax, all on one two-sided sheet.
 * `python gotchas <http://docs.python-guide.org/en/latest/writing/gotchas/>`_: things that tend to trip up python programmers.
 * `python style guide <https://www.python.org/dev/peps/pep-0008/>`_: rules for writing python code so other people can actually read it.
 * `plotting reference <https://github.com/harmsm/pythonic-science/raw/master/reference/plotting_reference.ipynb>`_: Jupyter notebook showing a bunch of matplotlib functionality (right click to save jupyter notebook).
@@ -24,6 +31,8 @@ Jupyter resources
 
 Scientific-python resources
 ...........................
+
+
 
 * `fitting and summary of quality-of-fit measures <http://connor-johnson.com/2014/02/18/linear-regression-with-python/>`_: resource for doing fitting in python.
 
