@@ -44,7 +44,7 @@ Schedule and course materials
 In general, Mon and Wed will be instruction days where we cover new programming
 material.  Fri will be an open "lab" where you will work on exercises in groups.
 
-.. table::
+.. table:: 
 
     +-------+-------------------------------------------------------------------------------------------+
     | Date  | Topic                                                                                     |
@@ -93,14 +93,17 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 4/17  | Lab: programming puzzles                                                                  |
     |       |                                                                                           |
     |       |  + **Preclass**: `Lab 00.1: Programming Puzzles`_                                         |
+    |       |  + **Postclass**: `Class 9: Python Puzzles Lab`_                                          |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/20  | Simulation                                                                                |
     |       |                                                                                           |
     |       |  + **Preclass**: `Chapter 1: Simulation`_                                                 |
+    |       |  + **Postclass**: `Class 10: Random numbers in python`_                                   |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/22  | Simulation                                                                                |
     |       |                                                                                           |
     |       |  + **Due**: `Lab 00.1: Programming Puzzles`_                                              |
+    |       |  + **Postclass**: `Class 11: Stats in python`_; `Lab 00.1: Programming Puzzles Key`_      |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/24  | Lab: simulating an experiment.                                                            |
     |       |                                                                                           |
@@ -212,6 +215,10 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 7: Pandas DataFrames`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/index.html
 .. _`Lab 00.0: Python Practice Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/06/00.0_python-practice_key.zip
 .. _`Class 8: Matplotlib`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/07/index.html
+.. _`Class 9: Python Puzzles Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/08/index.html
+.. _`Class 10: Random numbers in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/09/index.html
+.. _`Class 11: Stats in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/10/index.html
+.. _`Lab 00.1: Programming Puzzles Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/08/00.1_programming-puzzles_key.zip
 
 
 .. toctree::
