@@ -14,10 +14,13 @@ import argparse, sys, json
 
 def session_to_html(control,template_file):
 
-    threads = session_to_site.parse_slack_channel(control["slack"]["zipfile"],
-                                                  control["slack"]["channel"])
+    try:
+        threads = session_to_site.parse_slack_channel(control["slack"]["zipfile"],
+                                                      control["slack"]["channel"])
 
-    control["threads"] = threads
+        control["threads"] = threads
+    except KeyError:
+        pass 
 
     template_loader = jinja2.FileSystemLoader(searchpath="./")
     template_env = jinja2.Environment(loader=template_loader,
