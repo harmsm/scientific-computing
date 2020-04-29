@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>Class 14: Model Fitting II</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>Class 14: Model Fitting II</h3>
+                <p>April 29, 2020</p>
+            </div>
+
+            
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/preclass.zip">preclass.zip (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/postclass.zip">postclass.zip (right-click to download)</a>
+                                    </li>
+
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/02_regression.zip">Lab 2 simulations key (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+
+            
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-29 08:58:38</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">In breakout rooms, you’ll need to implement a model fit.  I assigned each breakout room a model:
+<div class="card m-1 bg-light p-2"><pre><code>aerosol_avocet 1
+aligned_avocet 2
+broker_barnacle 3
+dread_dingo    4
+flowing_fossa  5
+foggy_fossa    6
+injured_indri  7
+irritate_iguana 8
+literary_lion  1
+reserve_robin  2
+stolen_skunk   3
+unequal_uakari 4
+wistful_walrus 5</code></pre></div></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:00:41</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class started**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:01:05</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:05:39</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help! We need a TA! (reply in thread if you need a TA)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1025815037889_5137dc560fd9bcc2180b_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Nicole Paterson</div>
+                                            <div class="time">2020-04-29 09:05:51</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">TA?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:06:23</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Share one new thing you learned from the <code>01_fitting-with-least-squares</code>notebook?  (Reply in thread.)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-29 09:36:02</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">I learned that you can perform regressions for many functions for multiple parameters (not just linear).</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:07:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What should we discuss in the main session from the <code>01_fitting-with-least-squares</code>notebook? (Reply in thread).</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-29 09:36:43</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">How does sum of square residuals contribute to the fit?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:38:30</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">It's the value that is being minimized by <code>scipy.optimization.least_squares</code> to achieve a better fit</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-04-29 09:08:15</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the <code>01_fitting-with-least-squares</code>notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>███████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>11</td></tr><tr><td>🙂</td><td>████████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>8</td></tr><tr><td>😄</td><td>█████ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢</td><td>5</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/9b3b8fd3f6a8c1b3ca61e88489396893.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Tory Herman</div>
+                                            <div class="time">2020-04-29 09:08:17</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">we need a TA in avocet!</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-04-29 09:12:41</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">In the notebook, it says to “Write the SSR and number of parameters on the board”.  Since we have no board, please post these as a reply in thread to this message.</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-29/1034345230309_77e476d3da36dfd9a600_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Daria Wonderlick</div>
+                                            <div class="time">2020-04-29 09:14:05</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Model 4: 3 parameters, SSR = 1.99</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://secure.gravatar.com/avatar/3349a17c08146edfea83eed31d2624cd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Desban</div>
+                                            <div class="time">2020-04-29 09:26:05</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">;odel 3: 4 parameters, SSR = 1.82</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-27/1032160081344_1e0bf4814897ab1b0a1c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Natanya Villegas</div>
+                                            <div class="time">2020-04-29 09:34:11</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Model 8: 3 parameters, SSR = 1.9687498052988073</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1025815037889_5137dc560fd9bcc2180b_72.png">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Nicole Paterson</div>
+                                            <div class="time">2020-04-29 09:21:19</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">TA?!</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-01/1043922210454_5a7c9f7f382200be6311_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Heather Foote</div>
+                                            <div class="time">2020-04-29 09:27:23</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">We need a TA in literary lion lease</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-04-01/1044063468375_58cf4702a0e894de5123_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Adam Fries</div>
+                                            <div class="time">2020-04-29 09:33:35</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">wistful_walrus: y = a + bx^2 + cx^3 + dx^4;
+4 parameters, SSR = 2.19</div>
+                                        </div>
+
+                                        
+
+
+                                        
+                                            <div class="button bg-light m-1 p-1 rounded-lg border">
+                                            
+                                                
+                                                    <span class="button">👍<span class="badge badge-light">1</span></span>
+                                                
+                                            
+                                            </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-04-29 09:34:53</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Leaving breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
