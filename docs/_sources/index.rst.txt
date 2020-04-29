@@ -112,10 +112,12 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 4/27  | Fitting models to data                                                                    |
     |       |                                                                                           |
     |       |  + **Preclass**: `Chapter 2: Regression`_                                                 |
+    |       |  + **Postclass**: `Class 13: Model Fitting I`_                                            |
     +-------+-------------------------------------------------------------------------------------------+
     | 4/29  | Fitting models to data                                                                    |
     |       |                                                                                           |
     |       |  + **Due**: `Lab 01: Simulation`_                                                         |
+    |       |  + **Postclass**: `Class 14: Model Fitting II`_; `Lab 01: Simulations Key`_               |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/1   | Lab: fitting models to data                                                               |
     |       |                                                                                           |
@@ -219,6 +221,11 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 10: Random numbers in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/09/index.html
 .. _`Class 11: Stats in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/10/index.html
 .. _`Lab 00.1: Programming Puzzles Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/08/00.1_programming-puzzles_key.zip
+.. _`Class 13: Model Fitting I`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/12/index.html
+.. _`Class 14: Model Fitting II`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/index.html
+.. _`Lab 01: Simulations Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/02_regression.zip
+
+
 
 
 .. toctree::
