@@ -223,7 +223,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Lab 00.1: Programming Puzzles Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/08/00.1_programming-puzzles_key.zip
 .. _`Class 13: Model Fitting I`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/12/index.html
 .. _`Class 14: Model Fitting II`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/index.html
-.. _`Lab 01: Simulations Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/02_regression.zip
+.. _`Lab 01: Simulations Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/01_simulation.zip
 
 
 
