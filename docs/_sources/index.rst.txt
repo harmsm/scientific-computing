@@ -122,10 +122,11 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/1   | Lab: fitting models to data                                                               |
     |       |                                                                                           |
     |       |  + **Preclass**: `Lab 02: Regression`_                                                    |
+    |       |  + **Postclass**: `Class 15: Model Fitting Lab`_                                          |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/4   | Intro to machine learning                                                                 |
     |       |                                                                                           |
-    |       |  + **Preclass**: chapter_04                                                               |
+    |       |  + **Preclass**: `Chapter 4: Machine Learning Lite`_                                      |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/6   | Classification with machine learning                                                      |
     |       |                                                                                           |
@@ -134,53 +135,53 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/8   | Lab: classification using machine learning                                                |
     |       |                                                                                           |
     |       |  + **Due**: `Prospectus`_                                                                 |
-    |       |  + **Preclass**: lab_04                                                                   |
+    |       |  + **Preclass**: `Lab 04: Machine Learning`_                                              |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/11  | Molecular structures                                                                      |
     |       |                                                                                           |
-    |       |  + **Preclass**: chapter_03                                                               |
+    |       |  + **Preclass**: `Chapter 3: Dealing with Files`_                                         |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/13  | Molecular structures                                                                      |
     |       |                                                                                           |
-    |       |  + **Due**: lab_04                                                                        |
+    |       |  + **Due**: `Lab 04: Machine Learning`_                                                   |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/15  | Lab: calculating structural properties                                                    |
     |       |                                                                                           |
-    |       |  + **Preclass**: lab_03                                                                   |
+    |       |  + **Preclass**: Lab 03: Small files                                                      |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/18  | Big(ish) data                                                                             |
     |       |                                                                                           |
-    |       |  + **Preclass**: chapter_05                                                               |
+    |       |  + **Preclass**: `Chapter 5: Big Files (HTS)`_                                            |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/20  | Big(ish) data                                                                             |
     |       |                                                                                           |
-    |       |  + **Due**: lab_03                                                                        |
+    |       |  + **Due**: Lab 03: Small files                                                           |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/22  | Lab: analyzing HTS data                                                                   |
     |       |                                                                                           |
-    |       |  + **Preclass**: lab_05                                                                   |
+    |       |  + **Preclass**: `Lab 05: Big Files (HTS)`_                                               |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/25  | Memorial day, no class                                                                    |
     |       |                                                                                           |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/27  | Working with images                                                                       |
     |       |                                                                                           |
-    |       |  + **Due**: lab_05                                                                        |
+    |       |  + **Due**: `Lab 05: Big Files (HTS)`_                                                    |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/29  | Working with images, start lab                                                            |
     |       |                                                                                           |
-    |       |  + **Preclass**: lab_06                                                                   |
+    |       |  + **Preclass**: `Lab 06: Image Processing`_                                              |
     +-------+-------------------------------------------------------------------------------------------+
     | 6/1   | Finish lab: analyzing microscopy images                                                   |
     |       |                                                                                           |
-    |       |  + **Preclass**: lab_06                                                                   |
+    |       |  + **Preclass**: `Lab 06: Image Processing`_                                              |
     +-------+-------------------------------------------------------------------------------------------+
     | 6/3   | Final project, in-class work                                                              |
     |       |                                                                                           |
     +-------+-------------------------------------------------------------------------------------------+
     | 6/5   | Final project, in-class work                                                              |
     |       |                                                                                           |
-    |       |  + **Due**: lab_06                                                                        |
+    |       |  + **Due**: `Lab 06: Image Processing`_                                                   |
     +-------+-------------------------------------------------------------------------------------------+
     | 6/8   | Final project due                                                                         |
     |       |                                                                                           |
@@ -203,6 +204,12 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Lab 01: Simulation`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/01_simulation.zip
 .. _`Chapter 2: Regression`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/02_regression.zip
 .. _`Lab 02: Regression`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/02_regression.zip
+.. _`Chapter 4: Machine Learning Lite`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/04_machine-learning.zip
+.. _`Lab 04: Machine Learning`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/04_machine-learning.zip
+.. _`Chapter 3: Dealing with Files`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/03_dealing-with-files.zip
+.. _`Chapter 5: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/05_big-files.zip
+.. _`Lab 05: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/05_high-throughput-sequencing.zip
+.. _`Lab 06: Image Processing`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/06_microscopy.zip
 .. _`Configure Environment`: https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html
 .. _`Initial Survey`: https://forms.gle/XMfB2a9tpuuGeydY8
 .. _`Lab 00.0: Python Practice`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/00.0_python-practice.zip
@@ -224,8 +231,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 13: Model Fitting I`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/12/index.html
 .. _`Class 14: Model Fitting II`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/index.html
 .. _`Lab 01: Simulations Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/01_simulation.zip
-
-
+.. _`Class 15: Model Fitting Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/14/index.html
 
 
 .. toctree::
