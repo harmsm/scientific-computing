@@ -46,6 +46,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 
 .. table:: 
 
+
     +-------+-------------------------------------------------------------------------------------------+
     | Date  | Topic                                                                                     |
     +=======+===========================================================================================+
@@ -127,6 +128,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/4   | Intro to machine learning                                                                 |
     |       |                                                                                           |
     |       |  + **Preclass**: `Chapter 4: Machine Learning Lite`_                                      |
+    |       |  + **Postclass**: `Class 16: Intro to machine learning`_                                  |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/6   | Classification with machine learning                                                      |
     |       |                                                                                           |
@@ -167,6 +169,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/27  | Working with images                                                                       |
     |       |                                                                                           |
     |       |  + **Due**: `Lab 05: Big Files (HTS)`_                                                    |
+    |       |  + **Preclass**: `Chapter 6: Image Analysis`_                                             |
     +-------+-------------------------------------------------------------------------------------------+
     | 5/29  | Working with images, start lab                                                            |
     |       |                                                                                           |
@@ -209,6 +212,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Chapter 3: Dealing with Files`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/03_dealing-with-files.zip
 .. _`Chapter 5: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/05_big-files.zip
 .. _`Lab 05: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/05_high-throughput-sequencing.zip
+.. _`Chapter 6: Image Analysis`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/06_image-analysis.zip
 .. _`Lab 06: Image Processing`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/06_microscopy.zip
 .. _`Configure Environment`: https://python-for-scientists.readthedocs.io/en/latest/_pages/install_python.html
 .. _`Initial Survey`: https://forms.gle/XMfB2a9tpuuGeydY8
@@ -232,6 +236,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 14: Model Fitting II`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/index.html
 .. _`Lab 01: Simulations Key`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/13/01_simulation.zip
 .. _`Class 15: Model Fitting Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/14/index.html
+.. _`Class 16: Intro to machine learning`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/15/index.html
 
 
 .. toctree::
