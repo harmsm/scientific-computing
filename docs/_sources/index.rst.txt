@@ -152,7 +152,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+------------------------------------------------------------------------------------------------+
     | 5/15  | Lab: calculating structural properties                                                         |
     |       |                                                                                                |
-    |       |  + **Preclass**: Lab 03: Small files                                                           |
+    |       |  + **Preclass**: `Lab 03: Small files`_                                                        |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/18  | Big(ish) data                                                                                  |
     |       |                                                                                                |
@@ -160,7 +160,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     +-------+------------------------------------------------------------------------------------------------+
     | 5/20  | Big(ish) data                                                                                  |
     |       |                                                                                                |
-    |       |  + **Due**: Lab 03: Small files                                                                |
+    |       |  + **Due**: `Lab 03: Small files`_                                                             |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/22  | Lab: analyzing HTS data                                                                        |
     |       |                                                                                                |
@@ -213,6 +213,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Chapter 4: Machine Learning Lite`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/04_machine-learning.zip
 .. _`Lab 04: Machine Learning`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/04_machine-learning.zip
 .. _`Chapter 3: Dealing with Files`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/03_dealing-with-files.zip
+.. _`Lab 03: Small files`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/03_molecular-structure.zip
 .. _`Chapter 5: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/05_big-files.zip
 .. _`Lab 05: Big Files (HTS)`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/05_high-throughput-sequencing.zip
 .. _`Chapter 6: Image Analysis`: https://github.com/harmsm/pythonic-science/raw/master/zips/chapters/06_image-analysis.zip
