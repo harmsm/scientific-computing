@@ -242,12 +242,11 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 15: Model Fitting Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/14/index.html
 .. _`Class 16: Intro to machine learning`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/15/index.html
 .. _`Class 17: Introduction to PCA`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/16/index.html
-.. _`Lab 02: Regression Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/02_regression.zip
+.. _`Lab 02: Regression Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/02_regression.zip
 .. _`Class 18: PCA lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/17/index.html
 .. _`Class 19: Dealing with files in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/18/index.html
 .. _`Class 20: Practicum: parsing a pdb file`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/19/index.html
-.. _`Lab 04: Machine Learning Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/04_machine-learning.zip
-
+.. _`Lab 04: Machine Learning Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/04_machine-learning.zip
 
 
 .. toctree::
