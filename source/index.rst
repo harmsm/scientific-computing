@@ -153,10 +153,12 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/15  | Lab: calculating structural properties                                                         |
     |       |                                                                                                |
     |       |  + **Preclass**: `Lab 03: Small files`_                                                        |
+    |       |  + **Postclass**: `Class 21: Processing pdb file lab`_                                         |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/18  | Big(ish) data                                                                                  |
     |       |                                                                                                |
     |       |  + **Preclass**: `Chapter 5: Big Files (HTS)`_                                                 |
+    |       |  + **Postclass**: `Class 22: Introduction to parsing big files`_                               |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/20  | Big(ish) data                                                                                  |
     |       |                                                                                                |
@@ -247,6 +249,8 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 19: Dealing with files in python`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/18/index.html
 .. _`Class 20: Practicum: parsing a pdb file`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/19/index.html
 .. _`Lab 04: Machine Learning Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/04_machine-learning.zip
+.. _`Class 21: Processing pdb file lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/20/index.html
+.. _`Class 22: Introduction to parsing big files`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/21/index.html
 
 
 .. toctree::

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- Bootstrap-enabled parent template -->
+
+<html>
+    <head>
+        <title>Class 21: File parsing lab</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style type="text/css">
+            .time {
+                display:inline-block;
+                color:rgb(150,150,150);
+                margin-left:0.5em;
+            }
+            .username {
+                display:inline-block;
+                font-weight:700;
+                line-height:1;
+            }
+            .message {
+                line-height:1.5;
+            }
+            .emoji {
+                display: inline-block;
+                max-width: 5%;
+                max-height: auto;
+
+            }
+            .main-container {
+                max-width: 700px;
+            }
+            .thread-container {
+                max-width: 700px;
+            }
+            .thread-hr {
+                margin-top: 0em;
+                margin-bottom: 0em;
+                border-width: 1px;
+            }
+            .attachment-img.img-fluid {
+
+            }
+            .video-container {
+                max-width:650px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container main-container">
+
+            <div class="card pl-2 pt-2 pb-2 m-1 border-1 mx-auto">
+                <h3>Class 21: File parsing lab</h3>
+                <p>May 15, 2020</p>
+            </div>
+
+            
+                <div class="card bg-light m-2 p-2 thread-container mx-auto">
+                    <h4>Downloads</h4>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Pre class</p>
+                                <ul class="list-group">
+                                
+
+                                    <li class="list-group-item">
+                                        <a href="https://github.com/harmsm/pythonic-science/raw/master/zips/labs/03_molecular-structure.zip">03_molecular-structure.zip (right-click to download)</a>
+                                    </li>
+
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+
+                            <div class="button bg-white m-2 p-2 rounded-lg border">
+                                <p class="font-bold">Post class</p>
+                                <ul class="list-group">
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+
+                <div class="card bg-light p-2">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width=“560” height=“315" src="https://www.youtube.com/embed/PoWuJM6xTN0" frameborder=“0" allow=“accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+                        </div>
+
+                </div>
+
+            
+
+            
+                <div class="card bg-light pt-1 pl-0 pr-0 pb-0 mt-2 ml-1 mr-1 mb-1 thread-container mx-auto">
+
+                    <h4 class="ml-2">Session log</h4>
+
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:00:34</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Class started**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:07:42</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Inserting a line in an existing file
+<div class="card m-1 bg-light p-2"><pre><code>f = open("path_to_file", "r")
+contents = f.readlines()
+f.close()
+
+contents.insert(index, value)
+
+f = open("path_to_file", "w")
+contents = "".join(contents)
+f.write(contents)
+f.close()</code></pre></div></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:14:56</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">**Entering breakout rooms**</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:15:55</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Share one new thing you learned from the 03_molecular-structure notebook?  (Reply in thread.)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:16:01</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">What should we discuss in the main session from the 03_molecular-structure notebook? (Reply in thread).</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1035625810836_f7a7608525e30614ce98_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Hannah Markovic</div>
+                                            <div class="time">2020-05-15 10:48:25</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can you give an example of a valid input for the calc_hn function? I keep getting errors</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Polly Poll</div>
+                                            <div class="time">2020-05-15 09:16:11</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><div class="card p-2"><div>Poll by <span class="font-italic">@Luis Perez </span></div><div class="font-italic">I would rate my understanding of the material in the 03_molecular-structure notebook as:</div><table class="table table-striped p-3"><tbody><tr><td>😱</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙁</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>😐</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr><tr><td>🙂</td><td>█████████████████████████</td><td>25</td></tr><tr><td>😄</td><td>⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ ⁢ </td><td>0</td></tr></tbody></table></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:16:22</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Help! We need a TA! (reply in thread if you need a TA)</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-30/1037760933703_ff58d5ff09cac775f97d_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Laura Taggart-Murphy</div>
+                                            <div class="time">2020-05-15 10:28:50</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Can we please get a TA in Breakout room 11?</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-05-15 09:20:26</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Check out the ‘Format string syntax’ section: <a href="https://docs.python.org/3.8/library/string.html">https://docs.python.org/3.8/library/string.html</a></div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-23/1020366259973_c68ab10bcb70c0d19f72_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Luis Perez</div>
+                                            <div class="time">2020-05-15 09:23:50</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg"><code>get_value</code>is my favorite way to call stuff from dictionaries</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+                        <div class="card p-0 mt-0 ml-1 mr-1 mb-1">
+                            
+
+                                
+                                    <div class="row mt-1 pl-1 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-05-15 10:50:38</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">Center of mass equation:</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+
+                                
+                                    <hr class="thread-hr"/>
+                                    <div class="row mt-0 pl-5 mb-1 pr-2">
+                                
+
+                                    <div class="col-3 col-sm-2">
+                                        <img class="img-fluid rounded m-1" src="https://avatars.slack-edge.com/2020-03-22/1017267032100_9348dd59003b9cc8e01c_72.jpg">
+                                    </div>
+                                    <div class="col-9 col-sm-10">
+                                        <div class="button m-0 p-0">
+                                            <div class="username">Mike Harms</div>
+                                            <div class="time">2020-05-15 10:50:56</div>
+                                        </div>
+
+                                        <div class="button m-0 p-0">
+                                            <div class="msg">“M” is the sum of all of the masses</div>
+                                        </div>
+
+                                        
+
+
+                                        
+
+                                    </div>
+                                </div>
+
+                            
+                        </div>
+                    
+
+                </div>
+            
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    </body>
+</html>
