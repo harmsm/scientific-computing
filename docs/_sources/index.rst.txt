@@ -163,6 +163,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/20  | Big(ish) data                                                                                  |
     |       |                                                                                                |
     |       |  + **Due**: `Lab 03: Small files`_                                                             |
+    |       |  + **Postclass**: `Class 23: Parsing big files class 2`_; `Lab 03: Small files Key`_           |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/22  | Lab: analyzing HTS data                                                                        |
     |       |                                                                                                |
@@ -251,6 +252,9 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Lab 04: Machine Learning Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/04_machine-learning.zip
 .. _`Class 21: Processing pdb file lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/20/index.html
 .. _`Class 22: Introduction to parsing big files`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/21/index.html
+.. _`Class 23: Parsing big files class 2`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/22/index.html
+.. _`Lab 03: Small files Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/03_molecular-structure.zip
+
 
 
 .. toctree::
