@@ -53,7 +53,7 @@ Final project
 .............
 
 + Project prospectus (Due Friday, May 8)
-+ Final project (Due Monday, June 8)
++ Final project (Due Monday, June 9)
 + The descriptions of these assignments, as well as the grading rubric, are given
   in the `Final project description <final-project.html>`_.
 

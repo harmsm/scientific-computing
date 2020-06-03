@@ -79,7 +79,7 @@ addressed, I might ask for a revised version.
 Final project
 .............
 
-Due on Monday, June 8th.
+Due on Tuesday, June 9th.
 
 You will turn in EITHER a url for a github repo OR a zipped directory containing
 your project.  The repo/directory should have the following structure:

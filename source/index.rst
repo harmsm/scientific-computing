@@ -168,6 +168,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 5/22  | Lab: analyzing HTS data                                                                        |
     |       |                                                                                                |
     |       |  + **Preclass**: `Lab 05: Big Files (HTS)`_                                                    |
+    |       |  + **Postclass**: `Class 24: fastq file lab`_                                                  |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/25  | Memorial day, no class                                                                         |
     |       |                                                                                                |
@@ -176,14 +177,17 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     |       |                                                                                                |
     |       |  + **Due**: `Lab 05: Big Files (HTS)`_                                                         |
     |       |  + **Preclass**: `Chapter 6: Image Analysis`_                                                  |
+    |       |  + **Postclass**: `Class 25: Working with images I`_; `Lab 05: Big Files (HTS) Key`_           |
     +-------+------------------------------------------------------------------------------------------------+
     | 5/29  | Working with images, start lab                                                                 |
     |       |                                                                                                |
     |       |  + **Preclass**: `Lab 06: Image Processing`_                                                   |
+    |       |  + **Postclass**: `Class 26: Working with images II and start Lab`_                            |
     +-------+------------------------------------------------------------------------------------------------+
     | 6/1   | Finish lab: analyzing microscopy images                                                        |
     |       |                                                                                                |
     |       |  + **Preclass**: `Lab 06: Image Processing`_                                                   |
+    |       |  + **Postclass**: `Class 27: Finish images lab`_                                               |
     +-------+------------------------------------------------------------------------------------------------+
     | 6/3   | Final project, in-class work                                                                   |
     |       |                                                                                                |
@@ -192,7 +196,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     |       |                                                                                                |
     |       |  + **Due**: `Lab 06: Image Processing`_                                                        |
     +-------+------------------------------------------------------------------------------------------------+
-    | 6/8   | Final project due                                                                              |
+    | 6/9   | Final project due                                                                              |
     |       |                                                                                                |
     |       |  + **Due**: `Final Project`_                                                                   |
     +-------+------------------------------------------------------------------------------------------------+
@@ -254,7 +258,11 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Class 22: Introduction to parsing big files`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/21/index.html
 .. _`Class 23: Parsing big files class 2`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/22/index.html
 .. _`Lab 03: Small files Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/03_molecular-structure.zip
-
+.. _`Class 24: fastq file lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/23/index.html
+.. _`Class 25: Working with images I`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/24/index.html
+.. _`Lab 05: Big Files (HTS) Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/05_high-throughput-sequencing.zip
+.. _`Class 26: Working with images II and start Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/25/index.html
+.. _`Class 27: Finish images lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/26/index.html
 
 
 .. toctree::
