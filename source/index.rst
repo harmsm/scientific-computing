@@ -195,6 +195,7 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
     | 6/5   | Final project, in-class work                                                                   |
     |       |                                                                                                |
     |       |  + **Due**: `Lab 06: Image Processing`_                                                        |
+    |       |  + **Postclass**: `Lab 06: Image Processing Key`_                                              |
     +-------+------------------------------------------------------------------------------------------------+
     | 6/9   | Final project due                                                                              |
     |       |                                                                                                |
@@ -263,6 +264,8 @@ material.  Fri will be an open "lab" where you will work on exercises in groups.
 .. _`Lab 05: Big Files (HTS) Key`: https://github.com/harmsm/pythonic-science/raw/master/zips/labs/keys/05_high-throughput-sequencing.zip
 .. _`Class 26: Working with images II and start Lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/25/index.html
 .. _`Class 27: Finish images lab`: https://harmsm.github.io/scientific-computing/non-sphinx/sessions/26/index.html
+.. _`Lab 06: Image Processing Key`: https://github.com/harmsm/pythonic-science/raw/master/labs/06_microscopy/06_counting-puncta_key.ipynb
+
 
 
 .. toctree::
